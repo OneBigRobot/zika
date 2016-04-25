@@ -1,0 +1,173 @@
+/* Main share tools*/
+/* Grayscale = default, no class needed */
+/* Colorful = add class color-top to top-sharebar-wrapper */
+/* Reverse = add class reverse to top-sharebar-wrapper */
+.top-sharebar-wrapper {
+    float: right;
+    margin: 0px auto 30px;
+    @media (max-width: $med) {
+    	float:none;
+    }
+}
+.social-tools-wrapper{
+    overflow:hidden;
+    display:inline;
+    height:auto;
+}
+.social-tools-primary {
+    float:left;
+    border: 1px solid $ui-lightGray-0;
+    border-radius: 4px;
+    .top-sharebar-wrapper.expanded & {
+    	border-top-right-radius: 0px;
+		border-bottom-right-radius: 0px;
+    }
+}
+.social-tools-additional {
+    float:left;
+    display:none;
+    overflow: hidden;
+    border: 1px solid #dedede;
+    border-left: none;
+    border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	.social-tools {
+		margin-left: -200px; /*hide these on initial load*/
+	}
+}
+.social-tools .hideText {
+    position: absolute;
+    left: -10000px;
+}
+.social-tools-wrapper .tool {
+	width: 58px;
+	max-height: 40px;
+	display: inline;
+	float: left;
+	text-align: center;
+	vertical-align: middle;
+	padding: 9px 0 8px 0;
+	font-size: 1.4em;
+	line-height: 1em;
+	cursor:pointer;
+	border-left: 1px solid $ui-lightGray-0;
+	@media (max-width: $med) {
+		min-width: 40px;
+        width: auto;
+	}
+	@media (max-width: $small) {
+		display:none;
+		&.mobile {
+			min-width:40px;
+        	width:auto;
+        	display:inline-block;
+		}
+	}
+	span {
+		color: $ui-black-2;
+	}
+	&:hover {
+		opacity:0.9;
+	}
+	&.first {
+		border-left: none;
+	}
+	&.more {
+		width: 90px;
+		span {
+			color: $ui-black-2;
+		}
+		span:after {
+			content: 'More';
+			font-family: $franklin-bold;
+			font-size: 16px;
+			vertical-align: middle;
+			margin-left: 5px;
+		}
+	}
+	.top-sharebar-wrapper.expanded & {
+		width:40px;
+	}
+	/* reverse text */
+	.top-sharebar-wrapper.reverse & {
+		span {
+			color: #fff;
+		}
+	}
+	/* colorful buttons */
+	.top-sharebar-wrapper.color-top & {
+		&.facebook span {
+			color: $facebook;
+		}
+		&.twitter span {
+			color: $twitter;
+		}
+		&.google-plus span {
+			color: $google-plus;
+		}
+		&.email {
+			font-size:1.35em;
+			padding-bottom: 9px;
+			span {
+				color: $email;
+			}
+		}
+		&.linkedin span {
+			color: $linkedin;
+		}
+		&.pinterest span {
+			color: $pinterest;
+		}
+		&.reddit span {
+			color: $reddit;
+		}
+		&.stumbleupon span {
+			color: $stumbleupon;
+		}
+		&.tumblr span {
+			color: $tumblr;
+		}
+	}
+}
+/* End Main share bar */
+
+/* Individual chart share buttons */
+.pgChart-footer-share{
+	float:right;
+	width:40%;
+	text-align:right;
+	margin: 0.35em 0 0.5em;
+
+	.pgChart-footer--chunked & {
+		width:100%;
+		float:none;
+		text-align:left;
+		margin:0;
+		@media (max-width: $small){
+			text-align:right;
+		}
+	}
+	a.pgChart-footer-share-button {
+		color:white;
+		background: $ui-lightGray-0;
+		padding:5px 2px 2px;
+		border-radius:2px;
+		width:30px;
+		height:26px;
+		display: inline-block;
+		text-align: center;
+	}
+}
+/* END Individual chart share buttons */
+
+@media (max-width: $small){
+	.pgChart--chunked .pgGrid{ //not sure what this is
+		flex-direction: column;
+	}
+}
+@media print {
+    /* TODO: Figure this out */
+    .pb-f-article-article-topper .social-tools-wrapper {
+        display:none;
+    }
+}

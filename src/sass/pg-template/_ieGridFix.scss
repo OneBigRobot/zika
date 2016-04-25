@@ -1,0 +1,223 @@
+//IE comments
+//Relies on classes added to <html>
+//
+
+/*For the team - explicit or implicit grutters*/
+.pg-ie .pgGrid,
+.ie10 .pgGrid{
+  	float: left;
+  	display: block;
+  	padding: 0;
+  	margin: -0.5em 0em 0.5em -1em;
+  	width:100%;
+  	clear:both;
+	overflow:auto;
+  	
+}
+
+.pg-ie .pgChart { overflow: initial;} //overflow visible
+
+.ie10 [class^="pgGrid-cell"],
+.pg-ie [class^="pgGrid-cell"]{
+  	float: left;
+  	padding: 0.5em 0 0em 1em;
+}
+
+/*overwriting styles makes BEM sad*/
+.ie10 .pgGrid--noGutters > [class^="pgGrid-cell"],
+.pg-ie .pgGrid--noGutters > [class^="pgGrid-cell"]{
+	padding:0;
+}
+
+.ie10 .pgGrid--guttersLg > [class^="pgGrid-cell"],
+.pg-ie .pgGrid--guttersLg > [class^="pgGrid-cell"]{
+	padding: 1em 0 0 1.5em;
+	
+}
+
+.ie10 .pgGrid--guttersXl > [class^="pgGrid-cell"],
+.pg-ie .pgGrid--guttersXl > [class^="pgGrid-cell"]{
+	padding: 1.5em 0 0 2em;
+	
+}
+
+//writing this 2 places oh well... 
+@mixin makeIEGridColumns($breakpoint-name: cell){
+	
+	@for $i from 1 through $grid-columns {
+	    $w: ($i/$grid-columns);
+	        
+	    // If the width doesn't already exist
+	    .pgGrid-#{$breakpoint-name}--#{$i} {
+	        width: $w * 100%;
+	    }
+	}
+}
+
+.ie10, .pg-ie{
+
+	@include makeGridColumns('cell', 9);
+
+	@each $breakpoint in $allBreakpoints {
+	  	$i: index($allBreakpoints, $breakpoint);
+	  	$bp-name: nth($allBreakpointNames, $i);
+	  	
+	  	@media (max-width: $breakpoint){
+	    	@include makeGridColumns($bp-name, 9);
+
+	    	.pgGrid-#{$bp-name}--stack .pgGrid-cell--1,
+			.pgGrid-#{$bp-name}--stack .pgGrid-cell--2,
+			.pgGrid-#{$bp-name}--stack .pgGrid-cell--3,
+			.pgGrid-#{$bp-name}--stack .pgGrid-cell--4,
+			.pgGrid-#{$bp-name}--stack .pgGrid-cell--5,
+			.pgGrid-#{$bp-name}--stack .pgGrid-cell--6,
+			.pgGrid-#{$bp-name}--stack .pgGrid-cell--7,
+			.pgGrid-#{$bp-name}--stack .pgGrid-cell--8,
+			.pgGrid-#{$bp-name}--stack .pgGrid-cell--9,
+			.pgGrid-#{$bp-name}--stack .pgGrid-cell--10,
+			.pgGrid-#{$bp-name}--stack .pgGrid-cell--11,
+			.pgGrid-#{$bp-name}--stack .pgGrid-cell--12{
+				width: 100%;
+			}
+		}
+	}
+} //end .ie10, .pg-ie
+
+.ie10, .pg-ie{
+	.pgContent.pgGrid{
+		float:none;
+		margin:auto;
+	}
+}
+
+
+//ie11 fixes
+.ie11{
+
+
+	//default [class^="pgGrid-cell"]{
+	@include makeGridColumns('cell', 11, 0.5em);
+
+	@each $breakpoint in $allBreakpoints {
+	  	$i: index($allBreakpoints, $breakpoint);
+	  	$bp-name: nth($allBreakpointNames, $i);
+	  	
+	  	@media (max-width: $breakpoint){
+
+	    	@include makeGridColumns($bp-name, 11, 0.5em);
+
+	    	.pgGrid-#{$bp-name}--stack .pgGrid-cell--1,
+			.pgGrid-#{$bp-name}--stack .pgGrid-cell--2,
+			.pgGrid-#{$bp-name}--stack .pgGrid-cell--3,
+			.pgGrid-#{$bp-name}--stack .pgGrid-cell--4,
+			.pgGrid-#{$bp-name}--stack .pgGrid-cell--5,
+			.pgGrid-#{$bp-name}--stack .pgGrid-cell--6,
+			.pgGrid-#{$bp-name}--stack .pgGrid-cell--7,
+			.pgGrid-#{$bp-name}--stack .pgGrid-cell--8,
+			.pgGrid-#{$bp-name}--stack .pgGrid-cell--9,
+			.pgGrid-#{$bp-name}--stack .pgGrid-cell--10,
+			.pgGrid-#{$bp-name}--stack .pgGrid-cell--11,
+			.pgGrid-#{$bp-name}--stack .pgGrid-cell--12{
+				flex-basis:  calc(100% - 0.5em);
+			}
+		}
+	}
+	
+
+
+	/*overwriting styles makes BEM sad*/
+	.pgGrid--noGutters {
+		@include makeGridColumns('cell', 11, 0);
+
+		@each $breakpoint in $allBreakpoints {
+		  	$i: index($allBreakpoints, $breakpoint);
+		  	$bp-name: nth($allBreakpointNames, $i);
+		  	
+		  	@media (max-width: $breakpoint){
+
+		    	@include makeGridColumns($bp-name, 11, 0);
+
+		    	.pgGrid-#{$bp-name}--stack .pgGrid-cell--1,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--2,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--3,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--4,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--5,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--6,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--7,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--8,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--9,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--10,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--11,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--12{
+					flex-basis:  calc(100% - 0);
+				}
+			}
+		}
+	}
+
+	.pgGrid--guttersLg{
+
+		@include makeGridColumns('cell', 11, 1em);
+
+		@each $breakpoint in $allBreakpoints {
+		  	$i: index($allBreakpoints, $breakpoint);
+		  	$bp-name: nth($allBreakpointNames, $i);
+		  	
+		  	@media (max-width: $breakpoint){
+
+		    	@include makeGridColumns($bp-name, 11, 1em);
+
+		    	.pgGrid-#{$bp-name}--stack .pgGrid-cell--1,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--2,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--3,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--4,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--5,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--6,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--7,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--8,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--9,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--10,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--11,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--12{
+					flex-basis:  calc(100% - 1em);
+				}
+			}
+		}
+		
+	}
+
+	.pgGrid--guttersXl {
+		@include makeGridColumns('cell', 11, 1em);
+
+		@each $breakpoint in $allBreakpoints {
+		  	$i: index($allBreakpoints, $breakpoint);
+		  	$bp-name: nth($allBreakpointNames, $i);
+		  	
+		  	@media (max-width: $breakpoint){
+
+		    	@include makeGridColumns($bp-name, 11, 1em);
+
+		    	.pgGrid-#{$bp-name}--stack .pgGrid-cell--1,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--2,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--3,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--4,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--5,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--6,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--7,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--8,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--9,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--10,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--11,
+				.pgGrid-#{$bp-name}--stack .pgGrid-cell--12{
+					flex-basis:  calc(100% - 1em);
+				}
+			}
+		}
+	}
+
+
+}
+
+
+
+

@@ -1,0 +1,161 @@
+//Breakpoints
+
+
+/* Here is how the breakpoints work
+
+0px --- 300px (xs)
+ 301px --- 480px (sm)
+    481px --- 768px (md)
+         769px --- 1000px(lg)
+            1001px --- 1200px default -styles
+                1201px --- 1400px (xl) min-width: 1201px
+                    1401px --- ∞px (xxl) min-width: 1401px
+
+
+*/
+
+$xxlarge: 1400px;
+$xlarge: 1200px;
+$large: 1000px; //PB fixed width
+$med: 768px; //iPad Portrait
+$small: 480px; //drop font size for phone
+$xsmall: 300px;
+
+$allBreakpoints: $xxlarge, $xlarge, $large, $med, $small, $xsmall;
+$allBreakpointNames: xxl, xl, lg, md, sm, xs;
+
+// Max widths
+$contentWideMax: 1400px;
+$contentRegularMax: 1200px;
+$contentNarrowMax: 1000px;
+
+
+/*
+    Number of columns in the grid
+    DO NOT TOUCH UNLESS ABSOLUTELY SURE
+*/
+$grid-columns: 12; 
+
+//JKust used in IE fixes could roll into grid setup too
+//dflt = default
+
+
+$gutter-class-names: default, pgGrid--guttersLg, pgGrid--guttersXl;
+$gutter-sizes: 0.5em, 0, 1, 1.5;
+
+//Theme colors....
+
+/*****************
+* There are two list variables at the bottom of this file. 
+* If you add a color to this file add it to one or both of the list variables
+****************/
+
+// $navBlack: #000;
+// $hoverGray: #5A5A5A;
+// $lightGray: #d5d5d5;
+// $lightText: #6e6e6e;
+
+/* UI grayscale; runs darkest to lightest */
+$ui-black-0: #000000;
+$ui-black-1: #2a2a2a;
+$ui-black-2: #5a5a5a;
+
+$ui-gray-0: #6e6e6e;
+$ui-gray-1: #969696;
+$ui-gray-2: #AAAAAA;
+
+$ui-lightGray-0: #d5d5d5;
+$ui-lightGray-1: #e9e9e9;
+$ui-lightGray-2: #f1f1f1;
+
+/* Other UI colors */
+$blueGray: #23517A; /* what uses this? */
+$linkBlue:#2e6d9d;
+$linkBlue-hover: #468cbe;
+
+/* Social media colors */
+$facebook: #3b5998;
+$facebook-hover: #5a78b4;
+$twitter: #55acee;
+$twitter-hover: #5fc0ff;
+$email: #bd2a32;
+$google-plus: #dd4b39;
+$linkedin: #007bb6;
+$pinterest: #cb2027;
+$reddit: #ff5700;
+$stumbleupon: #EB4823;
+$tumblr: #32506d;
+
+//Highlight Colors 
+
+//Charbuilder colors
+$black-0: #231f20;
+$black-1: #808284;
+$black-2: #b1b3b5;
+$black-3: #e6e7e8;
+
+$gray-0: #585852;
+$gray-1: #80817c;
+$gray-2: #a7a8a3;
+$gray-3: #d1d2cd;
+$gray-4: #efefea;
+
+$brown-0: #693323;
+$brown-1: #916f63;
+$brown-2: #bba49a;
+$brown-3: #e6dbd6;
+
+$red-0: #ee645c;
+$red-1: #f69687;
+$red-2: #fabeb4;
+$red-3: #fde7e1;
+
+$orange-0: #f68b28;
+$orange-1: #fcc691;
+$orange-2: #fdd9ba;
+$orange-3: #feeada;
+
+$yellow-0: #d7c944;
+$yellow-1: #ebe08c;
+$yellow-2: #f2ebbc;
+$yellow-3: #f4f2de;
+
+$green-0: #00b6bd;
+$green-1: #77cdd5;
+$green-2: #b4e1e4;
+$green-3: #d5edef;
+
+$blue-0: #006f91;
+$blue-1: #7caec6;
+$blue-2: #b4d5e5;
+$blue-3: #d5e7f0;
+
+$democrat-0: #0081c5;
+$democrat-1: #66b7e6;
+$democrat-2: #b4d6f1;
+$democrat-3: #e1ebf7;
+
+$republican-0: #ed1c24;
+$republican-1: #f38487;
+$republican-2: #f9bfbe;
+$republican-3: #fdeceb;
+
+
+
+//List variables for iteration - update;
+$allColors: $ui-black-0, $ui-black-1, $ui-black-2, $ui-gray-0, $ui-gray-1, $ui-gray-2, $ui-lightGray-0, $ui-lightGray-1, $ui-lightGray-2, $blueGray, $linkBlue, $linkBlue-hover, $facebook, $facebook-hover, $twitter, $twitter-hover, $black-0, $black-1, $black-2, $black-3, $gray-0, $gray-1, $gray-2, $gray-3, $gray-4, $brown-0, $brown-1, $brown-2, $brown-3, $red-0, $red-1, $red-2, $red-3, $orange-0, $orange-1, $orange-2, $orange-3, $yellow-0, $yellow-1, $yellow-2, $yellow-3, $green-0, $green-1, $green-2, $green-3, $blue-0, $blue-1, $blue-2, $blue-3, $democrat-0, $democrat-1, $democrat-2, $democrat-3, $republican-0, $republican-1, $republican-2, $republican-3;
+$highlightcolors: $ui-black-0, $ui-black-1, $ui-black-2, $ui-gray-0, $ui-gray-1, $ui-gray-2, $ui-lightGray-0, $ui-lightGray-1, $ui-lightGray-2, $blueGray, $linkBlue, $linkBlue-hover, $facebook, $facebook-hover, $twitter, $twitter-hover, $gray-0, $gray-1, $gray-2, $gray-3, $gray-4, $brown-0, $brown-1, $brown-2, $brown-3, $red-0, $red-1, $red-2, $red-3, $orange-0, $orange-1, $orange-2, $orange-3, $yellow-0, $yellow-1, $yellow-2, $yellow-3, $green-0, $green-1, $green-2, $green-3, $blue-0, $blue-1, $blue-2, $blue-3, $democrat-0, $democrat-1, $democrat-2, $democrat-3, $republican-0, $republican-1, $republican-2, $republican-3; //pulls out really dark colors that won't work as a highlight with black text color
+
+//Need variable and plan-text versions of these
+$allColorNames: ui-black-0, ui-black-1, ui-black-2, ui-gray-0, ui-gray-1, ui-gray-2, ui-lightGray-0, ui-lightGray-1, ui-lightGray-2, blueGray, linkBlue, linkBlue-hover, facebook, facebook-hover, twitter, twitter-hover, black-0, black-1, black-2, black-3, gray-0, gray-1, gray-2, gray-3, gray-4, brown-0, brown-1, brown-2, brown-3, red-0, red-1, red-2, red-3, orange-0, orange-1, orange-2, orange-3, yellow-0, yellow-1, yellow-2, yellow-3, green-0, green-1, green-2, green-3, blue-0, blue-1, blue-2, blue-3, democrat-0, democrat-1, democrat-2, democrat-3, republican-0, republican-1, republican-2, republican-3;
+$highlightcolorNames: ui-black-0, ui-black-1, ui-black-2, ui-gray-0, ui-gray-1, ui-gray-2, ui-lightGray-0, ui-lightGray-1, ui-lightGray-2, blueGray, linkBlue, linkBlue-hover, facebook, facebook-hover, twitter, twitter-hover, gray-0, gray-1, gray-2, gray-3, gray-4, brown-0, brown-1, brown-2, brown-3, red-0, red-1, red-2, red-3, orange-0, orange-1, orange-2, orange-3, yellow-0, yellow-1, yellow-2, yellow-3, green-0, green-1, green-2, green-3, blue-0, blue-1, blue-2, blue-3, democrat-0, democrat-1, democrat-2, democrat-3, republican-0, republican-1, republican-2, republican-3; //pulls out really dark colors that won't work as a highlight with black text color
+
+// FONTS
+$franklin-bold: 'FranklinITCProBold',Helvetica,Arial,sans-serif;
+$franklin-light: 'FranklinITCProLight',Helvetica,Arial,sans-serif;
+$franklin-thin: 'FranklinITCProThin',Helvetica,Arial,sans-serif;
+$georgia: Georgia, serif;
+$postoni-standard: "PostoniStandardRegular",Georgia,serif;
+$postoni-standard-bold: "PostoniStandardBold",Georgia,serif; 
+$postoni-standard-italic: "PostoniStandardItalic",Georgia,serif;
+$postoni-standard-bold-italic: "PostoniStandardBoldItalic",Georgia,serif;

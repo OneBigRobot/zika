@@ -1,0 +1,76 @@
+//_utilities.scss
+
+//hidden for sighted folks visible for screen readers
+
+
+.pgBorder-left { border-left:solid 1px $ui-lightGray-0; }
+
+.pgBorder-right { border-right:solid 1px $ui-lightGray-0; }
+
+.pgBorder-top { border-top:solid 1px $ui-lightGray-0; }
+
+.pgBorder-bottom { border-bottom:solid 1px $ui-lightGray-0; }
+
+.pgBorder--dashed.pgBorder-top { border-top-style:dashed; }
+
+.pgBorder--dashed.pgBorder-right { border-right-style:dashed; }
+
+.pgBorder--dashed.pgBorder-bottom { border-bottom-style:dashed; }
+
+.pgBorder--dashed.pgBorder-left { border-left-style:dashed; }
+
+.pgBorder--dotted.pgBorder-top { border-top-style:dotted; }
+
+.pgBorder--dotted.pgBorder-right { border-right-style:dotted; }
+
+.pgBorder--dotted.pgBorder-bottom { border-bottom-style:dotted; }
+
+.pgBorder--dotted.pgBorder-left { border-left-style:dotted; }
+
+
+@media (max-width: $xxlarge){
+  .pgNoBorder-top-xxl{ border-top: none; }
+  .pgNoBorder-right-xxl{ border-right: none; }
+  .pgNoBorder-bottom-xxl{ border-bottom: none; }
+  .pgNoBorder-left-xxl{ border-left: none; }
+}
+
+@media (max-width: $xlarge){
+  .pgNoBorder-top-xl{ border-top: none; }
+  .pgNoBorder-right-xl{ border-right: none; }
+  .pgNoBorder-bottom-xl{ border-bottom: none; }
+  .pgNoBorder-left-xl{ border-left: none; }
+
+}
+
+@media (max-width: $large){
+  .pgNoBorder-top-lg{ border-top: none; }
+  .pgNoBorder-right-lg{ border-right: none; }
+  .pgNoBorder-bottom-lg{ border-bottom: none; }
+  .pgNoBorder-left-lg{ border-left: none; }
+}
+
+
+
+@media (max-width: $med){
+  .pgNoBorder-top-md{ border-top: none; }
+  .pgNoBorder-right-md{ border-right: none; }
+  .pgNoBorder-bottom-md{ border-bottom: none; }
+  .pgNoBorder-left-md{ border-left: none; }
+
+}
+
+@media (max-width: $small){
+  .pgNoBorder-top-sm{ border-top: none; }
+  .pgNoBorder-right-sm{ border-right: none; }
+  .pgNoBorder-bottom-sm{ border-bottom: none; }
+  .pgNoBorder-left-sm{ border-left: none; }
+}
+
+@media (max-width: $xsmall){
+  .pgNoBorder-top-xs{ border-top: none; }
+  .pgNoBorder-right-xs{ border-right: none; }
+  .pgNoBorder-bottom-xs{ border-bottom: none; }
+  .pgNoBorder-left-xs{ border-left: none; }
+
+}

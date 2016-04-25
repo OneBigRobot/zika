@@ -1,0 +1,183 @@
+//_type.scss
+html{
+    //font-size: 100%; //roughly 16px
+    font-size: 14px;
+}
+
+body {
+    color: $ui-black-1;
+    font-family: $franklin-light;
+}
+
+strong {
+    font-family: $franklin-bold;
+    font-weight: 400;
+}
+
+a {
+    color: $linkBlue;
+}
+
+/* FONTS */
+.postoni-standard {
+    font-family: $postoni-standard;
+    font-weight: normal;
+}
+.postoni-standard-italic {
+    font-family: $postoni-standard-italic;
+    font-weight: normal;
+}
+.postoni-standard-bold {
+    font-family: $postoni-standard-bold;
+    font-weight: normal;
+}
+.postoni-standard-bold-italic {
+    font-family: $postoni-standard-bold-italic;
+    font-weight: normal;
+}
+.postoni-standard strong {
+    font-family: $postoni-standard-bold;
+    font-weight: normal;
+}
+.postoni-standard em {
+    font-family: $postoni-standard-italic;
+    font-weight: normal;
+}
+.postoni-standard strong em {
+    font-family: $postoni-standard-bold-italic;
+    font-weight: normal;
+}
+.postoni-standard.small, .postoni-standard-italic.small {
+    font-size:2.8em;
+}
+
+.franklin-light {
+    font-family: $franklin-light;
+    font-weight: normal;
+}
+.franklin-bold{
+    font-family: $franklin-bold;
+    font-weight: normal;
+}
+.franklin-thin{
+    font-family: $franklin-thin;
+    font-weight: normal;
+}
+.franklin-light.small {
+    font-size:3.2em;
+}
+
+.georgia {
+    font-family: $georgia;
+    font-weight: normal;
+}
+.georgia a {
+    font-family: $georgia;
+    font-weight: normal;
+}
+.bodyCopy {
+    @extend .georgia;
+    line-height: 1.8em;
+    margin-bottom: 24px;
+    font-size: 18px;
+    margin-top:0; 
+    color: $ui-black-1;
+    text-shadow: 0 1px 0 #FFF;
+    font-weight: normal;
+}
+.pgInterstitialLink {
+    @extend .bodyCopy;
+    font-style: italic;
+    a {
+        text-decoration: underline;
+    }
+}
+p.drop-cap:first-letter {
+    font-family: $postoni-standard;
+    font-size: 151px;
+    float: left;
+    margin:15px 0 -5px 0; //firefox spacing
+    padding:0 8px 0 0; 
+    // height:.7em; 
+    line-height:116px;    //chrome spacing
+}
+p.drop-cap--sans:first-letter {
+    font-family: $franklin-bold;
+    font-size: 115px;
+    line-height: 82px; //chrome spacing
+    margin-top: 12px;  //firefox spacing
+    padding-right: 4px;
+}
+
+//H tag styles
+.pgH1,
+.pgH2,
+.pgH3,
+.pgH4, 
+.pgH5 {
+    color: $ui-black-1;
+    @extend .franklin-bold;
+}
+.pgH1.franklin-thin,
+.pgH2.franklin-thin,
+.pgH3.franklin-thin,
+.pgH4.franklin-thin,
+.pgH5.franklin-thin {
+    @extend .franklin-thin;
+}
+.pgH1.franklin-light,
+.pgH2.franklin-light,
+.pgH3.franklin-light,
+.pgH4.franklin-light,
+.pgH5.franklin-light {
+    @extend .franklin-light;
+}
+.pgH1.postoni-standard,
+.pgH2.postoni-standard,
+.pgH3.postoni-standard,
+.pgH4.postoni-standard,
+.pgH5.postoni-standard {
+    @extend .postoni-standard;
+}
+.pgH1.postoni-standard-bold,
+.pgH2.postoni-standard-bold,
+.pgH3.postoni-standard-bold,
+.pgH4.postoni-standard-bold,
+.pgH5.postoni-standard-bold {
+    @extend .postoni-standard-bold;
+}
+.pgH1.postoni-standard-bold-italic,
+.pgH2.postoni-standard-bold-italic,
+.pgH3.postoni-standard-bold-italic,
+.pgH4.postoni-standard-bold-italic,
+.pgH5.postoni-standard-bold-italic {
+    @extend .postoni-standard-bold-italic;
+}
+.pgH1.postoni-standard-italic,
+.pgH2.postoni-standard-italic,
+.pgH3.postoni-standard-italic,
+.pgH4.postoni-standard-italic,
+.pgH5.postoni-standard-italic {
+    @extend .postoni-standard-italic;
+}
+
+.pgH1{
+    font-size: 3em;
+    line-height: 1.2em;
+}
+.pgH2{
+    font-size: 2.1em;
+    line-height: 1.2em;
+    margin: 0.5em 0; 
+}
+.pgH3{
+    font-size: 1.5em;
+    line-height: 1.3em;
+    margin: 0.5em 0;
+}
+.pgH4{
+    font-size: 1.2em;
+    line-height: 1.4em;
+    margin: 0.5em 0;
+}
+.pgH5 {}

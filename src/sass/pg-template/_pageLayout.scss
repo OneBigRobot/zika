@@ -1,0 +1,351 @@
+// _pageLayout.scss
+body{
+    margin-top:50px; //for pb header
+}
+.pgContent{
+    width:100%;
+    margin:auto;
+    padding: 0 10px;
+}
+.ie .pgContent{
+    overflow:auto;
+}
+.pgContent--wide{
+    max-width:$contentWideMax;
+}
+.pgContent--regular{
+    max-width:$contentRegularMax;
+}
+.pgContent--narrow{
+    max-width:$contentNarrowMax;
+}
+.leaderboard{
+    max-width:1000px;
+    position:relative;
+    margin:auto;
+    padding:20px;
+    text-align:center;
+}
+.leaderboard:before {
+  content: "Ad";
+  position: absolute;
+  bottom: 16px;
+  left: 0px;
+  font: 10pt normal $franklin-light;
+}
+.leaderboard--mobile{
+    display: none;
+}
+.bottom-ad {
+    margin: 30px 0;
+    text-align: center;
+}
+.pgGraphicHeader{
+    overflow:auto; //catch the floats..
+    padding:0 0 1em;
+    margin:0; 
+}
+
+// Page template styles //
+.pgHeadline-kicker{
+    margin: 10px 0 0;
+    @extend .franklin-bold;
+    font-size: 1.2em;
+    display:inline-block;
+}
+.pgHeadline--wKicker {
+    @extend .franklin-bold;
+    @extend .pgH1;
+    font-size:3.3em;
+    line-height: 1.08em; 
+    @media (max-width: $med) {
+        font-size: 2.857142857em;
+    }
+    @media (max-width: $small){
+        font-size: 2.0em;
+    }
+    &.postoni-standard, &.postoni-standard-italic, &.postoni-standard-bold, &.postoni-standard-bold-italic {
+        font-size:3.7em;
+        line-height:1.1em;
+        @media (max-width: $med){
+            font-size: 2.85em;
+            line-height: 1.1em;
+        }
+        @media (max-width: $small){
+            font-size: 2em;
+        }
+    }
+    &.franklin-thin, &.franklin-light {
+        font-size: 3.5em;
+    }
+}
+.pgLead{
+    @extend .franklin-thin; 
+    font-size:1.42em;
+    line-height:1.25em;
+    @media (max-width: $med) {
+        font-size:1.37em;
+        line-height:1.3em;
+    }
+    @media (max-width: $small) {
+        font-size:1.30em;
+        line-height:1.2em;
+    }
+}
+.pgByline{
+    float:left;
+    @extend .franklin-bold;
+    @media (max-width: $med) {
+        width:100%;
+        clear:both; 
+        margin-bottom: 0.5em;   
+    }
+}
+//I understand this is kinda anti BEM but its just for responsive part
+.pgByline-author-wrap{
+    font-size:1.142857143em;
+    display:inline-block;
+    float:left;
+    @extend .franklin-bold;
+}
+.pgByline-author{
+    color:$linkBlue;
+    @extend .franklin-bold;
+}
+.pgByline-twitter{
+    display:inline-block;
+    float:left;
+    margin-left:0.75em; //TODO: Media queries...
+    clear:right;
+}
+.pgAdditionalInfo{
+    float:right;
+}
+.pgPublishedDate{
+    color: $ui-gray-2;
+    font-size: 1.142857143em;
+    display:block;
+    @extend .franklin-light;
+    margin-right:0.75em;
+    clear: both; //probably --modifier 
+}
+.pgPublishedDate--sm{
+    display:none;
+}
+.pg2nd-Header{
+    width:100%;
+    margin: 0.45em 0 0.25em;
+    font-size:1.45em;
+}
+//see if this can extend something else type
+.pg2nd-lead{
+    width:100%;
+    font-size: 1.28em;
+    @extend .franklin-light;
+    margin: 0.25em 0 1em; 
+    @media (max-width: $small) {
+        font-size: 1.142857143em;
+    }
+}
+//see if this can extend something else from type
+.pg2nd-lead--chunked{
+    width:100%;
+    @extend .franklin-light;
+    margin: 0 0 1em; 
+}
+.pgChart-footer-source{
+    color: $ui-gray-1;
+    line-height: 20px;
+    float:left;
+    width:60%;
+    font-size: 0.9375em;
+    margin: 0.5em 0 1em;
+}
+
+//Share is in socialShare.scss
+
+.pgArticle{
+    padding:10px 0px;
+}
+
+.pgArticle--wAD{
+    padding:10px 50px 10px 0px;
+}
+
+.pgSidebar{
+    padding: 50px 0 10px 20px;
+}
+
+.pgSectionGutter{
+    padding-right: 50px;
+}
+
+.pgPlaceholder{
+  width: 100%;
+  padding: .8em 1em 0;
+  background:#EEE;
+  background:rgba(200, 200, 200, 0.2);
+  border-radius: 3px;
+}
+
+.pgChart{
+    margin:2.5em 0 0;
+    overflow:auto;
+    /*Added overflow auto*/
+}
+
+.pgChart--chunked{
+}
+
+//This is an overwrite from another page
+.pgArticle-bottom-related{
+  margin: 78px 0;
+}
+
+.pgChart-footer{
+
+}
+
+#wp-graphics-comments-wrapper .echo_container .echo-header-container #comment-info-links {
+    padding-top: 23px;
+}
+
+#wp-graphics-comments-wrapper {
+    padding-left: 0;
+}
+.pgRelatedCoverage {
+    padding-right: 0;
+}
+@media(max-width: $med) {
+    #wp-graphics-comments-wrapper,
+    .pgRelatedCoverage {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.pgRelatedCoverage{
+    margin:10px 0;
+}
+
+.pgRelatedCoverage .header-mobile-border{
+    line-height: 20px;
+    width: 30px;
+    border-top: 3px solid #2A2A2A;
+    height: 1px;
+    margin-top: 20px;
+}
+
+.pgRelatedCoverage-header{
+    font-size:14px;
+    line-height:40px;
+    @extend .franklin-bold;
+    margin: -5px 0 12px;
+    color: #2A2A2a;
+}
+
+.pgRelatedCoverage-items {
+    padding: 0 20px;
+    border: 1px solid #D5D5D5;
+    border-radius: 4px;
+    font-size: 1.1em;
+}
+.pgRelatedCoverage-items .headline{
+    @extend .franklin-bold;
+    color: #111;
+}
+.pgRelatedCoverage-items .article{
+    border-bottom: 1px solid #D5D5D5;
+}
+.pgRelatedCoverage-items .article:last-child{
+    border-bottom: none;
+}
+.pgChart-footer--chunked{
+    display:flex;
+    flex-direction:column-reverse;
+    margin-top:-33px;
+}
+.pgChart-footer--chunked .pgChart-footer-source{
+    width:100%;
+    float:none;
+    margin:1em 0 0;
+}
+
+.pg3rd-Header{
+    margin: 0 0 0.25em;
+    font-size: 1.1em;
+}
+
+.pg3rd-Header--chunked{
+    margin-bottom:1em;
+}
+
+.pgChart-description--chunked{
+}
+
+
+//Look in _socialSshare for .pgChart-footer-share{}
+
+
+@media (max-width: $med){
+    .leaderboard--desktop{
+        display: none;
+    }
+    .leaderboard--mobile{
+        display: inherit;
+    }
+    .pgArticle,
+    .pgArticle--wAD{
+        width:100%;
+        flex: 0 0 100%;
+        border:none; // not sure how I feel about this overwrite...
+        padding:0px;
+    }
+    .pgSidebar{
+        display:none;
+    }
+    .pgSectionGutter{
+        padding-right: 0;
+    }
+    .pgAdditionalInfo{
+        float:left;
+    }
+}
+
+@media (max-width: $small){
+    .pgChart--chunked .pgGrid{
+        flex-direction: row; //for iphones :(
+    }
+    .pgChart-footer--chunked{
+        display:flex;
+        flex-direction:row;
+        justify-content: space-between;
+        margin-top:0;
+    }
+}
+
+@media (max-width: $xsmall){}
+.iframe {
+    .pgContent {
+        border-top: none;
+    }
+    .pgArticle {
+        padding: 0;
+        border-right: none;
+        flex: none;
+        width: 100%;
+    }
+    .pgChart {
+        margin: 0;
+        border-bottom: none;
+    }
+    .pgChart-footer-share {
+        display: none;
+    }
+    .bottom-ad {
+        display: none;
+    }
+    .pgArticle-bottom {
+        display: none;
+    }
+}

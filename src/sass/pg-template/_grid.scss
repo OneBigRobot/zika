@@ -1,0 +1,123 @@
+//the grid!
+//Look for IE grid fix import at the bottom.
+
+/*implicit gutters in the gird*/
+.pgGrid{
+  	display: flex;
+  	flex-wrap: wrap;
+  	list-style: none;
+  	padding: 0;
+  	margin: -1em 0 1em -1em;
+  	//overflow: hidden;
+}
+
+/*overwriting styles makes BEM sad*/
+.pgGrid--noGutters{
+  margin: auto;
+
+}
+
+.pgGrid--guttersLg{
+	margin: -1.5em 0 1.5em -1.5em;
+}
+
+.pgGrid--guttersXl{
+	margin: -2em 0 2em -2em;
+}
+
+/*
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-basics
+This is the shorthand for flex-grow, flex-shrink and flex-basis combined. The second and third parameters (flex-shrink and flex-basis) are optional. Default is 0 1 auto.
+It is recommended that you use this shorthand property rather than set the individual properties. The short hand sets the other values intelligently.
+*/
+[class^="pgGrid-cell"]{
+	flex: 1;
+  	padding: 0.5em 0 0 0.5em;
+  	overflow: hidden;
+
+}
+
+/*overwriting styles makes BEM sad*/
+.pgGrid--noGutters > [class^="pgGrid-cell"]{
+	padding:0;
+}
+
+.pgGrid--guttersLg > [class^="pgGrid-cell"]{
+	padding: 1em 0 0 1em;
+	
+}
+
+.pgGrid--guttersXl > [class^="pgGrid-cell"]{
+	padding: 1.5em 0 0 1.5em;
+	
+}
+
+.pgGrid-cell-img{
+	width:100%; //should this be flex: 0 0 100%; with ie fallback?
+}
+
+/*
+
+	Using flex basis for explicitly building out the grid
+	Flex-basis - https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-basics
+	This defines the default size of an element before the remaining space is distributed. The main-size value makes it match the width or height, depending on which is relevant based on the flex-direction.
+*/
+
+//IE fix is in here so we don't have the loop 2x. 
+//I feel meh about it - open to suggestions
+@mixin makeGridColumns($breakpoint-name: cell, $ie: 0, $gutter: 0em){
+	
+	@for $i from 1 through $grid-columns {
+	    $w: ($i/$grid-columns)* 100%;
+	        
+	    // If the width doesn't already exist
+	    .pgGrid-#{$breakpoint-name}--#{$i} {
+    	//This renders out something like .pgGrid-lg--6;
+	    	@if($ie == 9){
+		        width: $w;
+	        } @else if($ie == 11) {
+				flex-basis: calc(#{$w} - #{$gutter});
+    		}@else{
+		        flex: 0 0 $w ;
+    		}
+	    }
+	}
+}
+
+
+@include makeGridColumns();
+
+//Breakpoint and breakpoint names are in _variables.scss
+@each $breakpoint in $allBreakpoints {
+  	$i: index($allBreakpoints, $breakpoint);
+  	$bp-name: nth($allBreakpointNames, $i);
+  	
+  	//Check for xxl breakpoint and set to min-with
+  	$breakpoint-parameter: max-width;
+  	@if($breakpoint == $xxlarge){
+		$breakpoint-parameter: min-width;
+		$breakpoint: $xlarge; //this is weird and gross... 
+  	}
+
+  	@media ($breakpoint-parameter: $breakpoint){
+    	@include makeGridColumns($bp-name);
+
+    	.pgGrid-#{$bp-name}--stack .pgGrid-cell--1,
+		.pgGrid-#{$bp-name}--stack .pgGrid-cell--2,
+		.pgGrid-#{$bp-name}--stack .pgGrid-cell--3,
+		.pgGrid-#{$bp-name}--stack .pgGrid-cell--4,
+		.pgGrid-#{$bp-name}--stack .pgGrid-cell--5,
+		.pgGrid-#{$bp-name}--stack .pgGrid-cell--6,
+		.pgGrid-#{$bp-name}--stack .pgGrid-cell--7,
+		.pgGrid-#{$bp-name}--stack .pgGrid-cell--8,
+		.pgGrid-#{$bp-name}--stack .pgGrid-cell--9,
+		.pgGrid-#{$bp-name}--stack .pgGrid-cell--10,
+		.pgGrid-#{$bp-name}--stack .pgGrid-cell--11,
+		.pgGrid-#{$bp-name}--stack .pgGrid-cell--12{
+			flex: 0 0 100%;
+		}
+	}
+}
+
+/*IE Gird Fix import*/
+@import "ieGridFix";

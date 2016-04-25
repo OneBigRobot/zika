@@ -1,0 +1,4 @@
+{
+    "prepub_command": "gulp production",
+    "pub_dir": "public-prod"
+}

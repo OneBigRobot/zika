@@ -1,0 +1,14 @@
+//The grid specific mixins/loops are in _grid.scss (that seemed to make more sense)
+//This seems like a better place for general mixins
+
+@mixin background-opacity($color, $opacity: 0.4) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}
+
+@mixin background-color-transition() {
+	transition-delay: 0s;
+	transition-duration: 0.15s;
+	transition-property: background-color;
+	transition-timing-function: ease-in-out;
+}

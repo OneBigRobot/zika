@@ -1,0 +1,54 @@
+// Helper text styles come with the correct directional icon attached as ::after
+// By default, helper text is 16px but can be increased as needed.
+
+.helper {
+	font-family: $franklin-light;
+	font-size: 16px;
+	color: $ui-gray-0; 
+
+	&.helper--emphasize {
+		font-family: $franklin-bold;
+		color: $ui-black-1;
+	}
+	&::before, &::after {
+		font-family: FontAwesome;
+		font-size: 16px;
+	}
+	&::before {
+		margin-right: 10px;
+	}
+	&::after {
+		margin-left: 8px;
+	}
+}
+.helper--instructions::before {
+	content: "\f0a6";
+}
+.helper--expand {
+	color: $linkBlue;
+	cursor: pointer;
+	&::after {
+		content: "\f0d7";
+	}
+	&.helper--emphasize {
+		color: $linkBlue;
+	}
+}
+.helper--expand-close::after {
+	content: "\f0d8";
+}
+.helper--move-down::after {
+	content: "\f063";
+}
+.helper--move-up::after {
+	content: "\f062";
+}
+.helper--arrow-leftright::after {
+	content: "\f061";
+}
+.helper--arrow-updown::after {
+	content: "\f063";
+}
+
+
+

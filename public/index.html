@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<!--[if lte IE 9]>
+<html class="pg-ie">
+<![endif]-->
+<!--[if !IE]><!-->
+<html lang="en"><!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=1.0">
+
+        
+        <title>{{ pub_metadata_headline }} - Washington Post</title>
+        <meta name="twitter:title"          content="{{ pub_metadata_headline }}" />
+        <meta property="og:title"           content="{{ pub_metadata_headline }}" />
+        <meta name="description"            content="{{ pub_metadata_blurb }}" />
+        <meta property="og:description"     content="{{ pub_metadata_blurb }}" />
+        <meta name="twitter:description"    content="{{ pub_metadata_blurb }}" />
+        <meta name="keywords"               content="{{ pub_metadata_keywords }}" />
+        <link rel="canonical"               href="{{ pub_metadata_url }}" />
+        <meta property="og:url"             content="{{ pub_metadata_url }}"/>
+        <meta name="twitter:url"            content="{{ pub_metadata_url }}" />
+        <link rel="shorturl"                href="{{ pub_metadata_short_url }}" />
+        <meta property="og:image"           content="{{ pub_metadata_promo_image }}" />
+        <meta name="twitter:image"          content="{{ pub_metadata_promo_image }}" />
+
+        <meta property="og:type"            content="article"/>
+        <meta name="twitter:site"           content="@postgraphics" />
+        <meta property="article:publisher"  content="https://www.facebook.com/washingtonpost" />
+        <meta property="article:author"     content="https://www.facebook.com/postgraphics" />
+        <!--<meta property="article:tag"     content="{{ pub_metadata_keywords_fb }}" />-->
+        <!--<meta name="twitter:creator"    content="@username" />-->
+        <meta name="twitter:card"           content="summary_large_image" />
+        <meta property="fb:app_id"          content="41245586762" />
+        <meta property="og:site_name"       content="Washington Post" />
+        <meta property="fb:admins"          content="1244584375" />
+        <meta property="fb:admins"          content="4403963" />
+        <meta property="fb:admins"          content="2724956" />
+        <meta property="fb:admins"          content="500835072" />
+        <meta property="fb:admins"          content="1513210492" />
+
+        <script type="text/javascript" charset="utf-8">
+            var wp_content_type = 'interactive graphics';
+            var thisNode = '{{ pub_metadata_commercial_node }}',
+                navNode = thisNode,
+                commercialNode = thisNode,
+                wp_channel = '{{ pub_metadata_commercial_node }}', // this should be top level section node only
+                wp_section = wp_channel,
+                wp_proj_directory  = document.location.pathname.replace('/graphics', ''),
+                wp_page_name = wp_section + ':' + wp_content_type + ':' + wp_proj_directory,
+                wp_author = '{{ pub_metadata_authors }}',
+                wp_blogname = '{{ pub_metadata_blogname }}',
+                wp_track_scrolling = true;
+            //var wp_subsection = 'sports - nationals'; // top level - subsection level, usually only used for sports
+            var wp_content_category = 'wp - ' + thisNode;
+            //var wp_hierarchy = 'sports|nationals'; // top level|subsection level, usually only used for sports
+            TWP = window.TWP || {};TWP.Data = {};TWP.base = '//www.washingtonpost.com';eidosBase = TWP.base;TWP.SocialConfig;
+        </script>
+
+        <!-- Sitewide -->
+        <link href="//css.washingtonpost.com/pb/resources/css/headerfonts.css" rel="stylesheet">
+        <link href="//css.washingtonpost.com/pb/resources/assets/fonts/fontawesome/4.0.3/css/font-awesome.css?_=1cd447" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="//css.washingtonpost.com/wp-srv/graphics/css/pretty-comments.css">
+        <link href="//css.washingtonpost.com/wp-srv/graphics/css/mobile-base-1.1.css?v2" rel="stylesheet">
+
+        <!-- Postgraphics/your template -->
+        
+        <link rel="stylesheet" href="css/base.css?{{ pub_token }}" />
+
+        <!-- Fav/touch icons -->
+        <link rel="shortcut icon" href="//img.washingtonpost.com/favicon.ico" />
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="//img.washingtonpost.com/wp-srv/graphics/templates/mobile/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="//img.washingtonpost.com/wp-srv/graphics/templates/mobile/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="//img.washingtonpost.com/wp-srv/graphics/templates/mobile/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="//img.washingtonpost.com/wp-srv/graphics/templates/mobile/ico/apple-touch-icon-57-precomposed.png">
+
+        <!-- Core AD code includes -->
+        <script type="text/javascript" src="//js.washingtonpost.com/wp-srv/graphics/templates/mobile/js/jquery-min.js"></script>
+
+        <!-- OMNITURE/CHARTBEAT CODE -->
+        <script src="//js.washingtonpost.com/1h/twp-global.js" type="text/javascript"></script>
+        <script src="//js.washingtonpost.com/wp-stat/analytics/main.js" type="text/javascript"></script>
+        <script type="text/javascript">TWP.Analytics.init();</script>
+
+        <!-- Main Controls JS -->
+        <script type="text/javascript" src="//js.washingtonpost.com/wp-srv/graphics/js/twp.util.js"></script>
+        <script type="text/javascript" src="//js.washingtonpost.com/wp-srv/graphics/js/mobile-base-1.1.js?v2"></script>
+        
+
+    </head>
+    <body>
+        <script>if (document.location.href.indexOf('template=iframe') !== -1) { document.body.style.display = 'none'; wp_page_name += ' - iframe'; }</script>
+
+        <a href="#pgContent" class="pgNotVisible pgShow-focus">Skip Navigation</a>
+        <div id="pb_root" class="">
+
+            <!--[if lt IE 9]>
+            <style>
+            .lt-ie9 body.left-menu #site-menu{
+                left: -50px;
+            }
+            .lt-ie9 #wp-logo{
+                background: transparent url(/pb/resources/img/washingtonpost_black_32.png) no-repeat 0 8px;
+            }
+            .lt-ie9 header.dark #wp-logo{
+                background: transparent url(/pb/resources/img/washingtonpost_white_32.png) no-repeat 0 8px;
+            }
+            </style>
+            <![endif]-->
+
+            <!--[if lt IE 8]>  <header class="pbHeader ie ie7 lte9 lte8 lte7 abt-not-loaded dark  not-fixed"> <![endif]-->
+            <!--[if IE 8]>     <header class="pbHeader ie ie8 lte9 lte8 abt-not-loaded dark  not-fixed"> <![endif]-->
+            <!--[if IE 9]>     <header class="pbHeader ie ie9 lte9 abt-not-loaded  dark  not-fixed"> <![endif]-->
+            <!--[if gt IE 9]>  <header class="pbHeader ie abt-not-loaded  dark  not-fixed"> <![endif]-->
+            <!--[if !IE]><!-->
+            <header id="wp-header" class="pbHeader nie abt-not-loaded title-mode dark not-fixed"><!--<![endif]-->
+                <nav id="site-menu" class="nav-menu">
+                    <form id="nav-search-mobile" method="get" action="//www.washingtonpost.com/newssearch/">
+                        <button type="submit" class="fa fa-search"></button>
+                        <input type="text" placeholder="Search" name="query" autocomplete="off">
+                    </form>
+                    <ul id="site-menu-sections">
+                        <li><a href="//www.posttv.com/?nid=top_pb_posttv">PostTV</a></li>
+                        <li><a href="//www.washingtonpost.com/politics?nid=top_pb_politics">Politics</a></li>
+                        <li><a href="//www.washingtonpost.com/opinions?nid=top_pb_opinions">Opinions</a></li>
+                        <li><a href="//www.washingtonpost.com/local?nid=top_pb_local">Local</a></li>
+                        <li><a href="//www.washingtonpost.com/sports?nid=top_pb_sports">Sports</a></li>
+                        <li><a href="//www.washingtonpost.com/national?nid=top_pb_national">National</a></li>
+                        <li><a href="//www.washingtonpost.com/world?nid=top_pb_world">World</a></li>
+                        <li><a href="//www.washingtonpost.com/business?nid=top_pb_business">Business</a></li>
+                        <li><a href="//www.washingtonpost.com/business/technology?nid=top_pb_technology">Tech</a></li>
+                        <li><a href="//www.washingtonpost.com/lifestyle?nid=top_pb_lifestyle">Lifestyle</a></li>
+                        <li><a href="//www.washingtonpost.com/entertainment?nid=top_pb_entertainment">Entertainment</a></li>
+                        <li><a href="//www.washingtonpost.com/classifieds?nid=top_pb_classifieds">Classifieds</a></li>
+                        <li><a href="//www.washingtonpost.com/jobs?nid=top_pb_jobs">Jobs</a></li>
+                        <li><a href="//www.washingtonpost.com/realestate?nid=top_pb_realestate">Real Estate</a></li>
+                        <li><a href="//www.washingtonpost.com/goingoutguide/?nid=top_pb_goingoutguide">Events</a></li>
+                        <li><a href="//www.washingtonpost.com/rentals?nid=top_pb_rentals">Rentals</a></li>
+                        <li><a href="//www.washingtonpost.com/cars/?nid=top_pb_cars">Cars</a></li>
+                        <li><a href="//www.washingtonpost.com/sf/brand-connect/?nid=top_pb_brandconnect">WP BrandConnect</a></li>
+                        <li><a href="https://subscribe.washingtonpost.com/newsletters">Newsletters & Alerts</a></li>
+                    </ul>
+                    <div id="site-menu-info">
+                        <p class="site-attribution">
+                            <a href="//www.washingtonpost.com"><strong>washingtonpost.com</strong></a>
+                            <span class="copyright">© 1996-2016 The Washington Post</span>
+                        </p>
+                        <p><a href="//www.washingtonpost.com/actmgmt/help/">Help and Contact Us</a></p>
+                        <p><a href="//www.washingtonpost.com/terms-of-service/2011/11/18/gIQAldiYiN_story.html">Terms of Service</a></p>
+                        <p><a href="//www.washingtonpost.com/privacy-policy/2011/11/18/gIQASIiaiN_story.html">Privacy Policy</a></p>
+                        <p><a href="//www.washingtonpost.com/discussion-and-submission-guidelines/2011/11/21/gIQAuvIbiN_story.html">Submissions and Discussion Policy</a></p>
+                        <p><a href="//www.washingtonpost.com/rss-terms-of-service/2012/01/16/gIQAadFYAQ_story.html">RSS Terms of Service</a></p>
+                        <p><a href="//www.washingtonpost.com/how-can-i-opt-out-of-online-advertising-cookies/2011/11/18/gIQABECbiN_story.html">Ad Choices</a></p>
+                    </div>
+                </nav>
+
+                <div id="user-menu" class="nav-menu"><ul></ul></div>
+
+                <div id="nav-bar">
+                    <div class="nav-left nav-section">
+                        <div id="site-menu-btn" class="nav-btn">
+                            <span class="nav-btn-label">Sections</span>
+                            <i class="fa fa-bars"></i>
+                        </div>
+                        <div id="wp-logo">
+                            <a href="//www.washingtonpost.com?nid=top_pb_wplogo">The Washington Post</a>
+                        </div>
+                        <div id="wp-logo-for-print">
+                            <img src="https://img.washingtonpost.com/pb/resources/img/washingtonpost_black_32.png" alt="The Washington Post" />
+                        </div>
+                    </div>
+
+                    <div class="nav-right nav-section">
+
+                        <form id="nav-search" method="get" action="//www.washingtonpost.com/newssearch/">
+                            <input type="text" placeholder="Search" name="query" autocomplete="off">
+                            <button type="submit" class="fa fa-search"></button>
+                        </form>
+
+                        <a id="nav-subscribe" class="nav-btn" href="https://subscribe.washingtonpost.com/acquisition/?nid=top_pb_subscribe&destination=">Subscribe</a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div id="wp-topper" class="abt-not-loaded">
+            <a id="wp-logo-large" href="//www.washingtonpost.com?nid=top_pb_wplogo"></a>
+            <div class="top-timestamp"></div>
+        </div>
+
+        <!-- Leaderbboard Ads -->
+        <div id="leaderboardad" class="leaderboard leaderboard--desktop">
+          <div id="slug_leaderboard" data-ad-type="leaderboard" style="display:none;"></div>
+        </div>
+        <div id="mobilead" class="leaderboard leaderboard--mobile">
+              <div id="slug_t" data-ad-type="t" style="display:none;"></div>
+        </div>
+
+        <section id="pgcontent" class="pgContent pgContent--regular pgBorder-top row">
+            <header class="pgGraphicHeader pgBorder-bottom col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                <a class="pgHeadline-kicker" href="#">
+    XX Section Link XX
+</a>
+
+<h1 class="pgH1 pgHeadline--wKicker postoni-standard-bold">
+    What Zika means for you – Assess what your risk is
+</h1>
+
+<p class="pgLead">
+    How likely is that you will get the Zika virus? Is it serious if you do get it?
+    <br>
+    The risk of getting the Zika virus depends greatly on where you live, on personal behavior and the knowledge about the virus. Being pregnant is one of the factors that can put you in a risky position.
+    <br>
+    <br>
+    Answer the questions in the four blocks along the graph and we’ll let you know what your risk of getting the virus is and what it means for you.
+</p>
+
+<div class="pgByline">
+    <span class="pgByline-author-wrap">
+    By <a class="pgByline-author" href="#author">XX Author XX</a>
+    </span>
+
+    <!-- ADD YOUR OWN TWITTER URL OR POSTGRAPHICS URL -->
+    <span class="pgByline-twitter">
+        <a href="https://twitter.com/postgraphics" class="twitter-follow-button pgByline-twitter-button" data-show-count="false" data-lang="en">
+           Follow @postgraphics
+        </a>
+    </span>
+
+    <div class="pgPublishedDate">
+        April 12, 2016
+    </div>
+</div>
+
+
+                <!-- SOCIAL TOOLS -->
+
+<div class="top-sharebar-wrapper color-top large-8 large-centered columns cf" id="top-sharebar_123534312321">
+
+    <div class="social-tools-wrapper">
+        <div class="social-tools-primary ">
+            <div class="social-tools ">
+                <!-- FB -->
+                <a data-service="facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=','share_facebook','width=658,height=354,scrollbars=no');return false;" tabindex="1">
+                    <div class="facebook tool first mobile"><span class="hideText">Share on Facebook</span><span class="fa fa-facebook-square"></span></div>
+                </a>
+                <!-- Twitter -->
+                <a data-service="twitter" onclick="window.open('https://twitter.com/share?url=&amp;text=','share_twitter','width=550, height=350, scrollbars=no');return false;" tabindex="2">
+                    <div class="twitter tool mobile"><span class="hideText">Share on Twitter</span><span class="fa fa-twitter"></span></div>
+                </a>
+                <!-- Google Plus -->
+                <a data-service="google-plus" onclick="window.open('https://plus.google.com/share?url=','share_google-plus','width=832,height=472,scrollbars=no');return false;" tabindex="3">
+                    <div class="google-plus tool mobile"><span class="hideText">Share on Google Plus</span><span class="fa fa-google-plus"></span></div>
+                </a>
+                <!-- Email -->
+                <a data-service="email" href="mailto:?subject=&amp;body=" tabindex="4">
+                    <div class="email tool mobile"><span class="hideText">Share via Email</span><span class="fa fa-envelope"></span></div>
+                </a>
+                <!-- More -->
+                <a onclick="return false;">
+                    <div class="more last tool mobile"><span class="hideText" tabindex="5">More Options</span><span class="fa fa-plus"> </span></div>
+                </a>
+            </div>
+        </div>
+        <div class="social-tools-additional">
+            <div class="social-tools ">
+                <!-- LinkedIn -->
+                <a data-service="linkedin" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&amp;url=&amp;title=','share_linkedin','width=830,height=460,scrollbars=no');return false;" tabindex="6">
+                    <div class="linkedin tool mobile first"><span class="hideText">Share on LinkedIn</span><span class="fa fa-linkedin"></span></div>
+                </a>
+                <!-- Pinterest -->
+                <a data-service="pinterest" onclick="window.open('//pinterest.com/pin/create/bookmarklet/?url=&amp;media=&amp;description=','share_pinterest','width=550,height=450,scrollbars=no');return false;" tabindex="7">
+                    <div class="pinterest tool mobile"><span class="hideText">Share on Pinterest</span><span class="fa fa-pinterest"></span></div>
+                </a>
+                <!-- Tumblr  -->
+                <a data-service="tumblr" onclick="window.open('http://www.tumblr.com/share/link?url=&amp;name=&amp;description=','share_tumblr','width=550,height=450,scrollbars=no');return false;" tabindex="8">
+                    <div class="tumblr tool mobile last"><span class="hideText">Share on Tumblr</span><span class="fa fa-tumblr"></span></div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+
+            </header>
+            <article class="pgArticle  col-lg-12 col-md-12 col-sm-12 col-xs-12 " role="main">
+
+                <div class="pgChart pgBorder-bottom" id="chart-1" >
+    <!--<h2 class="pgH2 pg2nd-Header">
+        H2 this is the first block
+    </h2>
+
+    <p class="pg2nd-lead">
+        This should be used, just if necessary, a little complement to the visual below
+    </p>-->
+
+    <canvas id="elementsCanvas">
+    </canvas>
+    <canvas id="animationCanvas">
+    </canvas>
+    <canvas id="mosquitosCanvas">
+    </canvas>
+    <canvas id="hoverCanvas">
+    </canvas>
+    <canvas id="glassAnimationCanvas">
+    </canvas>
+
+    <div id="pgStep1" class="pgStep">
+        <div class="pgStep__info">
+            <h4 class="pgStep__info__number">
+                1
+            </h4>
+            <div class="pgStep__info__text-container">
+                <h4 class="pgStep__info__text-title">
+                    Where you live and where you travel
+                </h4>
+                <p class="pgStep__info__text-description">
+                    The risk of contracting the virus depends greatly on where you live or if you’re planning to visit an area that is affected by the virus.
+                </p>
+                <button class="pgStep__info__text-action pg-button bounce" disabled="disabled" data-step="0">
+                    Start
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="pgQuestion-container1" disabled="disabled" class="pgQuestion-container">
+        <div id="pgQuestion-wrapper1" class="pgQuestion-wrapper">
+            <div class="pgQuestion">
+                <div class="pgQuestion__header">
+                    <h4 class="pgQuestion__header-number">
+                        1.1
+                    </h4><!--
+                 --><h5 class="pgQuestion__header-title">
+                        Where do you live?
+                    </h5><!--
+                 --><h4 class="pgQuestion__header-remaining-questions">
+                        1/2
+                    </h4>
+                </div>
+                <div class="pgQuestion__body">
+                    <img class="image" src="http://yowlu.com/wapo/images/zika-map.png">
+                    <select id="home-country" class="pgQuestion__body__select-country form-control" disabled="disabled" data-pos="1" data-step="0">
+                    
+                        <optgroup label="">
+                        
+                            <option value="3">
+                                Select a country
+                            </option>
+                        
+                        </optgroup>
+                    
+                        <optgroup label="Rest of the world">
+                        
+                            <option value="2">
+                                Other country
+                            </option>
+                        
+                        </optgroup>
+                    
+                        <optgroup label="Americas">
+                        
+                            <option value="1">
+                                Aruba
+                            </option>
+                        
+                            <option value="1">
+                                Barbados
+                            </option>
+                        
+                            <option value="1">
+                                Belize
+                            </option>
+                        
+                            <option value="1">
+                                Bolivia
+                            </option>
+                        
+                            <option value="1">
+                                Bonaire
+                            </option>
+                        
+                            <option value="1">
+                                Brazil
+                            </option>
+                        
+                            <option value="1">
+                                Colombia
+                            </option>
+                        
+                            <option value="1">
+                                Commonwealth of Puerto Rico, US territory
+                            </option>
+                        
+                            <option value="1">
+                                Costa Rica
+                            </option>
+                        
+                            <option value="1">
+                                Cuba
+                            </option>
+                        
+                            <option value="1">
+                                Curacao
+                            </option>
+                        
+                            <option value="1">
+                                Dominica
+                            </option>
+                        
+                            <option value="1">
+                                Dominican Republic
+                            </option>
+                        
+                            <option value="1">
+                                Ecuador
+                            </option>
+                        
+                            <option value="1">
+                                El Salvador
+                            </option>
+                        
+                            <option value="1">
+                                French Guiana
+                            </option>
+                        
+                            <option value="1">
+                                Guadeloupe
+                            </option>
+                        
+                            <option value="1">
+                                Guatemala
+                            </option>
+                        
+                            <option value="1">
+                                Guyana
+                            </option>
+                        
+                            <option value="1">
+                                Haiti
+                            </option>
+                        
+                            <option value="1">
+                                Honduras
+                            </option>
+                        
+                            <option value="1">
+                                Jamaica
+                            </option>
+                        
+                            <option value="1">
+                                Martinique
+                            </option>
+                        
+                            <option value="1">
+                                Mexico
+                            </option>
+                        
+                            <option value="1">
+                                Nicaragua
+                            </option>
+                        
+                            <option value="1">
+                                Panama
+                            </option>
+                        
+                            <option value="1">
+                                Paraguay
+                            </option>
+                        
+                            <option value="1">
+                                Saint Lucia
+                            </option>
+                        
+                            <option value="1">
+                                Saint Martin
+                            </option>
+                        
+                            <option value="1">
+                                Saint Vincent and the Grenadines
+                            </option>
+                        
+                            <option value="1">
+                                Sint Maarten
+                            </option>
+                        
+                            <option value="1">
+                                Suriname
+                            </option>
+                        
+                            <option value="1">
+                                Trinidad and Tobago
+                            </option>
+                        
+                            <option value="1">
+                                U.S. Virgin Islands
+                            </option>
+                        
+                            <option value="1">
+                                Venezuela
+                            </option>
+                        
+                        </optgroup>
+                    
+                        <optgroup label="Oceania/Pacific Islands">
+                        
+                            <option value="1">
+                                American Samoa
+                            </option>
+                        
+                            <option value="1">
+                                Fiji
+                            </option>
+                        
+                            <option value="1">
+                                Kosrae, Federated States of Micronesia
+                            </option>
+                        
+                            <option value="1">
+                                Marshall Islands
+                            </option>
+                        
+                            <option value="1">
+                                New Caledonia
+                            </option>
+                        
+                            <option value="1">
+                                Samoa
+                            </option>
+                        
+                            <option value="1">
+                                Tonga
+                            </option>
+                        
+                        </optgroup>
+                    
+                        <optgroup label="Africa">
+                        
+                            <option value="1">
+                                Cape Verde
+                            </option>
+                        
+                        </optgroup>
+                    
+                    </select>
+                </div>
+                <!--<div class="pgQuestion__footer">
+                    <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="1" data-step="0">
+                        OK
+                    </button>
+                </div>-->
+            </div><!--
+         --><div class="pgQuestion">
+                <div class="pgQuestion__header">
+                    <h4 class="pgQuestion__header-number">
+                        1.2
+                    </h4><!--
+                 --><h5 class="pgQuestion__header-title">
+                        Where are you planning to travel?
+                    </h5><!--
+                 --><h4 class="pgQuestion__header-remaining-questions">
+                        2/2
+                    </h4>
+                </div>
+                <div class="pgQuestion__body">
+                    <img class="image" src="http://yowlu.com/wapo/images/zika-map.png">
+                    <select id="visit-country" class="pgQuestion__body__select-country form-control" disabled="disabled" data-step="0">
+                    
+                        <optgroup label="">
+                        
+                            <option value="3">
+                                Select a country
+                            </option>
+                        
+                        </optgroup>
+                    
+                        <optgroup label="None of these ones">
+                        
+                            <option value="2">
+                                Other countries
+                            </option>
+                        
+                        </optgroup>
+                    
+                        <optgroup label="Americas">
+                        
+                            <option value="1">
+                                Aruba
+                            </option>
+                        
+                            <option value="1">
+                                Barbados
+                            </option>
+                        
+                            <option value="1">
+                                Belize
+                            </option>
+                        
+                            <option value="1">
+                                Bolivia
+                            </option>
+                        
+                            <option value="1">
+                                Bonaire
+                            </option>
+                        
+                            <option value="1">
+                                Brazil
+                            </option>
+                        
+                            <option value="1">
+                                Colombia
+                            </option>
+                        
+                            <option value="1">
+                                Commonwealth of Puerto Rico, US territory
+                            </option>
+                        
+                            <option value="1">
+                                Costa Rica
+                            </option>
+                        
+                            <option value="1">
+                                Cuba
+                            </option>
+                        
+                            <option value="1">
+                                Curacao
+                            </option>
+                        
+                            <option value="1">
+                                Dominica
+                            </option>
+                        
+                            <option value="1">
+                                Dominican Republic
+                            </option>
+                        
+                            <option value="1">
+                                Ecuador
+                            </option>
+                        
+                            <option value="1">
+                                El Salvador
+                            </option>
+                        
+                            <option value="1">
+                                French Guiana
+                            </option>
+                        
+                            <option value="1">
+                                Guadeloupe
+                            </option>
+                        
+                            <option value="1">
+                                Guatemala
+                            </option>
+                        
+                            <option value="1">
+                                Guyana
+                            </option>
+                        
+                            <option value="1">
+                                Haiti
+                            </option>
+                        
+                            <option value="1">
+                                Honduras
+                            </option>
+                        
+                            <option value="1">
+                                Jamaica
+                            </option>
+                        
+                            <option value="1">
+                                Martinique
+                            </option>
+                        
+                            <option value="1">
+                                Mexico
+                            </option>
+                        
+                            <option value="1">
+                                Nicaragua
+                            </option>
+                        
+                            <option value="1">
+                                Panama
+                            </option>
+                        
+                            <option value="1">
+                                Paraguay
+                            </option>
+                        
+                            <option value="1">
+                                Saint Lucia
+                            </option>
+                        
+                            <option value="1">
+                                Saint Martin
+                            </option>
+                        
+                            <option value="1">
+                                Saint Vincent and the Grenadines
+                            </option>
+                        
+                            <option value="1">
+                                Sint Maarten
+                            </option>
+                        
+                            <option value="1">
+                                Suriname
+                            </option>
+                        
+                            <option value="1">
+                                Trinidad and Tobago
+                            </option>
+                        
+                            <option value="1">
+                                U.S. Virgin Islands
+                            </option>
+                        
+                            <option value="1">
+                                Venezuela
+                            </option>
+                        
+                        </optgroup>
+                    
+                        <optgroup label="Oceania/Pacific Islands">
+                        
+                            <option value="1">
+                                American Samoa
+                            </option>
+                        
+                            <option value="1">
+                                Fiji
+                            </option>
+                        
+                            <option value="1">
+                                Kosrae, Federated States of Micronesia
+                            </option>
+                        
+                            <option value="1">
+                                Marshall Islands
+                            </option>
+                        
+                            <option value="1">
+                                New Caledonia
+                            </option>
+                        
+                            <option value="1">
+                                Samoa
+                            </option>
+                        
+                            <option value="1">
+                                Tonga
+                            </option>
+                        
+                        </optgroup>
+                    
+                        <optgroup label="Africa">
+                        
+                            <option value="1">
+                                Cape Verde
+                            </option>
+                        
+                        </optgroup>
+                    
+                    </select>
+                </div>
+                <!--<div class="pgQuestion__footer">
+                    <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="-1" data-step="0">
+                        OK
+                    </button>
+                </div>-->
+            </div>
+        </div>
+    </div>
+
+    <div id="pgStep2" class="pgStep" disabled="disabled">
+        <div class="pgStep__info">
+            <h4 class="pgStep__info__number">
+                2
+            </h4>
+            <div class="pgStep__info__text-container">
+                <h4 class="pgStep__info__text-title">
+                    Behavior
+                </h4>
+                <p class="pgStep__info__text-description">
+                    The risk also depends on some aspects of your personal behavior, how you protect yourself and decisions in your everyday life.
+                </p>
+                <button class="pgStep__info__text-action pg-button bounce" disabled="disabled" data-step="2">
+                    Continue
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="pgQuestion-container2" class="pgQuestion-container" disabled="disabled">
+        <div id="pgQuestion-wrapper2" class="pgQuestion-wrapper">
+            <div class="pgQuestion">
+                <div class="pgQuestion__header">
+                    <h4 class="pgQuestion__header-number">
+                        2.1
+                    </h4><!--
+                 --><h5 class="pgQuestion__header-title">
+                        Select the items that represent your personal behavior or aspects of your life.
+                    </h5><!--
+                 --><h4 class="pgQuestion__header-remaining-questions">
+                        1/1
+                    </h4>
+                </div>
+                <div class="pgQuestion__body">
+                    <div class="row pgQuestion__body__options-container">
+                        <div class="pgQuestion__body__option disabled-option" data-index="0">
+                            <img class="image" src="http://yowlu.com/wapo/images/icon1.png">
+                            <p>
+                                Insect repelent
+                            </p>
+                        </div>
+                        <div class="pgQuestion__body__option disabled-option" data-index="1">
+                            <img class="image" src="http://yowlu.com/wapo/images/icon2.png">
+                            <p>
+                                Shorts
+                            </p>
+                        </div>
+                        <div class="pgQuestion__body__option disabled-option" data-index="2">
+                            <img class="image" src="http://yowlu.com/wapo/images/icon3.png">
+                            <p>
+                                Dark shirt
+                            </p>
+                        </div>
+                        <div class="pgQuestion__body__option disabled-option" data-index="3">
+                            <img class="image" src="http://yowlu.com/wapo/images/icon4.png">
+                            <p>
+                                Light-colored clothes
+                            </p>
+                        </div>
+                        <div class="pgQuestion__body__option disabled-option" data-index="4">
+                            <img class="image" src="http://yowlu.com/wapo/images/icon5.png">
+                            <p>
+                                Sleep under mosquito nets
+                            </p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="row pgQuestion__body__options-container">
+                        <div class="pgQuestion__body__option disabled-option" data-index="5">
+                            <img class="image" src="http://yowlu.com/wapo/images/icon6.png">
+                            <p>
+                                Use water containers
+                            </p>
+                        </div>
+                        <div class="pgQuestion__body__option disabled-option" data-index="6">
+                            <img class="image" src="http://yowlu.com/wapo/images/icon7.png">
+                            <p>
+                                Water around your house
+                            </p>
+                        </div>
+                        <div class="pgQuestion__body__option disabled-option" data-index="7">
+                            <img class="image" src="http://yowlu.com/wapo/images/icon8.png">
+                            <p>
+                                Window&#39;s and door&#39;s nets
+                            </p>
+                        </div>
+                        <div class="pgQuestion__body__option disabled-option" data-index="8">
+                            <img class="image" src="http://yowlu.com/wapo/images/icon9.png">
+                            <p>
+                                Use of prophylactics
+                            </p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="pgQuestion__footer">
+                    <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="-1" data-step="2">
+                        Continue
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pgStep3" class="pgStep" disabled="disabled">
+        <div class="pgStep__info">
+            <h4 class="pgStep__info__number">
+                3
+            </h4>
+            <div class="pgStep__info__text-container">
+                <h4 class="pgStep__info__text-title">
+                    Knowledge
+                </h4>
+                <p class="pgStep__info__text-description">
+                    Knowledge about the Zika virus may keep you from being infected and will give you a better understanding of the disease.
+                </p>
+                <button class="pgStep__info__text-action pg-button bounce" disabled="disabled" data-step="4">
+                    Continue
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="pgQuestion-container3" class="pgQuestion-container" disabled="disabled">
+        <div id="pgQuestion-wrapper3" class="pgQuestion-wrapper">
+            <div class="pgQuestion">
+                <div class="pgQuestion__header">
+                    <h4 class="pgQuestion__header-number">
+                        3.1
+                    </h4><!--
+                 --><h5 class="pgQuestion__header-title">
+                        Identify the Zika mosquito.
+                    </h5><!--
+                 --><h4 class="pgQuestion__header-remaining-questions">
+                        1/3
+                    </h4>
+                </div>
+                <div class="pgQuestion__body">
+                    <div class="pgQuestion__body__binary-options-container pgQuestion__body__binary-options-container--terniary">
+                        <div class="pgQuestion__body__binary-option pgQuestion__body__binary-option--terniary disabled-option" data-pos="1" data-step="3">
+                            <img class="image" src="http://yowlu.com/wapo/images/mosquito1.png">
+                            <img class="image check" src="http://yowlu.com/wapo/images/check.png">
+                        </div>
+                        <div class="pgQuestion__body__binary-option pgQuestion__body__binary-option--terniary disabled-option" data-pos="1" data-step="3">
+                            <img class="image" src="http://yowlu.com/wapo/images/mosquito2.png">
+                        </div>
+                        <div class="pgQuestion__body__binary-option pgQuestion__body__binary-option--terniary disabled-option" data-pos="1" data-step="3">
+                            <img class="image" src="http://yowlu.com/wapo/images/mosquito3.png">
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="pgQuestion__footer">
+                    <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="1" data-step="3">
+                        OK
+                    </button>
+                </div>-->
+            </div><!--
+         --><div class="pgQuestion">
+                <div class="pgQuestion__header">
+                    <h4 class="pgQuestion__header-number">
+                        3.2
+                    </h4><!--
+                 --><h5 class="pgQuestion__header-title">
+                        Can El Niňo have an effect on Zika transmission?
+                    </h5><!--
+                 --><h4 class="pgQuestion__header-remaining-questions">
+                        2/3
+                    </h4>
+                </div>
+                <div class="pgQuestion__body">
+                    <div class="pgQuestion__body__binary-options-container">
+                        <div class="pgQuestion__body__binary-option disabled-option" data-pos="2" data-step="3">
+                            <h3>
+                                YES
+                            </h3>
+                        </div>
+                        <div class="pgQuestion__body__binary-option disabled-option" data-pos="2" data-step="3">
+                            <h3>
+                                NO
+                            </h3>
+                            <img class="image check" src="http://yowlu.com/wapo/images/check.png">
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="pgQuestion__footer">
+                    <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="2" data-step="3">
+                        OK
+                    </button>
+                </div>-->
+            </div><!--
+         --><div class="pgQuestion">
+                <div class="pgQuestion__header">
+                    <h4 class="pgQuestion__header-number">
+                        3.2
+                    </h4><!--
+                 --><h5 class="pgQuestion__header-title">
+                        Can the Aedes mosquito travel from country to country and region to region?
+                    </h5><!--
+                 --><h4 class="pgQuestion__header-remaining-questions">
+                        3/3
+                    </h4>
+                </div>
+                <div class="pgQuestion__body">
+                    <div class="pgQuestion__body__binary-options-container">
+                        <div class="pgQuestion__body__binary-option disabled-option" data-pos="-1" data-step="4">
+                            <h3>
+                                YES
+                            </h3>
+                        </div>
+                        <div class="pgQuestion__body__binary-option disabled-option" data-pos="-1" data-step="4">
+                            <h3>
+                                NO
+                            </h3>
+                            <img class="image check" src="http://yowlu.com/wapo/images/check.png">
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="pgQuestion__footer">
+                    <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="-1" data-step="4">
+                        OK
+                    </button>
+                </div>-->
+            </div>
+        </div>
+    </div>
+
+    <div id="pgStep4" class="pgStep pgStep--acenter" disabled="disabled">
+        <div class="pgStep__info">
+            <h4 class="pgStep__info__number">
+                4
+            </h4>
+            <br>
+            <div class="pgStep__info__text-container">
+                <h4 class="pgStep__info__text-title">
+                    ARE YOU PREGNANT OR TRYING?
+                </h4>
+                <p class="pgStep__info__text-description">
+                    Being pregnant is one risky factor since it has been proved that the Zika virus can be passed from a pregnant woman to her fetus during pregnancy or at delivery.
+                </p>
+            </div>
+        </div><!--
+     --><div class="pgStep__pregnancy-buttons">
+            <div class="pgStep__pregnancy-ok"></div>
+            <div class="pgStep__pregnancy-ko"></div>
+        </div><!--
+     --><div class="pgStep__last-chart">
+            <img class="image" src="http://yowlu.com/wapo/images/last-chart.png">
+        </div>
+        <div class="pgStep__users-stats">
+            <div class="pgStep__users-stats-wrapper">
+                <div class="pgStep__users-stats__col">
+                    <div class="pgStep__users-stats__col__value">
+                    </div>
+                    <div class="pgStep__users-stats__col__value">
+                    </div>
+                    <div class="pgStep__users-stats__col__value">
+                    </div>
+                    <div class="pgStep__users-stats__col__value">
+                    </div>
+                    <div class="pgStep__users-stats__col__value">
+                    </div>
+                </div>
+                <div class="pgStep__users-stats__col">
+                    <div class="pgStep__users-stats__col__value">
+                    </div>
+                    <div class="pgStep__users-stats__col__value">
+                    </div>
+                    <div class="pgStep__users-stats__col__value">
+                    </div>
+                    <div class="pgStep__users-stats__col__value">
+                    </div>
+                    <div class="pgStep__users-stats__col__value">
+                    </div>
+                </div>
+                <div class="pgStep__users-stats__col">
+                    <div class="pgStep__users-stats__col__value">
+                    </div>
+                    <div class="pgStep__users-stats__col__value">
+                    </div>
+                    <div class="pgStep__users-stats__col__value">
+                    </div>
+                    <div class="pgStep__users-stats__col__value">
+                    </div>
+                    <div class="pgStep__users-stats__col__value">
+                    </div>
+                </div>
+                <div class="pgStep__users-stats__col">
+                    <div class="pgStep__users-stats__col__value">
+                    </div>
+                    <div class="pgStep__users-stats__col__value">
+                    </div>
+                    <div class="pgStep__users-stats__col__value">
+                    </div>
+                    <div class="pgStep__users-stats__col__value">
+                    </div>
+                    <div class="pgStep__users-stats__col__value">
+                    </div>
+                </div>
+                <div class="pgStep__users-stats__col">
+                    <div class="pgStep__users-stats__col__value">
+                    </div>
+                    <div class="pgStep__users-stats__col__value">
+                    </div>
+                    <div class="pgStep__users-stats__col__value">
+                    </div>
+                    <div class="pgStep__users-stats__col__value">
+                    </div>
+                    <div class="pgStep__users-stats__col__value">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img class="image pgStep__users-stats-marker" src="http://yowlu.com/wapo/images/marker.png">
+        <span class="pgStep__users-stats-min">0</span>
+        <span class="pgStep__users-stats-mid">50</span>
+        <span class="pgStep__users-stats-max">100</span>
+    </div>
+
+    <div class="pgConclusions">
+        <h4 class="pgConclusions-title">
+            CONCLUSIONS
+        </h4>
+        <br>
+        <br>
+        <p class="pgConclusions-desc">
+            <strong>
+                <em>
+                    There is no vaccine or treatment for Zika
+                </em>
+            </strong>
+        </p>
+    </div>
+
+    <footer class="pgChart-footer">
+        <p class="pgChart-footer-source">
+            Source: XX Your source XX
+        </p>
+
+        
+        <div class="pgChart-footer-share">
+            <a class="pgChart-footer-share-button pgChart-footer-share-button--email" href="mailto:?subject={{ pub_metadata_headline }}&body={{ pub_metadata_url }}%23chart-1"><span class="pgNotVisible">Share by Email</span><i class="fa fa fa-envelope"></i></a>
+            <a class="pgChart-footer-share-button pgChart-footer-share-button--twitter" href="http://twitter.com/intent/tweet?text={{ pub_metadata_headline }}%20{{ pub_metadata_url }}%23chart-1%20via%20@postgraphics "><span class="pgNotVisible">Share on Twitter</span><i class="fa fa-twitter"></i></a>
+            <a class="pgChart-footer-share-button pgChart-footer-share-button--facebook" href="https://facebook.com/dialog/feed?app_id=41245586762&link={{ pub_metadata_url }}&name={{ pub_metadata_headline }}&redirect_uri={{ pub_metadata_url }}%23chart-1"><span class="pgNotVisible">Share on Facebook</span><i class="fa fa-facebook"></i></a>
+        </div>
+        
+    </footer>
+</div>
+
+
+                <div class="bottom-ad ">
+                    <div class="bottom-ad--bigbox">
+                        <div id="slug_bigbox" data-ad-type="bigbox" style="display:none;"></div>
+                    </div>
+                    <div class="bottom-ad--bigbox">
+                        <div id="slug_mob_bigbox" data-ad-type="mob_bigbox" style="display:none;"></div>
+                    </div>
+                </div>
+
+                <div class="editors-module cf">
+    <h4 class="franklin" style="padding: 0">More stories</h4>
+
+    <div class="editors-module-unit col-lg-6 col-md-6 col-sm-6 cf">
+        <div class="editors-module-unit-image col-lg-4 col-md-4 col-sm-6 col-xs-6 hidden-xxs">
+            <!-- Add URL here -->
+            <a href="">
+                <!-- Add image URL here -->
+                <img class="image" src="https://www.washingtonpost.com/pb/resources/img/twp-3000x1568.jpg" style="display: inline;">
+            </a>
+        </div>
+
+        <div class="editors-module-unit-text col-lg-8 col-md-8 col-sm-6 col-xs-6">
+            <h5>
+                <!-- Add URL here -->
+                <a href="">
+                    XX headline here
+                </a>
+            </h5>
+            <p>
+                GRAPHIC | XX blurb here
+            </p>
+        </div>
+    </div>
+
+    <div class="editors-module-unit col-lg-6 col-md-6 col-sm-6 cf ">
+        <div class="editors-module-unit-image col-lg-4 col-md-4 col-sm-6 col-xs-6 hidden-xxs">
+            <!-- Add URL here -->
+            <a href="">
+                <!-- Add image URL here -->
+                <img class="image" src="https://www.washingtonpost.com/pb/resources/img/twp-3000x1568.jpg" style="display: inline;">
+            </a>
+        </div>
+
+        <div class="editors-module-unit-text col-lg-8 col-md-8 col-sm-6 col-xs-6">
+            <h5>
+                <!-- Add URL here -->
+                <a href="https://www.washingtonpost.com/posttv/local/metro-surveillance-video-shows-station-during-smoke-incident/2015/06/23/da492164-19ab-11e5-bed8-1093ee58dad0_video.html">
+                    XX headline here
+                </a>
+            </h5>
+            <p>
+                GRAPHIC | XX blurb here
+            </p>
+        </div>
+    </div>
+</div>
+
+
+                <div class="pgArticle-bottom">
+                    <div id="wp-graphics-comments-wrapper" class="pretty-comments col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <div id="echo_container" class="echo_container count submitbox stream comment-vars" guid="" maxitemstop="2" sectionid="/conversations" isallcomments="true"></div>
+                        <script type="text/javascript">
+                           if (document.location.href.indexOf('template=iframe') == -1) {
+                               var twpcomments = document.createElement("script");
+                               twpcomments.async = true;
+                               twpcomments.src = "//js.washingtonpost.com/1d/twp-comments.js";
+                               var s = document.getElementsByTagName("script")[0];
+                               s.onLoad = echo();
+                               s.parentNode.insertBefore(twpcomments, s);
+                           }
+                           function echo(){
+                               jQuery('#echo_container').attr('guid',jQuery('link[rel=canonical]').eq(0).attr('href'));
+                           }
+                       </script>
+                    </div>
+
+                    <div class="pgRelatedCoverage pgArticle-bottom-related col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="header-mobile-border"></div>
+                        <h4 class="pgRelatedCoverage-header">More Coverage</h4>
+                        <div class="pgRelatedCoverage-items" id="relatedHeadlines"></div>
+                        <!-- Or create your own, using a div "article" for each item -->
+                        <!--<div class="article">
+                            <a href="//www.washingtonpost.com/politics/scores-killed-when-huge-tornado-levels-oklahoma-city-suburb/2013/05/21/b00ecada-c1ff-11e2-8c3b-0b5e9247e8ca_story.html"><p class="headline">Dozens killed when huge tornado levels Oklahoma City suburb</p></a>
+                        </div> -->
+                    </div>
+                </div>
+            </article>
+
+            
+        </section>
+
+        <!-- Related stories -->
+        <script type="text/javascript" src="//js.washingtonpost.com/graphics/_modules/site-search/TWP.Module.site-search-0.0.0.min.js"></script>
+        <script type="text/javascript">
+            jQuery(document).ready(function() {
+                if (document.location.href.indexOf('template=iframe') == -1) {
+                    try {
+                        jQuery.queryToUL({
+                            // custom query is optional, uncomment and customize to override auto-generated query
+                            // query: 'https://md1-a.akamaihd.net/wpost-content-api/content/v2/search.jsonp?appkey=relatedcontent&query=%22us%20census%22%20OR%20%22household%20income%22&startingrow=0&offset=3&fields=contenturl,byline,headline,blurb,primarysection,source&filters=primarysection:(National%20OR%20Local)%20AND%20source:(%22The%20Washington%20Post%22)&wt=json&omitHeader=true&json.wrf=storyCallback&tracking=relatedcontent',
+                            mobileQuery: true,
+                            container:['#relatedHeadlines', '#relatedHeadlinesSide'],
+                            callback: 'storyCallback',
+                            items: 5 // optional - how many items? 8 is default,
+                        });
+                    } catch (e) {}
+                }
+            });
+        </script>
+
+        <!-- Postgraphics/your template -->
+        
+        <script src="js/base.js?" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Ads -->
+        <script type="text/javascript">
+            jQuery(document).ready(function() {
+                if (document.location.href.indexOf('template=iframe') == -1) {
+                    var script = document.createElement("script");
+                    script.async = true;
+                    script.src = "//www.washingtonpost.com/wp-stat/ad/loaders/latest/js/min/loader.min.js";
+                    // Using jQuery for data attribute compatability
+                    $(script)
+                        .prop('data-ad-site', 'wp')
+                        .prop('data-ad-page-type', 'responsive');
+                    var s = document.getElementsByTagName("script")[0];
+                    s.parentNode.insertBefore(script, s);
+                }
+            });
+        </script>
+
+        <!-- Analytics -->
+        <script type="text/javascript" src="//js.washingtonpost.com/wpost/js/combo?c=true&amp;m=false&amp;context=wp-static"></script>
+    </body>
+</html>

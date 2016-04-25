@@ -1,0 +1,103 @@
+/* Standard button styles */
+/* For quiz buttons, multi-option buttons (filters), tabs, forms, toggle, etc. see XX */
+
+.pg-button {
+	display:inline-block;
+	background-color: white;
+	border: 1px solid $ui-lightGray-1;
+	border-radius: 4px;
+	text-align: center;
+	padding: 13px 16px;
+	font-family: $franklin-bold;
+	color: $ui-black-0;
+	font-size: 16px;
+	line-height: 16px;
+	cursor: pointer;
+	text-decoration: none;
+	@include background-color-transition;
+
+	&:hover {
+		background-color: $ui-lightGray-0;
+		border-color: $ui-lightGray-0;
+		text-decoration: none;
+	}
+
+	&.pg-button--emphasize {
+		background-color: $ui-black-0;
+		color: white;
+		&:hover {
+			background-color: $ui-black-2;
+			border-color: $ui-black-2;
+		}
+	}
+	&.pg-button--emphasize-alt {
+		background-color: $linkBlue;
+		color: white;
+		&:hover {
+			background-color: $linkBlue-hover;
+			border-color: $linkBlue-hover;
+		}
+	}
+	&.pg-button--deemphasize {
+		font-family: $franklin-light;
+		background-color: $ui-lightGray-0;
+		&:hover {
+			background-color: $ui-lightGray-1;
+			border-color: $ui-lightGray-1;
+		}
+	}
+	&.pg-button--facebook {
+		background-color: $facebook;
+		color: white;
+		&:before {
+			font-family: FontAwesome;
+			content: "\f082";
+			margin-right: 8px;
+		}
+		&:hover {
+			background-color: $facebook-hover;
+			border-color: $facebook-hover;
+		}
+	}
+	&.pg-button--twitter {
+		background-color: $twitter;
+		color: white;
+		&:before {
+			font-family: FontAwesome;
+			content: "\f099";
+			margin-right: 8px;
+		}
+		&:hover {
+			background-color: $twitter-hover;
+			border-color: $twitter-hover;
+		}
+	}
+	/* Close button */
+	&.pg-button--close {
+		border-color: $ui-black-1;
+		&:hover {
+			border-color: $ui-lightGray-1;
+		}
+		&.pg-button--emphasize:hover {
+			border-color: $ui-black-2;
+		}
+		&:after {
+			font-family: FontAwesome;
+			content: "\f00d";
+			margin-left: 8px;
+		}
+	}
+	&.pg-button-circle {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		padding: 0px;
+		padding-top: 11px;
+		&:after {
+			content: "";
+			margin-left: 0px;
+		}
+	}
+}
+
+

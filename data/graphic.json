@@ -1,0 +1,513 @@
+{
+	"first_step": {
+		"number": "1",
+		"title": "Where you live and where you travel",
+		"description": "The risk of contracting the virus depends greatly on where you live or if you’re planning to visit an area that is affected by the virus.",
+		"extra_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sapien justo, ornare a metus at, pretium venenatis ex. Proin consectetur, nisl tempus pretium"
+	},
+	"first_questions": {
+		"first_question": {
+			"number": "1.1",
+			"title": "Where do you live?",
+			"remaining_questions": "1/2",
+			"zone_countries": [
+					{
+						"name": "",
+						"countries": [
+							{
+								"name": "Select a country",
+								"value": "3"
+							}
+						]
+					},
+					{
+						"name": "Rest of the world",
+						"countries": [
+							{
+								"name": "Other country",
+								"value": "2"
+							}
+						]
+					},
+					{
+						"name": "Americas",
+						"countries": [
+							{
+								"name": "Aruba",
+								"value": "1"
+							},
+							{
+								"name": "Barbados",
+								"value": "1"
+							},
+							{
+								"name": "Belize",
+								"value": "1"
+							},
+							{
+								"name": "Bolivia",
+								"value": "1"
+							},
+							{
+								"name": "Bonaire",
+								"value": "1"
+							},
+							{
+								"name": "Brazil",
+								"value": "1"
+							},
+							{
+								"name": "Colombia",
+								"value": "1"
+							},
+							{
+								"name": "Commonwealth of Puerto Rico, US territory",
+								"value": "1"
+							},
+							{
+								"name": "Costa Rica",
+								"value": "1"
+							},
+							{
+								"name": "Cuba",
+								"value": "1"
+							},
+							{
+								"name": "Curacao",
+								"value": "1"
+							},
+							{
+								"name": "Dominica",
+								"value": "1"
+							},
+							{
+								"name": "Dominican Republic",
+								"value": "1"
+							},
+							{
+								"name": "Ecuador",
+								"value": "1"
+							},
+							{
+								"name": "El Salvador",
+								"value": "1"
+							},
+							{
+								"name": "French Guiana",
+								"value": "1"
+							},
+							{
+								"name": "Guadeloupe",
+								"value": "1"
+							},
+							{
+								"name": "Guatemala",
+								"value": "1"
+							},
+							{
+								"name": "Guyana",
+								"value": "1"
+							},
+							{
+								"name": "Haiti",
+								"value": "1"
+							},
+							{
+								"name": "Honduras",
+								"value": "1"
+							},
+							{
+								"name": "Jamaica",
+								"value": "1"
+							},
+							{
+								"name": "Martinique",
+								"value": "1"
+							},
+							{
+								"name": "Mexico",
+								"value": "1"
+							},
+							{
+								"name": "Nicaragua",
+								"value": "1"
+							},
+							{
+								"name": "Panama",
+								"value": "1"
+							},
+							{
+								"name": "Paraguay",
+								"value": "1"
+							},
+							{
+								"name": "Saint Lucia",
+								"value": "1"
+							},
+							{
+								"name": "Saint Martin",
+								"value": "1"
+							},
+							{
+								"name": "Saint Vincent and the Grenadines",
+								"value": "1"
+							},
+							{
+								"name": "Sint Maarten",
+								"value": "1"
+							},
+							{
+								"name": "Suriname",
+								"value": "1"
+							},
+							{
+								"name": "Trinidad and Tobago",
+								"value": "1"
+							},
+							{
+								"name": "U.S. Virgin Islands",
+								"value": "1"
+							},
+							{
+								"name": "Venezuela",
+								"value": "1"
+							}
+						]
+					},
+					{
+						"name": "Oceania/Pacific Islands",
+						"countries": [
+							{
+								"name": "American Samoa",
+								"value": "1"
+							},
+							{
+								"name": "Fiji",
+								"value": "1"
+							},
+							{
+								"name": "Kosrae, Federated States of Micronesia",
+								"value": "1"
+							},
+							{
+								"name": "Marshall Islands",
+								"value": "1"
+							},
+							{
+								"name": "New Caledonia",
+								"value": "1"
+							},
+							{
+								"name": "Samoa",
+								"value": "1"
+							},
+							{
+								"name": "Tonga",
+								"value": "1"
+							}
+						]
+					},
+					{
+						"name": "Africa",
+						"countries": [
+							{
+								"name": "Cape Verde",
+								"value": "1"
+							}
+						]
+					}
+				]
+		},
+		"second_question": {
+			"number": "1.2",
+			"title": "Where are you planning to travel?",
+			"remaining_questions": "2/2",
+			"zone_countries": [
+					{
+						"name": "",
+						"countries": [
+							{
+								"name": "Select a country",
+								"value": "3"
+							}
+						]
+					},
+					{
+						"name": "None of these ones",
+						"countries": [
+							{
+								"name": "Other countries",
+								"value": "2"
+							}
+						]
+					},
+					{
+						"name": "Americas",
+						"countries": [
+							{
+								"name": "Aruba",
+								"value": "1"
+							},
+							{
+								"name": "Barbados",
+								"value": "1"
+							},
+							{
+								"name": "Belize",
+								"value": "1"
+							},
+							{
+								"name": "Bolivia",
+								"value": "1"
+							},
+							{
+								"name": "Bonaire",
+								"value": "1"
+							},
+							{
+								"name": "Brazil",
+								"value": "1"
+							},
+							{
+								"name": "Colombia",
+								"value": "1"
+							},
+							{
+								"name": "Commonwealth of Puerto Rico, US territory",
+								"value": "1"
+							},
+							{
+								"name": "Costa Rica",
+								"value": "1"
+							},
+							{
+								"name": "Cuba",
+								"value": "1"
+							},
+							{
+								"name": "Curacao",
+								"value": "1"
+							},
+							{
+								"name": "Dominica",
+								"value": "1"
+							},
+							{
+								"name": "Dominican Republic",
+								"value": "1"
+							},
+							{
+								"name": "Ecuador",
+								"value": "1"
+							},
+							{
+								"name": "El Salvador",
+								"value": "1"
+							},
+							{
+								"name": "French Guiana",
+								"value": "1"
+							},
+							{
+								"name": "Guadeloupe",
+								"value": "1"
+							},
+							{
+								"name": "Guatemala",
+								"value": "1"
+							},
+							{
+								"name": "Guyana",
+								"value": "1"
+							},
+							{
+								"name": "Haiti",
+								"value": "1"
+							},
+							{
+								"name": "Honduras",
+								"value": "1"
+							},
+							{
+								"name": "Jamaica",
+								"value": "1"
+							},
+							{
+								"name": "Martinique",
+								"value": "1"
+							},
+							{
+								"name": "Mexico",
+								"value": "1"
+							},
+							{
+								"name": "Nicaragua",
+								"value": "1"
+							},
+							{
+								"name": "Panama",
+								"value": "1"
+							},
+							{
+								"name": "Paraguay",
+								"value": "1"
+							},
+							{
+								"name": "Saint Lucia",
+								"value": "1"
+							},
+							{
+								"name": "Saint Martin",
+								"value": "1"
+							},
+							{
+								"name": "Saint Vincent and the Grenadines",
+								"value": "1"
+							},
+							{
+								"name": "Sint Maarten",
+								"value": "1"
+							},
+							{
+								"name": "Suriname",
+								"value": "1"
+							},
+							{
+								"name": "Trinidad and Tobago",
+								"value": "1"
+							},
+							{
+								"name": "U.S. Virgin Islands",
+								"value": "1"
+							},
+							{
+								"name": "Venezuela",
+								"value": "1"
+							}
+						]
+					},
+					{
+						"name": "Oceania/Pacific Islands",
+						"countries": [
+							{
+								"name": "American Samoa",
+								"value": "1"
+							},
+							{
+								"name": "Fiji",
+								"value": "1"
+							},
+							{
+								"name": "Kosrae, Federated States of Micronesia",
+								"value": "1"
+							},
+							{
+								"name": "Marshall Islands",
+								"value": "1"
+							},
+							{
+								"name": "New Caledonia",
+								"value": "1"
+							},
+							{
+								"name": "Samoa",
+								"value": "1"
+							},
+							{
+								"name": "Tonga",
+								"value": "1"
+							}
+						]
+					},
+					{
+						"name": "Africa",
+						"countries": [
+							{
+								"name": "Cape Verde",
+								"value": "1"
+							}
+						]
+					}
+				]
+		}
+	},
+	"second_step": {
+		"number": "2",
+		"title": "Behavior",
+		"description": "The risk also depends on some aspects of your personal behavior, how you protect yourself and decisions in your everyday life."
+	},
+	"second_questions": {
+		"first_question": {
+			"number": "2.1",
+			"title": "Select the items that represent your personal behavior or aspects of your life.",
+			"remaining_questions": "1/1",
+			"answers": {
+				"first": "Insect repelent",
+				"second": "Shorts",
+				"third": "Dark shirt",
+				"fourth": "Light-colored clothes",
+				"fifth": "Sleep under mosquito nets",
+				"sixth": "Use water containers",
+				"seventh": "Water around your house",
+				"eighth": "Window's and door's nets",
+				"nineth": "Use of prophylactics"	
+			}
+		}
+	},
+	"third_step": {
+		"number": "3",
+		"title": "Knowledge",
+		"description": "Knowledge about the Zika virus may keep you from being infected and will give you a better understanding of the disease.",
+		"extra_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sapien justo, ornare a metus at, pretium venenatis ex. Proin consectetur, nisl tempus pretium"
+	},
+	"third_questions": {
+		"first_question": {
+			"number": "3.1",
+			"title": "Identify the Zika mosquito.",
+			"remaining_questions": "1/3",
+			"answer": "Zika virus disease is caused by a virus transmitted primarily by Aedes mosquitoes, mainly the Aedes aegypti. This is the same mosquito that transmits dengue, chikungunya and yellow fever."
+		},
+		"second_question": {
+			"number": "3.2",
+			"title": "Can El Niňo have an effect on Zika transmission?",
+			"remaining_questions": "2/3",
+			"answer": "The Aedes aegypti mosquito breeds in still water. Severe drought, flooding, heavy rains and temperature rises are all known effects of El Niño. An increase in mosquitoes can be expected due to expanding and favorable breeding sites."
+		}
+		,
+		"third_question": {
+			"number": "3.2",
+			"title": "Can the Aedes mosquito travel from country to country and region to region?",
+			"remaining_questions": "3/3",
+			"answer": "The Aedes aegypti mosquito is a weak flyer; it cannot fly more than 150 yards. However it may be possible for the mosquito to be transported from one person  to another  who goes from travels and introduces the Zika virus to new areas."
+		}
+	},
+	"fourth_step": {
+		"number": "4",
+		"title": "ARE YOU PREGNANT OR TRYING?",
+		"description": "Being pregnant is one risky factor since it has been proved that the Zika virus can be passed from a pregnant woman to her fetus during pregnancy or at delivery.",
+		"extra_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sapien justo, ornare a metus at, pretium venenatis ex. Proin consectetur, nisl tempus pretium"
+	},
+	"conclusions": {
+		"title": "CONCLUSIONS",
+		"first_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sapien justo, ornare a metus at, pretium venenatis ex. Proin consectetur, nisl tempus pretium interdum, leo ex fermentum mauris, lobortis auctor nulla ante a elit. Aliquam elementum vestibulum ultrices. Phasellus luctus quam neque. In hac habitasse platea dictumst. Praesent eget viverra neque, sit amet gravida neque. Aliquam erat volutpat.",
+		"key_point": "There is no vaccine or treatment for Zika",
+		"second_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sapien justo, ornare a metus at, pretium venenatis ex. Proin consectetur, nisl tempus pretium interdum, leo ex fermentum mauris, lobortis auctor nulla ante a elit. Aliquam elementum vestibulum ultrices. Phasellus luctus quam neque. In hac habitasse platea dictumst. Praesent eget viverra neque, sit amet gravida neque. Aliquam erat volutpat.",
+		"third_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sapien justo, ornare a metus at, pretium venenatis ex. Proin consectetur, nisl tempus pretium interdum, leo ex fermentum mauris, lobortis auctor nulla ante a elit. Aliquam elementum vestibulum ultrices. Phasellus luctus quam neque. In hac habitasse platea dictumst. Praesent eget viverra neque, sit amet gravida neque. Aliquam erat volutpat.",
+		"image_caption": "Estimated range of Aedes albopictus in the United States, 2016",
+		"first_way": "You don’t live in a country nor are you planning to travel to a country affected by the Zika virus. Your risk is zero.",
+		"second_way": "You don’t live in a country nor are you planning to travel to a country affected by the Zika virus. Your risk is low but remember that there have been cases of sexual transmission by partners that got infected in those areas.",
+		"third_way": "You live in a country that is affected by the Zika virus or you are planning to travel to a country that is.",
+		"fourth_way": "Zika virus is spread primarily through the bite of infected Aedes species mosquitoes. Only 20% people who contract the virus will even develop any symptoms and the illness is usually mild, with symptoms like fever, rash or joint pain that will last a few days.<br><br>Recently in Brazil, local health authorities have observed an increase in Guillain-Barré syndrome, that causes paralysis, which coincided with Zika virus infections in the general public. Based on a growing body of preliminary research, there is scientific consensus that Zika virus is a cause of microcephaly and Guillain-Barré syndrome.",
+		"behavior_first": "Wearing shorts and sleeveless shirts that are dark in color and keeping buckets of water or having water containers near your house can increase your risk of being bitten by the mosquito and raise your chances of getting the virus.",
+		"behavior_second": "Using insect repellent, wearing light color clothes, having physical barriers such mesh screens or treated netting materials on doors and windows, or sleeping under mosquito nets will all decrease your risk of getting bitten by the mosquito and lower your changes of getting the virus.",
+		"fifth_way": "The Zika virus can be transmitted from infected mothers to their fetuses and this can happen during both pregnancy or at childbirth. Based on a growing body of preliminary research, there is scientific consensus that Zika virus is a cause of microcephaly, which is a condition where a baby is born with a small head or the head stops growing after birth. Babies with microcephaly can develop developmental disabilities. Early diagnosis of microcephaly can sometimes be made by fetal ultrasound.<br><br>Pregnant women who develop symptoms of Zika virus infection, should see their health-care provider for close monitoring of their pregnancy.<br><br>If you’re travelling to a country affected by Zika, the World Health Organization is advising pregnant women not to travel to areas of ongoing Zika virus transmission."
+	},
+	"general": {
+		"button_start": "Start",
+		"button_continue": "Continue",
+		"button_ok": "OK",
+		"button_back": "Back",
+		"yes": "YES",
+		"no": "NO"
+	}
+}

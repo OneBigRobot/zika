@@ -1,0 +1,59 @@
+$xlarge: 1400px;
+$large: 1200px;
+$med: 992px; //PB fixed width
+$small: 768px; //iPad Portrait
+$xsmall: 480px; //drop font size for phone
+$xxsmall: 300px;
+
+.pgNotVisible{
+  padding: 2px;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  border: 0;
+  position: absolute;
+  top: auto;
+  left: auto;
+  overflow: hidden;
+}
+
+.pgHide{
+    display:none;
+}
+
+//This doesn't feel like it is going to work...
+.pgShow-focus:focus,
+.pgShow-focus:active{
+  padding: inherit;
+  width: auto;
+  height: auto;
+  background: inherit;
+  border: inherit;
+  position: inherit;
+  top: inherit;
+  left: inherit;
+  overflow: inherit;
+  border:dotted 1px blue;
+}
+/* bootstrap extensions */
+
+.visible-xxs-inline,
+.visible-xxs-block,
+.visible-xxs-inline-block {
+    display: none;
+}
+
+@media (max-width: $xsmall){
+  .hidden-xxs {
+      display: none;
+  }
+  .visible-xxs-inline {
+      display: inline;
+  }
+  .visible-xxs-block {
+      display: block;
+  }
+  .visible-xxs-inline-block {
+      display: inline-block;
+  }
+}
