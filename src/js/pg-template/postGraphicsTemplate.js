@@ -224,6 +224,7 @@ var setupMainLoop = function(){
 }
 //Execute main loop
 var main = function(time){
+  if (currentPhase == 20 || currentPhase == 21) {
   context5.clearRect(0, 0, context5.canvas.width, context5.canvas.height);
   /*switch (leftCoverGlass.currentMosquitoPhase) {
     case 0:*/
@@ -446,6 +447,8 @@ var main = function(time){
 
         context3.drawImage(rightCoverGlass.image[rightCoverGlass.currentImage], parseInt(rightCoverGlass.x * canvas3.width), parseInt(rightCoverGlass.y * canvas3.width), parseInt(canvas3.width * 0.125), parseInt((canvas3.width * 0.125) * (224.0/149.0)));
       }
+
+    }
   // clear the canvas
   context.clearRect(0, 0, context.canvas.width, context.canvas.height);
 
@@ -830,6 +833,9 @@ var main = function(time){
             //element.positionsArray = mosquitosPositionsPhase9[index%mosquitosPositionsPhase9.length];
 
             if (index == mosquitosLeft - 1) {
+              $("#pgStep2 .pg-button").attr("disabled", "disabled");
+              $("#pgStep2").attr("disabled", "disabled");
+
               $('#pgQuestion-container2 .pg-button').removeAttr("disabled");
               $('#pgQuestion-container2').removeAttr("disabled");
 
@@ -1032,6 +1038,9 @@ var main = function(time){
             //element.positionsArray = mosquitosPositionsPhase13[index%mosquitosPositionsPhase13.length];
 
             if (index == mosquitosLeft - 1) {
+              $("#pgStep3 .pg-button").attr("disabled", "disabled");
+              $("#pgStep3").attr("disabled", "disabled");
+
               $(".pgQuestion__body__binary-option").removeClass("disabled-option");
               $('#pgQuestion-container3 .pg-button').removeAttr("disabled");
               $('#pgQuestion-container3').removeAttr("disabled");
@@ -2016,9 +2025,18 @@ var decideNextStep = function(nextStep){
               for (var i = 0; i < mosquitosPositionsPhase6[0].length; i++) {
                 element.positionsArray.push(mosquitosPositionsPhase6[0][i]);
               }
+              for (var i = 0; i < mosquitosPositionsPhase8[0].length; i++) {
+                element.positionsArray.push(mosquitosPositionsPhase8[0][i]);
+              }
             }
             else {
-              element.positionsArray = mosquitosPositionsPhase6[0];
+              element.positionsArray = new Array();
+              for (var i = 0; i < mosquitosPositionsPhase6[0].length; i++) {
+                element.positionsArray.push(mosquitosPositionsPhase6[0][i]);
+              }
+              for (var i = 0; i < mosquitosPositionsPhase8[0].length; i++) {
+                element.positionsArray.push(mosquitosPositionsPhase8[0][i]);
+              }
             }
 
             element.positionsArray.forEach(function(element2,index2,array2) {
@@ -2028,7 +2046,7 @@ var decideNextStep = function(nextStep){
             });
 
             element.currentPosition = 0;
-            element.currentMosquitoPhase = 5;
+            element.currentMosquitoPhase = 7;
             element.speed = 0.004 + (Math.random() * 0.001);
             if (element.x > element.positionsArray[element.currentPosition].x) {
               element.xDir = false;
@@ -2048,6 +2066,8 @@ var decideNextStep = function(nextStep){
       
       $("#pgQuestion-container1").attr("disabled", "disabled");
       $("#pgQuestion-container1 select").attr("disabled", "disabled");
+      $("#pgStep2 .pg-button").removeAttr("disabled");
+      $("#pgStep2").removeAttr("disabled");
 
       $('html, body').animate({
         scrollTop: $('#pgStep2').offset().top
@@ -2095,12 +2115,21 @@ var decideNextStep = function(nextStep){
       $('#pgQuestion-container2 .pg-button').attr("disabled", "disabled");
       $('#pgQuestion-container2').attr("disabled", "disabled");
       $('.pgQuestion__body__option').addClass("disabled-option");
+      $("#pgStep3 .pg-button").removeAttr("disabled");
+      $("#pgStep3").removeAttr("disabled");
       
       mosquitosArray.forEach(function(element,index,array){
         if (index < mosquitosLeft) {
           setTimeout(function() {
             // add delay
-            element.positionsArray = mosquitosPositionsPhase10[0];
+            element.positionsArray = new Array();
+
+            for (var i = 0; i < mosquitosPositionsPhase10[0].length; i++) {
+                element.positionsArray.push(mosquitosPositionsPhase10[0][i]);
+              }
+              for (var i = 0; i < mosquitosPositionsPhase12[0].length; i++) {
+                element.positionsArray.push(mosquitosPositionsPhase12[0][i]);
+              }
 
             element.positionsArray.forEach(function(element2,index2,array2) {
               element2.x = element2.x + (((Math.random() * 0.1) - 0.05) * 0.003);
@@ -2109,7 +2138,7 @@ var decideNextStep = function(nextStep){
             });
 
             element.currentPosition = 0;
-            element.currentMosquitoPhase = 9;
+            element.currentMosquitoPhase = 11;
             element.speed = 0.004 + (Math.random() * 0.001);
             if (element.x > element.positionsArray[element.currentPosition].x) {
               element.xDir = false;
@@ -2763,7 +2792,7 @@ var selectPregnancyOption = function() {
         }, (Math.random() * 1500) + 1000);
       });
     setTimeout(function() {
-      createConclusions();
+      createConclusions(cell);
       createUsersStats(newX, newY);
       setTimeout(function() {
         $('html, body').animate({
@@ -2926,7 +2955,7 @@ var selectPregnancyOption = function() {
       });
 
     setTimeout(function() {
-      createConclusions();
+      createConclusions(cell);
       createUsersStats(newX, newY);
       setTimeout(function() {
         $('html, body').animate({
@@ -3065,32 +3094,57 @@ var returnMosquitosLeft = function(step, question, option){
 /**************************************
         Conclusions
 **************************************/
-var createConclusions = function() {
-  var conclusionsText = "";
+var createConclusions = function(cell) {
+  var conclusionsText = "<h4><b>You have a ";
+
+  //You have a low/mid/high risk of contracting the Zika virus, and (but) the consequences would be mild/ could be serious/
+  if (cell <= 10) {
+    conclusionsText += "low";
+  }
+  else if (cell <= 19) {
+    conclusionsText += "mid";
+  }
+  else {
+    conclusionsText += "high";
+  }
+
+  conclusionsText += " risk of contracting the Zika virus, and (but) the consequences "
+
+  if (cell <= 10) {
+    conclusionsText += "would be mild.";
+  }
+  else if (cell <= 19) {
+    conclusionsText += "would be mild.";
+  }
+  else {
+    conclusionsText += "could be serious.";
+  }
+
+  conclusionsText += "</b></h4>";
 
   if (parseInt($("#home-country").val()) == 2 && parseInt($("#visit-country").val()) == 2) {
     if (!$($(".pgQuestion__body__option")[8]).hasClass("selected") || pregnantSelected) {
-      conclusionsText += "<p>You don’t live in a country nor are you planning to travel to a country affected by the Zika virus. Your risk is low but remember that there have been cases of sexual transmission by partners that got infected in those areas.</p>";
+      conclusionsText += "<p>You don’t live in a country nor are you planning to travel to a country affected by the Zika virus. <b>Your risk is low</b> but remember that there have been <b>cases of sexual transmission</b> by partners that got infected in those areas.</p>";
     }
     else {
-      conclusionsText += "<p>You don’t live in a country nor are you planning to travel to a country affected by the Zika virus. Your risk is zero.</p>";
+      conclusionsText += "<p>You don’t live in a country nor are you planning to travel to a country affected by the Zika virus. <b>Your risk is zero.<b></p>";
     }
   }
   else {
     conclusionsText += "<p>You live in a country that is affected by the Zika virus or you are planning to travel to a country that is.</p>";
 
     if ($($(".pgQuestion__body__option")[1]).hasClass("selected") || $($(".pgQuestion__body__option")[2]).hasClass("selected") || $($(".pgQuestion__body__option")[5]).hasClass("selected") || $($(".pgQuestion__body__option")[6]).hasClass("selected")) {
-      conclusionsText += "<p>Wearing shorts and sleeveless shirts that are dark in color and keeping buckets of water or having water containers near your house can increase your risk of being bitten by the mosquito and raise your chances of getting the virus.</p>";
+      conclusionsText += "<p>Wearing shorts and sleeveless shirts that are dark in color and keeping buckets of water or having water containers near your house can <b>increase your risk of being bitten by the mosquito and raise your chances of getting the virus.</b></p>";
     }
     if ($($(".pgQuestion__body__option")[3]).hasClass("selected") || $($(".pgQuestion__body__option")[4]).hasClass("selected") || $($(".pgQuestion__body__option")[7]).hasClass("selected")) {
-      conclusionsText += "<p>Using insect repellent, wearing light color clothes, having physical barriers such mesh screens or treated netting materials on doors and windows, or sleeping under mosquito nets will all decrease your risk of getting bitten by the mosquito and lower your changes of getting the virus.</p>";
+      conclusionsText += "<p>Using insect repellent, wearing light color clothes, having physical barriers such mesh screens or treated netting materials on doors and windows, or sleeping under mosquito nets will all <b>decrease your risk of getting bitten by the mosquito and lower your changes of getting the virus.</b></p>";
     }
 
     if (nonPregnantSelected) {
-      conclusionsText += "<p>Zika virus is spread primarily through the bite of infected Aedes species mosquitoes. Only 20% people who contract the virus will even develop any symptoms and the illness is usually mild, with symptoms like fever, rash or joint pain that will last a few days.<br><br>Recently in Brazil, local health authorities have observed an increase in Guillain-Barré syndrome, that causes paralysis, which coincided with Zika virus infections in the general public. Based on a growing body of preliminary research, there is scientific consensus that Zika virus is a cause of microcephaly and Guillain-Barré syndrome.</p>";
+      conclusionsText += "<p>Zika virus is spread primarily through the bite of infected Aedes species mosquitoes. <b>Only 20% people who contract the virus will even develop any symptoms and the illness is usually mild</b>, with symptoms like fever, rash or joint pain that will last a few days.<br><br>Recently in Brazil, local health authorities have observed an increase in Guillain-Barré syndrome, that causes paralysis, which coincided with Zika virus infections in the general public. Based on a growing body of preliminary research, there is scientific consensus that Zika virus is a cause of microcephaly and Guillain-Barré syndrome.</p>";
     }
     else {
-      conclusionsText += "<p>The Zika virus can be transmitted from infected mothers to their fetuses and this can happen during both pregnancy or at childbirth. Based on a growing body of preliminary research, there is scientific consensus that Zika virus is a cause of microcephaly, which is a condition where a baby is born with a small head or the head stops growing after birth. Babies with microcephaly can develop developmental disabilities. Early diagnosis of microcephaly can sometimes be made by fetal ultrasound.<br><br>Pregnant women who develop symptoms of Zika virus infection, should see their health-care provider for close monitoring of their pregnancy. If you’re travelling to a country affected by Zika, the World Health Organization is advising pregnant women not to travel to areas of ongoing Zika virus transmission.</p>";
+      conclusionsText += "<p><b>The Zika virus can be transmitted from infected mothers to their fetuses</b> and this can happen during both pregnancy or at childbirth. Based on a growing body of preliminary research, <b>there is scientific consensus that Zika virus is a cause of microcephaly</b>, which is a condition where a baby is born with a small head or the head stops growing after birth. Babies with microcephaly can develop developmental disabilities. Early diagnosis of microcephaly can sometimes be made by fetal ultrasound.<br><br><b>Pregnant women who develop symptoms of Zika virus infection, should see their health-care provider for close monitoring of their pregnancy.</b> If you’re travelling to a country affected by Zika, the World Health Organization is advising pregnant women not to travel to areas of ongoing Zika virus transmission.</p>";
     }
   }
 
@@ -3110,8 +3164,12 @@ var createUsersStats = function(markerLeft, markerTop) {
     }
   }
 
-  $(".pgStep__users-stats-mid").html(parseInt(maxResults / 2.0));
-  $(".pgStep__users-stats-max").html(maxResults);
+  $(".pgStep__users-stats-mid").html(parseInt(maxResults / 2.0)+"%");
+  $(".pgStep__users-stats-max").html(maxResults+"%");
+
+  $(".pgStep__users-stats-min").css("opacity", "1.0");
+  $(".pgStep__users-stats-mid").css("opacity", "1.0");
+  $(".pgStep__users-stats-max").css("opacity", "1.0");
 
   for (var i = 0; i < results.length; i++) {
     animateUsersStats($($(".pgStep__users-stats__col")[parseInt(i/5)]).find(".pgStep__users-stats__col__value")[i%5], (results[i] / maxResults) * 100.0, i);

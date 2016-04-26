@@ -21,6 +21,15 @@
 						]
 					},
 					{
+						"name": "USA",
+						"countries": [
+							{
+								"name": "United States of America",
+								"value": "2"
+							}
+						]
+					},
+					{
 						"name": "Rest of the world",
 						"countries": [
 							{
@@ -233,6 +242,15 @@
 						]
 					},
 					{
+						"name": "USA",
+						"countries": [
+							{
+								"name": "United States of America",
+								"value": "2"
+							}
+						]
+					},
+					{
 						"name": "None of these ones",
 						"countries": [
 							{
@@ -438,9 +456,9 @@
 	},
 	"second_questions": {
 		"first_question": {
-			"number": "2.1",
-			"title": "Select the items that represent your personal behavior or aspects of your life.",
-			"remaining_questions": "1/1",
+			"number": "2",
+			"title": "Select the behaviors that apply to you.",
+			"remaining_questions": "",
 			"answers": {
 				"first": "Insect repelent",
 				"second": "Shorts",
@@ -463,7 +481,7 @@
 	"third_questions": {
 		"first_question": {
 			"number": "3.1",
-			"title": "Identify the Zika mosquito.",
+			"title": "Which is the main mosquito transmitting the Zika virus?",
 			"remaining_questions": "1/3",
 			"answer": "Zika virus disease is caused by a virus transmitted primarily by Aedes mosquitoes, mainly the Aedes aegypti. This is the same mosquito that transmits dengue, chikungunya and yellow fever."
 		},
@@ -476,7 +494,7 @@
 		,
 		"third_question": {
 			"number": "3.2",
-			"title": "Can the Aedes mosquito travel from country to country and region to region?",
+			"title": "Can the Aedes mosquito travel from country to country and region to region?",
 			"remaining_questions": "3/3",
 			"answer": "The Aedes aegypti mosquito is a weak flyer; it cannot fly more than 150 yards. However it may be possible for the mosquito to be transported from one person  to another  who goes from travels and introduces the Zika virus to new areas."
 		}

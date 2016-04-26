@@ -350,6 +350,14 @@
                         
                         </optgroup>
                     
+                        <optgroup label="USA">
+                        
+                            <option value="2">
+                                United States of America
+                            </option>
+                        
+                        </optgroup>
+                    
                         <optgroup label="Rest of the world">
                         
                             <option value="2">
@@ -574,6 +582,14 @@
                         
                         </optgroup>
                     
+                        <optgroup label="USA">
+                        
+                            <option value="2">
+                                United States of America
+                            </option>
+                        
+                        </optgroup>
+                    
                         <optgroup label="None of these ones">
                         
                             <option value="2">
@@ -789,9 +805,9 @@
                 <p class="pgStep__info__text-description">
                     The risk also depends on some aspects of your personal behavior, how you protect yourself and decisions in your everyday life.
                 </p>
-                <button class="pgStep__info__text-action pg-button bounce" disabled="disabled" data-step="2">
+                <!--<button class="pgStep__info__text-action pg-button bounce" disabled="disabled" data-step="2">
                     Continue
-                </button>
+                </button>-->
             </div>
         </div>
     </div>
@@ -801,13 +817,13 @@
             <div class="pgQuestion">
                 <div class="pgQuestion__header">
                     <h4 class="pgQuestion__header-number">
-                        2.1
+                        2
                     </h4><!--
                  --><h5 class="pgQuestion__header-title">
-                        Select the items that represent your personal behavior or aspects of your life.
+                        Select the behaviors that apply to you.
                     </h5><!--
                  --><h4 class="pgQuestion__header-remaining-questions">
-                        1/1
+                        
                     </h4>
                 </div>
                 <div class="pgQuestion__body">
@@ -893,9 +909,9 @@
                 <p class="pgStep__info__text-description">
                     Knowledge about the Zika virus may keep you from being infected and will give you a better understanding of the disease.
                 </p>
-                <button class="pgStep__info__text-action pg-button bounce" disabled="disabled" data-step="4">
+                <!--<button class="pgStep__info__text-action pg-button bounce" disabled="disabled" data-step="4">
                     Continue
-                </button>
+                </button>-->
             </div>
         </div>
     </div>
@@ -908,7 +924,7 @@
                         3.1
                     </h4><!--
                  --><h5 class="pgQuestion__header-title">
-                        Identify the Zika mosquito.
+                        Which is the main mosquito transmitting the Zika virus?
                     </h5><!--
                  --><h4 class="pgQuestion__header-remaining-questions">
                         1/3
@@ -922,6 +938,7 @@
                         </div>
                         <div class="pgQuestion__body__binary-option pgQuestion__body__binary-option--terniary disabled-option" data-pos="1" data-step="3">
                             <img class="image" src="http://yowlu.com/wapo/images/mosquito2.png">
+                            <img class="image check" src="http://yowlu.com/wapo/images/check.png">
                         </div>
                         <div class="pgQuestion__body__binary-option pgQuestion__body__binary-option--terniary disabled-option" data-pos="1" data-step="3">
                             <img class="image" src="http://yowlu.com/wapo/images/mosquito3.png">
@@ -973,7 +990,7 @@
                         3.2
                     </h4><!--
                  --><h5 class="pgQuestion__header-title">
-                        Can the Aedes mosquito travel from country to country and region to region?
+                        Can the Aedes mosquito travel from country to country and region to region?
                     </h5><!--
                  --><h4 class="pgQuestion__header-remaining-questions">
                         3/3
@@ -1108,11 +1125,57 @@
                 </em>
             </strong>
         </p>
+
+        <div class="pgConclusions-sharebar-wrapper top-sharebar-wrapper color-top large-8 large-centered columns cf">
+            <div class="social-tools-wrapper">
+                <div class="social-tools-primary ">
+                    <div class="social-tools ">
+                        <!-- FB -->
+                        <a data-service="facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=','share_facebook','width=658,height=354,scrollbars=no');return false;" tabindex="1">
+                            <div class="facebook tool first mobile"><span class="hideText">Share on Facebook</span><span class="fa fa-facebook-square"></span></div>
+                        </a>
+                        <!-- Twitter -->
+                        <a data-service="twitter" onclick="window.open('https://twitter.com/share?url=&amp;text=','share_twitter','width=550, height=350, scrollbars=no');return false;" tabindex="2">
+                            <div class="twitter tool mobile"><span class="hideText">Share on Twitter</span><span class="fa fa-twitter"></span></div>
+                        </a>
+                        <!-- Google Plus -->
+                        <a data-service="google-plus" onclick="window.open('https://plus.google.com/share?url=','share_google-plus','width=832,height=472,scrollbars=no');return false;" tabindex="3">
+                            <div class="google-plus tool mobile"><span class="hideText">Share on Google Plus</span><span class="fa fa-google-plus"></span></div>
+                        </a>
+                        <!-- Email -->
+                        <a data-service="email" href="mailto:?subject=&amp;body=" tabindex="4">
+                            <div class="email tool mobile"><span class="hideText">Share via Email</span><span class="fa fa-envelope"></span></div>
+                        </a>
+                        <!-- More -->
+                        <a onclick="return false;">
+                            <div class="more last tool mobile"><span class="hideText" tabindex="5">More Options</span><span class="fa fa-plus"> </span></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="social-tools-additional">
+                    <div class="social-tools ">
+                        <!-- LinkedIn -->
+                        <a data-service="linkedin" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&amp;url=&amp;title=','share_linkedin','width=830,height=460,scrollbars=no');return false;" tabindex="6">
+                            <div class="linkedin tool mobile first"><span class="hideText">Share on LinkedIn</span><span class="fa fa-linkedin"></span></div>
+                        </a>
+                        <!-- Pinterest -->
+                        <a data-service="pinterest" onclick="window.open('//pinterest.com/pin/create/bookmarklet/?url=&amp;media=&amp;description=','share_pinterest','width=550,height=450,scrollbars=no');return false;" tabindex="7">
+                            <div class="pinterest tool mobile"><span class="hideText">Share on Pinterest</span><span class="fa fa-pinterest"></span></div>
+                        </a>
+                        <!-- Tumblr  -->
+                        <a data-service="tumblr" onclick="window.open('http://www.tumblr.com/share/link?url=&amp;name=&amp;description=','share_tumblr','width=550,height=450,scrollbars=no');return false;" tabindex="8">
+                            <div class="tumblr tool mobile last"><span class="hideText">Share on Tumblr</span><span class="fa fa-tumblr"></span></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
     </div>
 
     <footer class="pgChart-footer">
         <p class="pgChart-footer-source">
-            Source: XX Your source XX
+            Source: <br><a href="http://www.who.int/mediacentre/factsheets/zika/en/">http://www.who.int/mediacentre/factsheets/zika/en/</a><br><a href="http://www.cdc.gov/zika/">http://www.cdc.gov/zika/</a>
         </p>
 
         
