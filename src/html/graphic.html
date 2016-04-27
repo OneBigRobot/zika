@@ -39,16 +39,16 @@
             <img class="image" src="http://yowlu.com/wapo/images/glass-cover5.png">
         </div>
 
-        <canvas id="elementsCanvas">
+        <!--<canvas id="elementsCanvas">
         </canvas>
         <canvas id="animationCanvas">
-        </canvas>
+        </canvas>-->
         <canvas id="mosquitosCanvas">
         </canvas>
-        <canvas id="hoverCanvas">
+        <!--<canvas id="hoverCanvas">
         </canvas>
         <canvas id="glassAnimationCanvas">
-        </canvas>
+        </canvas>-->
 
         <div class="vertical-background">
             <img class="image" src="http://yowlu.com/wapo/images/zika-risk-vertical-hover.png">
@@ -300,7 +300,6 @@
                             </div>
                             <div class="pgQuestion__body__binary-option pgQuestion__body__binary-option--terniary disabled-option" data-pos="1" data-step="3">
                                 <img class="image" src="http://yowlu.com/wapo/images/mosquito2.png">
-                                <img class="image check" src="http://yowlu.com/wapo/images/check.png">
                             </div>
                             <div class="pgQuestion__body__binary-option pgQuestion__body__binary-option--terniary disabled-option" data-pos="1" data-step="3">
                                 <img class="image" src="http://yowlu.com/wapo/images/mosquito3.png">
@@ -335,12 +334,12 @@
                                 <h3>
                                     {{ graphic.general.yes }}
                                 </h3>
+                                <img class="image check" src="http://yowlu.com/wapo/images/check.png">
                             </div>
                             <div class="pgQuestion__body__binary-option disabled-option" data-pos="2" data-step="3">
                                 <h3>
                                     {{ graphic.general.no }}
                                 </h3>
-                                <img class="image check" src="http://yowlu.com/wapo/images/check.png">
                             </div>
                         </div>
                         <br>
@@ -470,11 +469,6 @@
         </div>
 
         <div class="pgConclusions">
-            <h4 class="pgConclusions-title">
-                {{ graphic.conclusions.title }}
-            </h4>
-            <br>
-            <br>
             <p class="pgConclusions-desc">
                 <strong>
                     <em>
@@ -483,6 +477,9 @@
                 </strong>
             </p>
 
+            <h4 class="pgConclusions-sharebar-wrapper-title">
+                {{ graphic.conclusions.share_results }}
+            </h4>
             <div class="pgConclusions-sharebar-wrapper top-sharebar-wrapper color-top large-8 large-centered columns cf">
                 <div class="social-tools-wrapper">
                     <div class="social-tools-primary ">
@@ -504,7 +501,7 @@
 
         <footer class="pgChart-footer">
             <p class="pgChart-footer-source">
-                Source: <br><a href="http://www.who.int/features/qa/zika/en/">World Health Organization</a><br><a href="http://www.cdc.gov/zika/index.html">Centers for Disease Control and Prevention</a>
+                Source: <a href="http://www.who.int/features/qa/zika/en/">World Health Organization</a>, <a href="http://www.cdc.gov/zika/index.html">Centers for Disease Control and Prevention</a>
             </p>
         </footer>
     </div>

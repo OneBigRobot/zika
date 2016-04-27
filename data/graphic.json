@@ -251,10 +251,10 @@
 						]
 					},
 					{
-						"name": "None of these ones",
+						"name": "",
 						"countries": [
 							{
-								"name": "Other countries",
+								"name": "None",
 								"value": "2"
 							}
 						]
@@ -483,25 +483,25 @@
 			"number": "3.1",
 			"title": "Which is the main mosquito transmitting the Zika virus?",
 			"remaining_questions": "",
-			"answer": "Zika virus disease is caused by a virus transmitted primarily by Aedes mosquitoes, mainly the Aedes aegypti. This is the same mosquito that transmits dengue, chikungunya and yellow fever."
+			"answer": " Zika virus disease is transmitted primarily by Aedes mosquitoes, mainly the Aedes aegypti."
 		},
 		"second_question": {
 			"number": "3.2",
 			"title": "Can El Niňo have an effect on Zika transmission?",
 			"remaining_questions": "",
-			"answer": "The Aedes aegypti mosquito breeds in still water. Severe drought, flooding, heavy rains and temperature rises are all known effects of El Niño. An increase in mosquitoes can be expected due to expanding and favorable breeding sites."
+			"answer": "An increase in mosquitoes can be expected due to expanding and favorable breeding sites, consequence of El Niño effects."
 		}
 		,
 		"third_question": {
 			"number": "3.2",
 			"title": "Can the Aedes mosquito travel from country to country and region to region?",
 			"remaining_questions": "",
-			"answer": "The Aedes aegypti mosquito is a weak flyer; it cannot fly more than 150 yards. However it may be possible for the mosquito to be transported from one person  to another  who goes from travels and introduces the Zika virus to new areas."
+			"answer": "The Aedes aegypti mosquito is a weak flyer; it cannot fly more than 150 yards."
 		}
 	},
 	"fourth_step": {
 		"number": "4",
-		"title": "ARE YOU PREGNANT OR TRYING?",
+		"title": "Are you pregnant or trying?",
 		"description": "Being pregnant is one risky factor since it has been proved that the Zika virus can be passed from a pregnant woman to her fetus during pregnancy or at delivery.",
 		"extra_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sapien justo, ornare a metus at, pretium venenatis ex. Proin consectetur, nisl tempus pretium"
 	},
@@ -518,7 +518,8 @@
 		"fourth_way": "Zika virus is spread primarily through the bite of infected Aedes species mosquitoes. Only 20% people who contract the virus will even develop any symptoms and the illness is usually mild, with symptoms like fever, rash or joint pain that will last a few days.<br><br>Recently in Brazil, local health authorities have observed an increase in Guillain-Barré syndrome, that causes paralysis, which coincided with Zika virus infections in the general public. Based on a growing body of preliminary research, there is scientific consensus that Zika virus is a cause of microcephaly and Guillain-Barré syndrome.",
 		"behavior_first": "Wearing shorts and sleeveless shirts that are dark in color and keeping buckets of water or having water containers near your house can increase your risk of being bitten by the mosquito and raise your chances of getting the virus.",
 		"behavior_second": "Using insect repellent, wearing light color clothes, having physical barriers such mesh screens or treated netting materials on doors and windows, or sleeping under mosquito nets will all decrease your risk of getting bitten by the mosquito and lower your changes of getting the virus.",
-		"fifth_way": "The Zika virus can be transmitted from infected mothers to their fetuses and this can happen during both pregnancy or at childbirth. Based on a growing body of preliminary research, there is scientific consensus that Zika virus is a cause of microcephaly, which is a condition where a baby is born with a small head or the head stops growing after birth. Babies with microcephaly can develop developmental disabilities. Early diagnosis of microcephaly can sometimes be made by fetal ultrasound.<br><br>Pregnant women who develop symptoms of Zika virus infection, should see their health-care provider for close monitoring of their pregnancy.<br><br>If you’re travelling to a country affected by Zika, the World Health Organization is advising pregnant women not to travel to areas of ongoing Zika virus transmission."
+		"fifth_way": "The Zika virus can be transmitted from infected mothers to their fetuses and this can happen during both pregnancy or at childbirth. Based on a growing body of preliminary research, there is scientific consensus that Zika virus is a cause of microcephaly, which is a condition where a baby is born with a small head or the head stops growing after birth. Babies with microcephaly can develop developmental disabilities. Early diagnosis of microcephaly can sometimes be made by fetal ultrasound.<br><br>Pregnant women who develop symptoms of Zika virus infection, should see their health-care provider for close monitoring of their pregnancy.<br><br>If you’re travelling to a country affected by Zika, the World Health Organization is advising pregnant women not to travel to areas of ongoing Zika virus transmission.",
+		"share_results": "Share Results"
 	},
 	"general": {
 		"button_start": "Start",

@@ -227,10 +227,10 @@ var setupMainLoop = function(){
 }
 //Execute main loop
 var main = function(time){
-  if (currentPhase == 20 || currentPhase == 21) {
+  /*if (currentPhase == 20 || currentPhase == 21) {
   context5.clearRect(0, 0, context5.canvas.width, context5.canvas.height);
-  /*switch (leftCoverGlass.currentMosquitoPhase) {
-    case 0:*/
+  switch (leftCoverGlass.currentMosquitoPhase) {
+    case 0:
       var leftGlassControlHover = false;
       if (((leftCoverGlassHover.x > leftCoverGlassHover.positionsArray[leftCoverGlassHover.currentPosition].x &&
             leftCoverGlassHover.xDir) || (leftCoverGlassHover.x < leftCoverGlassHover.positionsArray[leftCoverGlassHover.currentPosition].x &&
@@ -339,7 +339,7 @@ var main = function(time){
 
   context3.clearRect(0, 0, context3.canvas.width, context3.canvas.height);
   /*switch (leftCoverGlass.currentMosquitoPhase) {
-    case 0:*/
+    case 0:
       var leftGlassControl = false;
       if (((leftCoverGlass.x > leftCoverGlass.positionsArray[leftCoverGlass.currentPosition].x &&
             leftCoverGlass.xDir) || (leftCoverGlass.x < leftCoverGlass.positionsArray[leftCoverGlass.currentPosition].x &&
@@ -397,7 +397,7 @@ var main = function(time){
     break;
     case 2:
     break;
-  }*/
+  }
     var rightGlassControl = false;
       if (((rightCoverGlass.x > rightCoverGlass.positionsArray[rightCoverGlass.currentPosition].x &&
             rightCoverGlass.xDir) || (rightCoverGlass.x < rightCoverGlass.positionsArray[rightCoverGlass.currentPosition].x &&
@@ -451,7 +451,7 @@ var main = function(time){
         context3.drawImage(rightCoverGlass.image[rightCoverGlass.currentImage], parseInt(rightCoverGlass.x * canvas3.width), parseInt(rightCoverGlass.y * canvas3.width), parseInt(canvas3.width * 0.125), parseInt((canvas3.width * 0.125) * (224.0/149.0)));
       }
 
-    }
+    }*/
   // clear the canvas
   context.clearRect(0, 0, context.canvas.width, context.canvas.height);
 
@@ -1990,7 +1990,15 @@ function drawRotatedImage(image, x, y, angle, auxCtx) {
   auxCtx.restore(); //
 }
 //Setup mosquitos
-var setupMosquitos = function(){
+var setupMosquitos = function() {
+  canvas = document.getElementById('mosquitosCanvas');
+  canvas.width = $('.pgChart-wrapper').width();
+  canvas.height = $('.pgChart-wrapper').height();
+  canvas.style.width  = canvas.width.toString() + "px";
+  canvas.style.height = canvas.height.toString() + "px";
+  context = canvas.getContext('2d');
+  context.imageSmoothingEnabled = false;
+
   var mosquito = new Image();
   mosquito.addEventListener('load', function () {
     //
@@ -3168,10 +3176,10 @@ var returnMosquitosLeft = function(step, question, option){
     }
     if (question == 2) {
       if (option == 0) {
-        auxMosquitosLeft = 0;
+        auxMosquitosLeft = 1;
       }
       else if (option == 1) {
-        auxMosquitosLeft = 1;
+        auxMosquitosLeft = 0;
       }
     }
     if (question == 3) {
@@ -3191,9 +3199,8 @@ var returnMosquitosLeft = function(step, question, option){
         Conclusions
 **************************************/
 var createConclusions = function(cell) {
-  var conclusionsText = "<h4><b>You have a ";
+  var conclusionsText = '<h4 class="pgConclusions__main-conclusion"><b>You have a ';
 
-  //You have a low/mid/high risk of contracting the Zika virus, and (but) the consequences would be mild/ could be serious/
   if (cell <= 10) {
     conclusionsText += "low";
   }
@@ -3204,7 +3211,7 @@ var createConclusions = function(cell) {
     conclusionsText += "high";
   }
 
-  conclusionsText += " risk of contracting the Zika virus, and (but) the consequences "
+  conclusionsText += " risk of contracting the Zika virus, and the consequences "
 
   if (cell <= 10) {
     conclusionsText += "would be mild.";
@@ -3222,7 +3229,7 @@ var createConclusions = function(cell) {
     conclusionsText += "<p>You live in the United States or you are planning to travel to the United States. Research shows that some states will be affected by the Zika virus in the coming weeks.</p>"
   }
 
-  if ((parseInt($("#home-country").val()) == 2 && parseInt($("#visit-country").val()) == 2) || ((parseInt($("#home-country").val()) == 4 && parseInt($("#visit-country").val()) == 4))) {
+  if ((parseInt($("#home-country").val()) == 2 && parseInt($("#visit-country").val()) == 2)) {
     if (!$($(".pgQuestion__body__option")[8]).hasClass("selected") || pregnantSelected) {
       conclusionsText += "<p>You don’t live in a country nor are you planning to travel to a country affected by the Zika virus. <b>Your risk is low</b> but remember that there have been <b>cases of sexual transmission</b> by partners that got infected in those areas.</p>";
     }
@@ -3230,7 +3237,7 @@ var createConclusions = function(cell) {
       conclusionsText += "<p>You don’t live in a country nor are you planning to travel to a country affected by the Zika virus. <b>Your risk is zero.<b></p>";
     }
   }
-  else {
+  else if(!(parseInt($("#home-country").val()) == 4 && parseInt($("#visit-country").val()) == 4)) {
     conclusionsText += "<p>You live in a country that is affected by the Zika virus or you are planning to travel to a country that is.</p>";
 
     if ($($(".pgQuestion__body__option")[1]).hasClass("selected") || $($(".pgQuestion__body__option")[2]).hasClass("selected") || $($(".pgQuestion__body__option")[5]).hasClass("selected") || $($(".pgQuestion__body__option")[6]).hasClass("selected")) {
@@ -3251,6 +3258,8 @@ var createConclusions = function(cell) {
   conclusionsText += "<br><br>";
 
   $(".pgConclusions-desc").before(conclusionsText);
+
+  $(".pgConclusions-desc, .pgConclusions h4").css("display", "block");
 }
 
 var createUsersStats = function(markerLeft, markerTop, cell) {
@@ -3419,7 +3428,14 @@ $(window).on("resize", function() {
     if ($(".pgChart").width() > 1180 && markerMarginTop != -1) {
       $(".pgStep__last-chart-marker").css("margin-top", parseInt($(".pgStep__last-chart-marker").css("margin-top")) + "px")
     } 
-    //setupCanvas();
+    
+    canvas = document.getElementById('mosquitosCanvas');
+    canvas.width = $('.pgChart-wrapper').width();
+    canvas.height = $('.pgChart-wrapper').height();
+    canvas.style.width  = canvas.width.toString() + "px";
+    canvas.style.height = canvas.height.toString() + "px";
+    context = canvas.getContext('2d');
+    context.imageSmoothingEnabled = false;
 });
 
 function resizeend() {
@@ -3427,7 +3443,7 @@ function resizeend() {
         setTimeout(main.resizeend, delta);
     } else {
       timeout = false;
-      setupCanvas(); 
+      //setupCanvas(); 
       if ($(".pgArticle").width() < tabletTreshold) {
         $(".pgChart").scrollLeft(($(".pgArticle").width() / oldWidth) * scrollLeft);
       }
@@ -3444,7 +3460,7 @@ $(document).ready(function() {
   animateElementsPregnancy();
   animateBehaviorElements();
   setTimeout(function() {
-    setupCanvas();
+    //setupCanvas();
     setupMosquitos();
   }, 500);
   setupMainLoop();
