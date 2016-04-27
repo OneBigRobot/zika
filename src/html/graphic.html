@@ -1,502 +1,511 @@
 <div class="pgChart pgBorder-bottom" id="chart-1" >
-    <!--<h2 class="pgH2 pg2nd-Header">
-        H2 this is the first block
-    </h2>
+    <div class="pgChart-wrapper">
+        <!--<h2 class="pgH2 pg2nd-Header">
+            H2 this is the first block
+        </h2>
 
-    <p class="pg2nd-lead">
-        This should be used, just if necessary, a little complement to the visual below
-    </p>-->
+        <p class="pg2nd-lead">
+            This should be used, just if necessary, a little complement to the visual below
+        </p>-->
 
-    <canvas id="elementsCanvas">
-    </canvas>
-    <canvas id="animationCanvas">
-    </canvas>
-    <canvas id="mosquitosCanvas">
-    </canvas>
-    <canvas id="hoverCanvas">
-    </canvas>
-    <canvas id="glassAnimationCanvas">
-    </canvas>
+        <div class="horizontal-divisions">
+            <div>
+            </div>
+            <div>
+            </div>
+            <div>
+            </div>
+            <div>
+            </div>
+        </div>
+        <div class="horizontal-background">
+            <img class="image" src="http://yowlu.com/wapo/images/zika-horitzontal.png">
+        </div>
+        <div class="vertical-divisions">
+            <div>
+            </div>
+            <div>
+            </div>
+            <div>
+            </div>
+        </div>
+        <div class="vertical-background">
+            <img class="image" src="http://yowlu.com/wapo/images/zika-risk-vertical.png">
+        </div>
+        <div id="left-glass-cover" class="vertical-background">
+            <img class="image" src="http://yowlu.com/wapo/images/glass-cover3.png">
+        </div>
+        <div id="right-glass-cover" class="vertical-background">
+            <img class="image" src="http://yowlu.com/wapo/images/glass-cover5.png">
+        </div>
 
-    <div id="pgStep1" class="pgStep">
-        <div class="pgStep__info">
-            <h4 class="pgStep__info__number">
-                {{ graphic.first_step.number }}
-            </h4>
-            <div class="pgStep__info__text-container">
-                <h4 class="pgStep__info__text-title">
-                    {{ graphic.first_step.title }}
+        <canvas id="elementsCanvas">
+        </canvas>
+        <canvas id="animationCanvas">
+        </canvas>
+        <canvas id="mosquitosCanvas">
+        </canvas>
+        <canvas id="hoverCanvas">
+        </canvas>
+        <canvas id="glassAnimationCanvas">
+        </canvas>
+
+        <div class="vertical-background">
+            <img class="image" src="http://yowlu.com/wapo/images/zika-risk-vertical-hover.png">
+        </div>
+        
+
+
+        <div class="vertical-background">
+            <img class="image" src="http://yowlu.com/wapo/images/glass-cover1.png">
+        </div>
+        <div id="left-glass-cover-mid" class="vertical-background">
+            <img class="image" src="http://yowlu.com/wapo/images/glass-cover2.png">
+        </div>
+        
+        <div id="right-glass-cover-mid" class="vertical-background">
+            <img class="image" src="http://yowlu.com/wapo/images/glass-cover4.png">
+        </div>
+
+        <div id="pgStep1" class="pgStep">
+            <div class="pgStep__info">
+                <h4 class="pgStep__info__number">
+                    {{ graphic.first_step.number }}
                 </h4>
-                <p class="pgStep__info__text-description">
-                    {{ graphic.first_step.description }}
-                </p>
-                <button class="pgStep__info__text-action pg-button bounce" disabled="disabled" data-step="0">
-                    {{ graphic.general.button_start }}
-                </button>
+                <div class="pgStep__info__text-container">
+                    <h4 class="pgStep__info__text-title">
+                        {{ graphic.first_step.title }}
+                    </h4>
+                    <p class="pgStep__info__text-description">
+                        {{ graphic.first_step.description }}
+                    </p>
+                    <button class="pgStep__info__text-action pg-button bounce" disabled="disabled" data-step="0">
+                        {{ graphic.general.button_start }}
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div id="pgQuestion-container1" disabled="disabled" class="pgQuestion-container">
-        <div id="pgQuestion-wrapper1" class="pgQuestion-wrapper">
-            <div class="pgQuestion">
-                <div class="pgQuestion__header">
-                    <h4 class="pgQuestion__header-number">
-                        {{ graphic.first_questions.first_question.number }}
-                    </h4><!--
-                 --><h5 class="pgQuestion__header-title">
-                        {{ graphic.first_questions.first_question.title }}
-                    </h5><!--
-                 --><h4 class="pgQuestion__header-remaining-questions">
-                        {{ graphic.first_questions.first_question.remaining_questions }}
-                    </h4>
-                </div>
-                <div class="pgQuestion__body">
-                    <img class="image" src="http://yowlu.com/wapo/images/zika-map.png">
-                    <select id="home-country" class="pgQuestion__body__select-country form-control" disabled="disabled" data-pos="1" data-step="0">
-                    {% for zone_country in graphic.first_questions.first_question.zone_countries %}
-                        <optgroup label="{{ zone_country.name }}">
-                        {% for country in zone_country.countries %}
-                            <option value="{{ country.value }}">
-                                {{ country.name }}
-                            </option>
+        <div id="pgQuestion-container1" disabled="disabled" class="pgQuestion-container">
+            <div id="pgQuestion-wrapper1" class="pgQuestion-wrapper">
+                <div class="pgQuestion">
+                    <div class="pgQuestion__header">
+                        <h4 class="pgQuestion__header-number">
+                            {{ graphic.first_questions.first_question.number }}
+                        </h4><!--
+                     --><h5 class="pgQuestion__header-title">
+                            {{ graphic.first_questions.first_question.title }}
+                        </h5><!--
+                     --><h4 class="pgQuestion__header-remaining-questions">
+                            {{ graphic.first_questions.first_question.remaining_questions }}
+                        </h4>
+                    </div>
+                    <div class="pgQuestion__body">
+                        <img class="image image-map" src="http://yowlu.com/wapo/images/zika-map.png">
+                        <select id="home-country" class="pgQuestion__body__select-country form-control" disabled="disabled" data-pos="1" data-step="0">
+                        {% for zone_country in graphic.first_questions.first_question.zone_countries %}
+                            <optgroup label="{{ zone_country.name }}">
+                            {% for country in zone_country.countries %}
+                                <option value="{{ country.value }}">
+                                    {{ country.name }}
+                                </option>
+                            {% endfor %}
+                            </optgroup>
                         {% endfor %}
-                        </optgroup>
-                    {% endfor %}
-                    </select>
-                </div>
-                <!--<div class="pgQuestion__footer">
-                    <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="1" data-step="0">
-                        {{ graphic.general.button_ok }}
-                    </button>
-                </div>-->
-            </div><!--
-         --><div class="pgQuestion">
-                <div class="pgQuestion__header">
-                    <h4 class="pgQuestion__header-number">
-                        {{ graphic.first_questions.second_question.number }}
-                    </h4><!--
-                 --><h5 class="pgQuestion__header-title">
-                        {{ graphic.first_questions.second_question.title }}
-                    </h5><!--
-                 --><h4 class="pgQuestion__header-remaining-questions">
-                        {{ graphic.first_questions.second_question.remaining_questions }}
-                    </h4>
-                </div>
-                <div class="pgQuestion__body">
-                    <img class="image" src="http://yowlu.com/wapo/images/zika-map.png">
-                    <select id="visit-country" class="pgQuestion__body__select-country form-control" disabled="disabled" data-step="0">
-                    {% for zone_country in graphic.first_questions.second_question.zone_countries %}
-                        <optgroup label="{{ zone_country.name }}">
-                        {% for country in zone_country.countries %}
-                            <option value="{{ country.value }}">
-                                {{ country.name }}
-                            </option>
+                        </select>
+                    </div>
+                    <!--<div class="pgQuestion__footer">
+                        <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="1" data-step="0">
+                            {{ graphic.general.button_ok }}
+                        </button>
+                    </div>-->
+                </div><!--
+             --><div class="pgQuestion">
+                    <div class="pgQuestion__header">
+                        <h4 class="pgQuestion__header-number">
+                            {{ graphic.first_questions.second_question.number }}
+                        </h4><!--
+                     --><h5 class="pgQuestion__header-title">
+                            {{ graphic.first_questions.second_question.title }}
+                        </h5><!--
+                     --><h4 class="pgQuestion__header-remaining-questions">
+                            {{ graphic.first_questions.second_question.remaining_questions }}
+                        </h4>
+                    </div>
+                    <div class="pgQuestion__body">
+                        <img class="image image-map" src="http://yowlu.com/wapo/images/zika-map.png">
+                        <select id="visit-country" class="pgQuestion__body__select-country form-control" disabled="disabled" data-step="0">
+                        {% for zone_country in graphic.first_questions.second_question.zone_countries %}
+                            <optgroup label="{{ zone_country.name }}">
+                            {% for country in zone_country.countries %}
+                                <option value="{{ country.value }}">
+                                    {{ country.name }}
+                                </option>
+                            {% endfor %}
+                            </optgroup>
                         {% endfor %}
-                        </optgroup>
-                    {% endfor %}
-                    </select>
+                        </select>
+                    </div>
+                    <!--<div class="pgQuestion__footer">
+                        <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="-1" data-step="0">
+                            {{ graphic.general.button_ok }}
+                        </button>
+                    </div>-->
                 </div>
-                <!--<div class="pgQuestion__footer">
-                    <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="-1" data-step="0">
-                        {{ graphic.general.button_ok }}
-                    </button>
-                </div>-->
             </div>
         </div>
-    </div>
 
-    <div id="pgStep2" class="pgStep" disabled="disabled">
-        <div class="pgStep__info">
-            <h4 class="pgStep__info__number">
-                {{ graphic.second_step.number }}
-            </h4>
-            <div class="pgStep__info__text-container">
-                <h4 class="pgStep__info__text-title">
-                    {{ graphic.second_step.title }}
+        <div id="pgStep2" class="pgStep" disabled="disabled">
+            <div class="pgStep__info">
+                <h4 class="pgStep__info__number">
+                    {{ graphic.second_step.number }}
                 </h4>
-                <p class="pgStep__info__text-description">
-                    {{ graphic.second_step.description }}
-                </p>
-                <!--<button class="pgStep__info__text-action pg-button bounce" disabled="disabled" data-step="2">
-                    {{ graphic.general.button_continue }}
-                </button>-->
-            </div>
-        </div>
-    </div>
-
-    <div id="pgQuestion-container2" class="pgQuestion-container" disabled="disabled">
-        <div id="pgQuestion-wrapper2" class="pgQuestion-wrapper">
-            <div class="pgQuestion">
-                <div class="pgQuestion__header">
-                    <h4 class="pgQuestion__header-number">
-                        {{ graphic.second_questions.first_question.number }}
-                    </h4><!--
-                 --><h5 class="pgQuestion__header-title">
-                        {{ graphic.second_questions.first_question.title }}
-                    </h5><!--
-                 --><h4 class="pgQuestion__header-remaining-questions">
-                        {{ graphic.second_questions.first_question.remaining_questions }}
+                <div class="pgStep__info__text-container">
+                    <h4 class="pgStep__info__text-title">
+                        {{ graphic.second_step.title }}
                     </h4>
-                </div>
-                <div class="pgQuestion__body">
-                    <div class="row pgQuestion__body__options-container">
-                        <div class="pgQuestion__body__option disabled-option" data-index="0">
-                            <img class="image" src="http://yowlu.com/wapo/images/icon1.png">
-                            <p>
-                                {{ graphic.second_questions.first_question.answers.first }}
-                            </p>
-                        </div>
-                        <div class="pgQuestion__body__option disabled-option" data-index="1">
-                            <img class="image" src="http://yowlu.com/wapo/images/icon2.png">
-                            <p>
-                                {{ graphic.second_questions.first_question.answers.second }}
-                            </p>
-                        </div>
-                        <div class="pgQuestion__body__option disabled-option" data-index="2">
-                            <img class="image" src="http://yowlu.com/wapo/images/icon3.png">
-                            <p>
-                                {{ graphic.second_questions.first_question.answers.third }}
-                            </p>
-                        </div>
-                        <div class="pgQuestion__body__option disabled-option" data-index="3">
-                            <img class="image" src="http://yowlu.com/wapo/images/icon4.png">
-                            <p>
-                                {{ graphic.second_questions.first_question.answers.fourth }}
-                            </p>
-                        </div>
-                        <div class="pgQuestion__body__option disabled-option" data-index="4">
-                            <img class="image" src="http://yowlu.com/wapo/images/icon5.png">
-                            <p>
-                                {{ graphic.second_questions.first_question.answers.fifth }}
-                            </p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="row pgQuestion__body__options-container">
-                        <div class="pgQuestion__body__option disabled-option" data-index="5">
-                            <img class="image" src="http://yowlu.com/wapo/images/icon6.png">
-                            <p>
-                                {{ graphic.second_questions.first_question.answers.sixth }}
-                            </p>
-                        </div>
-                        <div class="pgQuestion__body__option disabled-option" data-index="6">
-                            <img class="image" src="http://yowlu.com/wapo/images/icon7.png">
-                            <p>
-                                {{ graphic.second_questions.first_question.answers.seventh }}
-                            </p>
-                        </div>
-                        <div class="pgQuestion__body__option disabled-option" data-index="7">
-                            <img class="image" src="http://yowlu.com/wapo/images/icon8.png">
-                            <p>
-                                {{ graphic.second_questions.first_question.answers.eighth }}
-                            </p>
-                        </div>
-                        <div class="pgQuestion__body__option disabled-option" data-index="8">
-                            <img class="image" src="http://yowlu.com/wapo/images/icon9.png">
-                            <p>
-                                {{ graphic.second_questions.first_question.answers.nineth }}
-                            </p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="pgQuestion__footer">
-                    <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="-1" data-step="2">
+                    <p class="pgStep__info__text-description">
+                        {{ graphic.second_step.description }}
+                    </p>
+                    <!--<button class="pgStep__info__text-action pg-button bounce" disabled="disabled" data-step="2">
                         {{ graphic.general.button_continue }}
-                    </button>
+                    </button>-->
                 </div>
             </div>
         </div>
-    </div>
 
-    <div id="pgStep3" class="pgStep" disabled="disabled">
-        <div class="pgStep__info">
-            <h4 class="pgStep__info__number">
-                {{ graphic.third_step.number }}
-            </h4>
-            <div class="pgStep__info__text-container">
-                <h4 class="pgStep__info__text-title">
-                    {{ graphic.third_step.title }}
+        <div id="pgQuestion-container2" class="pgQuestion-container" disabled="disabled">
+            <div id="pgQuestion-wrapper2" class="pgQuestion-wrapper">
+                <div class="pgQuestion">
+                    <div class="pgQuestion__header">
+                        <h4 class="pgQuestion__header-number">
+                            {{ graphic.second_questions.first_question.number }}
+                        </h4><!--
+                     --><h5 class="pgQuestion__header-title">
+                            {{ graphic.second_questions.first_question.title }}
+                        </h5><!--
+                     --><h4 class="pgQuestion__header-remaining-questions">
+                            {{ graphic.second_questions.first_question.remaining_questions }}
+                        </h4>
+                    </div>
+                    <div class="pgQuestion__body">
+                        <div class="row pgQuestion__body__options-container">
+                            <div class="pgQuestion__body__option disabled-option" data-index="0">
+                                <img class="image" src="http://yowlu.com/wapo/images/icon1.png">
+                                <p>
+                                    {{ graphic.second_questions.first_question.answers.first }}
+                                </p>
+                            </div>
+                            <div class="pgQuestion__body__option disabled-option" data-index="1">
+                                <img class="image" src="http://yowlu.com/wapo/images/icon2.png">
+                                <p>
+                                    {{ graphic.second_questions.first_question.answers.second }}
+                                </p>
+                            </div>
+                            <div class="pgQuestion__body__option disabled-option" data-index="2">
+                                <img class="image" src="http://yowlu.com/wapo/images/icon3.png">
+                                <p>
+                                    {{ graphic.second_questions.first_question.answers.third }}
+                                </p>
+                            </div>
+                            <div class="pgQuestion__body__option disabled-option" data-index="3">
+                                <img class="image" src="http://yowlu.com/wapo/images/icon4.png">
+                                <p>
+                                    {{ graphic.second_questions.first_question.answers.fourth }}
+                                </p>
+                            </div>
+                            <div class="pgQuestion__body__option disabled-option" data-index="4">
+                                <img class="image" src="http://yowlu.com/wapo/images/icon5.png">
+                                <p>
+                                    {{ graphic.second_questions.first_question.answers.fifth }}
+                                </p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="row pgQuestion__body__options-container">
+                            <div class="pgQuestion__body__option disabled-option" data-index="5">
+                                <img class="image" src="http://yowlu.com/wapo/images/icon6.png">
+                                <p>
+                                    {{ graphic.second_questions.first_question.answers.sixth }}
+                                </p>
+                            </div>
+                            <div class="pgQuestion__body__option disabled-option" data-index="6">
+                                <img class="image" src="http://yowlu.com/wapo/images/icon7.png">
+                                <p>
+                                    {{ graphic.second_questions.first_question.answers.seventh }}
+                                </p>
+                            </div>
+                            <div class="pgQuestion__body__option disabled-option" data-index="7">
+                                <img class="image" src="http://yowlu.com/wapo/images/icon8.png">
+                                <p>
+                                    {{ graphic.second_questions.first_question.answers.eighth }}
+                                </p>
+                            </div>
+                            <div class="pgQuestion__body__option disabled-option" data-index="8">
+                                <img class="image" src="http://yowlu.com/wapo/images/icon9.png">
+                                <p>
+                                    {{ graphic.second_questions.first_question.answers.nineth }}
+                                </p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="pgQuestion__footer">
+                        <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="-1" data-step="2">
+                            {{ graphic.general.button_continue }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="pgStep3" class="pgStep" disabled="disabled">
+            <div class="pgStep__info">
+                <h4 class="pgStep__info__number">
+                    {{ graphic.third_step.number }}
                 </h4>
-                <p class="pgStep__info__text-description">
-                    {{ graphic.third_step.description }}
-                </p>
-                <!--<button class="pgStep__info__text-action pg-button bounce" disabled="disabled" data-step="4">
-                    {{ graphic.general.button_continue }}
-                </button>-->
+                <div class="pgStep__info__text-container">
+                    <h4 class="pgStep__info__text-title">
+                        {{ graphic.third_step.title }}
+                    </h4>
+                    <p class="pgStep__info__text-description">
+                        {{ graphic.third_step.description }}
+                    </p>
+                    <!--<button class="pgStep__info__text-action pg-button bounce" disabled="disabled" data-step="4">
+                        {{ graphic.general.button_continue }}
+                    </button>-->
+                </div>
             </div>
         </div>
-    </div>
 
-    <div id="pgQuestion-container3" class="pgQuestion-container" disabled="disabled">
-        <div id="pgQuestion-wrapper3" class="pgQuestion-wrapper">
-            <div class="pgQuestion">
-                <div class="pgQuestion__header">
-                    <h4 class="pgQuestion__header-number">
-                        {{ graphic.third_questions.first_question.number }}
-                    </h4><!--
-                 --><h5 class="pgQuestion__header-title">
-                        {{ graphic.third_questions.first_question.title }}
-                    </h5><!--
-                 --><h4 class="pgQuestion__header-remaining-questions">
-                        {{ graphic.third_questions.first_question.remaining_questions }}
-                    </h4>
-                </div>
-                <div class="pgQuestion__body">
-                    <div class="pgQuestion__body__binary-options-container pgQuestion__body__binary-options-container--terniary">
-                        <div class="pgQuestion__body__binary-option pgQuestion__body__binary-option--terniary disabled-option" data-pos="1" data-step="3">
-                            <img class="image" src="http://yowlu.com/wapo/images/mosquito1.png">
-                            <img class="image check" src="http://yowlu.com/wapo/images/check.png">
+        <div id="pgQuestion-container3" class="pgQuestion-container" disabled="disabled">
+            <div id="pgQuestion-wrapper3" class="pgQuestion-wrapper">
+                <div class="pgQuestion">
+                    <div class="pgQuestion__header">
+                        <h4 class="pgQuestion__header-number">
+                            {{ graphic.third_questions.first_question.number }}
+                        </h4><!--
+                     --><h5 class="pgQuestion__header-title">
+                            {{ graphic.third_questions.first_question.title }}
+                        </h5><!--
+                     --><h4 class="pgQuestion__header-remaining-questions">
+                            {{ graphic.third_questions.first_question.remaining_questions }}
+                        </h4>
+                    </div>
+                    <div class="pgQuestion__body">
+                        <div class="pgQuestion__body__binary-options-container pgQuestion__body__binary-options-container--terniary">
+                            <div class="pgQuestion__body__binary-option pgQuestion__body__binary-option--terniary disabled-option" data-pos="1" data-step="3">
+                                <img class="image" src="http://yowlu.com/wapo/images/mosquito1.png">
+                                <img class="image check" src="http://yowlu.com/wapo/images/check.png">
+                            </div>
+                            <div class="pgQuestion__body__binary-option pgQuestion__body__binary-option--terniary disabled-option" data-pos="1" data-step="3">
+                                <img class="image" src="http://yowlu.com/wapo/images/mosquito2.png">
+                                <img class="image check" src="http://yowlu.com/wapo/images/check.png">
+                            </div>
+                            <div class="pgQuestion__body__binary-option pgQuestion__body__binary-option--terniary disabled-option" data-pos="1" data-step="3">
+                                <img class="image" src="http://yowlu.com/wapo/images/mosquito3.png">
+                            </div>
                         </div>
-                        <div class="pgQuestion__body__binary-option pgQuestion__body__binary-option--terniary disabled-option" data-pos="1" data-step="3">
-                            <img class="image" src="http://yowlu.com/wapo/images/mosquito2.png">
-                            <img class="image check" src="http://yowlu.com/wapo/images/check.png">
-                        </div>
-                        <div class="pgQuestion__body__binary-option pgQuestion__body__binary-option--terniary disabled-option" data-pos="1" data-step="3">
-                            <img class="image" src="http://yowlu.com/wapo/images/mosquito3.png">
+                        <br>
+                        <div class="pgQuestion__body__answer">
+                            {{ graphic.third_questions.first_question.answer }}
                         </div>
                     </div>
-                </div>
-                <!--<div class="pgQuestion__footer">
-                    <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="1" data-step="3">
-                        {{ graphic.general.button_ok }}
-                    </button>
-                </div>-->
-            </div><!--
-         --><div class="pgQuestion">
-                <div class="pgQuestion__header">
-                    <h4 class="pgQuestion__header-number">
-                        {{ graphic.third_questions.second_question.number }}
-                    </h4><!--
-                 --><h5 class="pgQuestion__header-title">
-                        {{ graphic.third_questions.second_question.title }}
-                    </h5><!--
-                 --><h4 class="pgQuestion__header-remaining-questions">
-                        {{ graphic.third_questions.second_question.remaining_questions }}
-                    </h4>
-                </div>
-                <div class="pgQuestion__body">
-                    <div class="pgQuestion__body__binary-options-container">
-                        <div class="pgQuestion__body__binary-option disabled-option" data-pos="2" data-step="3">
-                            <h3>
-                                {{ graphic.general.yes }}
-                            </h3>
+                    <!--<div class="pgQuestion__footer">
+                        <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="1" data-step="3">
+                            {{ graphic.general.button_ok }}
+                        </button>
+                    </div>-->
+                </div><!--
+             --><div class="pgQuestion">
+                    <div class="pgQuestion__header">
+                        <h4 class="pgQuestion__header-number">
+                            {{ graphic.third_questions.second_question.number }}
+                        </h4><!--
+                     --><h5 class="pgQuestion__header-title">
+                            {{ graphic.third_questions.second_question.title }}
+                        </h5><!--
+                     --><h4 class="pgQuestion__header-remaining-questions">
+                            {{ graphic.third_questions.second_question.remaining_questions }}
+                        </h4>
+                    </div>
+                    <div class="pgQuestion__body">
+                        <div class="pgQuestion__body__binary-options-container">
+                            <div class="pgQuestion__body__binary-option disabled-option" data-pos="2" data-step="3">
+                                <h3>
+                                    {{ graphic.general.yes }}
+                                </h3>
+                            </div>
+                            <div class="pgQuestion__body__binary-option disabled-option" data-pos="2" data-step="3">
+                                <h3>
+                                    {{ graphic.general.no }}
+                                </h3>
+                                <img class="image check" src="http://yowlu.com/wapo/images/check.png">
+                            </div>
                         </div>
-                        <div class="pgQuestion__body__binary-option disabled-option" data-pos="2" data-step="3">
-                            <h3>
-                                {{ graphic.general.no }}
-                            </h3>
-                            <img class="image check" src="http://yowlu.com/wapo/images/check.png">
+                        <br>
+                        <div class="pgQuestion__body__answer">
+                            {{ graphic.third_questions.second_question.answer }}
                         </div>
                     </div>
-                </div>
-                <!--<div class="pgQuestion__footer">
-                    <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="2" data-step="3">
-                        {{ graphic.general.button_ok }}
-                    </button>
-                </div>-->
-            </div><!--
-         --><div class="pgQuestion">
-                <div class="pgQuestion__header">
-                    <h4 class="pgQuestion__header-number">
-                        {{ graphic.third_questions.third_question.number }}
-                    </h4><!--
-                 --><h5 class="pgQuestion__header-title">
-                        {{ graphic.third_questions.third_question.title }}
-                    </h5><!--
-                 --><h4 class="pgQuestion__header-remaining-questions">
-                        {{ graphic.third_questions.third_question.remaining_questions }}
-                    </h4>
-                </div>
-                <div class="pgQuestion__body">
-                    <div class="pgQuestion__body__binary-options-container">
-                        <div class="pgQuestion__body__binary-option disabled-option" data-pos="-1" data-step="4">
-                            <h3>
-                                {{ graphic.general.yes }}
-                            </h3>
+                    <!--<div class="pgQuestion__footer">
+                        <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="2" data-step="3">
+                            {{ graphic.general.button_ok }}
+                        </button>
+                    </div>-->
+                </div><!--
+             --><div class="pgQuestion">
+                    <div class="pgQuestion__header">
+                        <h4 class="pgQuestion__header-number">
+                            {{ graphic.third_questions.third_question.number }}
+                        </h4><!--
+                     --><h5 class="pgQuestion__header-title">
+                            {{ graphic.third_questions.third_question.title }}
+                        </h5><!--
+                     --><h4 class="pgQuestion__header-remaining-questions">
+                            {{ graphic.third_questions.third_question.remaining_questions }}
+                        </h4>
+                    </div>
+                    <div class="pgQuestion__body">
+                        <div class="pgQuestion__body__binary-options-container">
+                            <div class="pgQuestion__body__binary-option disabled-option" data-pos="-1" data-step="4">
+                                <h3>
+                                    {{ graphic.general.yes }}
+                                </h3>
+                            </div>
+                            <div class="pgQuestion__body__binary-option disabled-option" data-pos="-1" data-step="4">
+                                <h3>
+                                    {{ graphic.general.no }}
+                                </h3>
+                                <img class="image check" src="http://yowlu.com/wapo/images/check.png">
+                            </div>
                         </div>
-                        <div class="pgQuestion__body__binary-option disabled-option" data-pos="-1" data-step="4">
-                            <h3>
-                                {{ graphic.general.no }}
-                            </h3>
-                            <img class="image check" src="http://yowlu.com/wapo/images/check.png">
+                        <br>
+                        <div class="pgQuestion__body__answer">
+                            {{ graphic.third_questions.third_question.answer }}
                         </div>
                     </div>
+                    <!--<div class="pgQuestion__footer">
+                        <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="-1" data-step="4">
+                            {{ graphic.general.button_ok }}
+                        </button>
+                    </div>-->
                 </div>
-                <!--<div class="pgQuestion__footer">
-                    <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="-1" data-step="4">
-                        {{ graphic.general.button_ok }}
-                    </button>
-                </div>-->
             </div>
         </div>
-    </div>
 
-    <div id="pgStep4" class="pgStep pgStep--acenter" disabled="disabled">
-        <div class="pgStep__info">
-            <h4 class="pgStep__info__number">
-                {{ graphic.fourth_step.number }}
+        <div id="pgStep4" class="pgStep pgStep--acenter" disabled="disabled">
+            <div class="pgStep__info">
+                <h4 class="pgStep__info__number">
+                    {{ graphic.fourth_step.number }}
+                </h4>
+                <br>
+                <div class="pgStep__info__text-container">
+                    <h4 class="pgStep__info__text-title">
+                        {{ graphic.fourth_step.title }}
+                    </h4>
+                    <p class="pgStep__info__text-description">
+                        {{ graphic.fourth_step.description |safe }}
+                    </p>
+                </div>
+            </div><!--
+         --><div class="pgStep__pregnancy-buttons">
+                <div class="pgStep__pregnancy-ok"></div>
+                <div class="pgStep__pregnancy-ko"></div>
+            </div><!--
+         --><div class="pgStep__last-chart">
+                <img class="image" src="http://yowlu.com/wapo/images/last-chart.png">
+            </div>
+            <div class="pgStep__last-chart-marker">
+                <img class="image" src="http://yowlu.com/wapo/images/marker.png">
+            </div>
+            <div class="pgStep__users-stats">
+                <div class="pgStep__users-stats-wrapper">
+                    <div class="pgStep__users-stats-row">
+                        <div class="pgStep__users-stats-row-value">
+                        </div>
+                        <div class="pgStep__users-stats-row-value">
+                        </div>
+                        <div class="pgStep__users-stats-row-value">
+                        </div>
+                    </div>
+                    <div class="pgStep__users-stats-row">
+                        <div class="pgStep__users-stats-row-value">
+                        </div>
+                        <div class="pgStep__users-stats-row-value">
+                        </div>
+                        <div class="pgStep__users-stats-row-value">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pgStep__users-stats-text">
+                <div>PROBABILITY OF OCCURRENCE</div>
+                <div class="pgStep__users-stats-text-row-value-wrapper">
+                    <div class="pgStep__users-stats-text-row-value">
+                        LOW 32%
+                    </div>
+                    <div class="pgStep__users-stats-text-row-value">
+                        MEDIUM 32%
+                    </div>
+                    <div class="pgStep__users-stats-text-row-value">
+                        HIGH 32%
+                    </div>
+                    <img class="image pgStep__users-stats-marker" src="http://yowlu.com/wapo/images/marker.png">
+                </div>
+                <div>CONSEQUENCES</div>
+                <div class="pgStep__users-stats-text-row-value-wrapper">
+                    <div class="pgStep__users-stats-text-row-value">
+                        LOW 32%
+                    </div>
+                    <div class="pgStep__users-stats-text-row-value">
+                        MEDIUM 32%
+                    </div>
+                    <div class="pgStep__users-stats-text-row-value">
+                        HIGH 32%
+                    </div>
+                    <img class="image pgStep__users-stats-marker" src="http://yowlu.com/wapo/images/marker.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="pgConclusions">
+            <h4 class="pgConclusions-title">
+                {{ graphic.conclusions.title }}
             </h4>
             <br>
-            <div class="pgStep__info__text-container">
-                <h4 class="pgStep__info__text-title">
-                    {{ graphic.fourth_step.title }}
-                </h4>
-                <p class="pgStep__info__text-description">
-                    {{ graphic.fourth_step.description |safe }}
-                </p>
-            </div>
-        </div><!--
-     --><div class="pgStep__pregnancy-buttons">
-            <div class="pgStep__pregnancy-ok"></div>
-            <div class="pgStep__pregnancy-ko"></div>
-        </div><!--
-     --><div class="pgStep__last-chart">
-            <img class="image" src="http://yowlu.com/wapo/images/last-chart.png">
-        </div>
-        <div class="pgStep__users-stats">
-            <div class="pgStep__users-stats-wrapper">
-                <div class="pgStep__users-stats__col">
-                    <div class="pgStep__users-stats__col__value">
-                    </div>
-                    <div class="pgStep__users-stats__col__value">
-                    </div>
-                    <div class="pgStep__users-stats__col__value">
-                    </div>
-                    <div class="pgStep__users-stats__col__value">
-                    </div>
-                    <div class="pgStep__users-stats__col__value">
+            <br>
+            <p class="pgConclusions-desc">
+                <strong>
+                    <em>
+                        {{ graphic.conclusions.key_point }}
+                    </em>
+                </strong>
+            </p>
+
+            <div class="pgConclusions-sharebar-wrapper top-sharebar-wrapper color-top large-8 large-centered columns cf">
+                <div class="social-tools-wrapper">
+                    <div class="social-tools-primary ">
+                        <div class="social-tools ">
+                            <!-- FB -->
+                            <a data-service="facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=','share_facebook','width=658,height=354,scrollbars=no');return false;" tabindex="1">
+                                <div class="facebook tool first mobile"><span class="hideText">Share on Facebook</span><span class="fa fa-facebook-square"></span></div>
+                            </a>
+                            <!-- Twitter -->
+                            <a data-service="twitter" onclick="window.open('https://twitter.com/share?url=&amp;text=','share_twitter','width=550, height=350, scrollbars=no');return false;" tabindex="2">
+                                <div class="twitter tool mobile"><span class="hideText">Share on Twitter</span><span class="fa fa-twitter"></span></div>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="pgStep__users-stats__col">
-                    <div class="pgStep__users-stats__col__value">
-                    </div>
-                    <div class="pgStep__users-stats__col__value">
-                    </div>
-                    <div class="pgStep__users-stats__col__value">
-                    </div>
-                    <div class="pgStep__users-stats__col__value">
-                    </div>
-                    <div class="pgStep__users-stats__col__value">
-                    </div>
-                </div>
-                <div class="pgStep__users-stats__col">
-                    <div class="pgStep__users-stats__col__value">
-                    </div>
-                    <div class="pgStep__users-stats__col__value">
-                    </div>
-                    <div class="pgStep__users-stats__col__value">
-                    </div>
-                    <div class="pgStep__users-stats__col__value">
-                    </div>
-                    <div class="pgStep__users-stats__col__value">
-                    </div>
-                </div>
-                <div class="pgStep__users-stats__col">
-                    <div class="pgStep__users-stats__col__value">
-                    </div>
-                    <div class="pgStep__users-stats__col__value">
-                    </div>
-                    <div class="pgStep__users-stats__col__value">
-                    </div>
-                    <div class="pgStep__users-stats__col__value">
-                    </div>
-                    <div class="pgStep__users-stats__col__value">
-                    </div>
-                </div>
-                <div class="pgStep__users-stats__col">
-                    <div class="pgStep__users-stats__col__value">
-                    </div>
-                    <div class="pgStep__users-stats__col__value">
-                    </div>
-                    <div class="pgStep__users-stats__col__value">
-                    </div>
-                    <div class="pgStep__users-stats__col__value">
-                    </div>
-                    <div class="pgStep__users-stats__col__value">
-                    </div>
-                </div>
+                <div class="clear"></div>
             </div>
         </div>
-        <img class="image pgStep__users-stats-marker" src="http://yowlu.com/wapo/images/marker.png">
-        <span class="pgStep__users-stats-min">0</span>
-        <span class="pgStep__users-stats-mid">50</span>
-        <span class="pgStep__users-stats-max">100</span>
+
+        <footer class="pgChart-footer">
+            <p class="pgChart-footer-source">
+                Source: <br><a href="http://www.who.int/features/qa/zika/en/">World Health Organization</a><br><a href="http://www.cdc.gov/zika/index.html">Centers for Disease Control and Prevention</a>
+            </p>
+        </footer>
     </div>
-
-    <div class="pgConclusions">
-        <h4 class="pgConclusions-title">
-            {{ graphic.conclusions.title }}
-        </h4>
-        <br>
-        <br>
-        <p class="pgConclusions-desc">
-            <strong>
-                <em>
-                    {{ graphic.conclusions.key_point }}
-                </em>
-            </strong>
-        </p>
-
-        <div class="pgConclusions-sharebar-wrapper top-sharebar-wrapper color-top large-8 large-centered columns cf">
-            <div class="social-tools-wrapper">
-                <div class="social-tools-primary ">
-                    <div class="social-tools ">
-                        <!-- FB -->
-                        <a data-service="facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=','share_facebook','width=658,height=354,scrollbars=no');return false;" tabindex="1">
-                            <div class="facebook tool first mobile"><span class="hideText">Share on Facebook</span><span class="fa fa-facebook-square"></span></div>
-                        </a>
-                        <!-- Twitter -->
-                        <a data-service="twitter" onclick="window.open('https://twitter.com/share?url=&amp;text=','share_twitter','width=550, height=350, scrollbars=no');return false;" tabindex="2">
-                            <div class="twitter tool mobile"><span class="hideText">Share on Twitter</span><span class="fa fa-twitter"></span></div>
-                        </a>
-                        <!-- Google Plus -->
-                        <a data-service="google-plus" onclick="window.open('https://plus.google.com/share?url=','share_google-plus','width=832,height=472,scrollbars=no');return false;" tabindex="3">
-                            <div class="google-plus tool mobile"><span class="hideText">Share on Google Plus</span><span class="fa fa-google-plus"></span></div>
-                        </a>
-                        <!-- Email -->
-                        <a data-service="email" href="mailto:?subject=&amp;body=" tabindex="4">
-                            <div class="email tool mobile"><span class="hideText">Share via Email</span><span class="fa fa-envelope"></span></div>
-                        </a>
-                        <!-- More -->
-                        <a onclick="return false;">
-                            <div class="more last tool mobile"><span class="hideText" tabindex="5">More Options</span><span class="fa fa-plus"> </span></div>
-                        </a>
-                    </div>
-                </div>
-                <div class="social-tools-additional">
-                    <div class="social-tools ">
-                        <!-- LinkedIn -->
-                        <a data-service="linkedin" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&amp;url=&amp;title=','share_linkedin','width=830,height=460,scrollbars=no');return false;" tabindex="6">
-                            <div class="linkedin tool mobile first"><span class="hideText">Share on LinkedIn</span><span class="fa fa-linkedin"></span></div>
-                        </a>
-                        <!-- Pinterest -->
-                        <a data-service="pinterest" onclick="window.open('//pinterest.com/pin/create/bookmarklet/?url=&amp;media=&amp;description=','share_pinterest','width=550,height=450,scrollbars=no');return false;" tabindex="7">
-                            <div class="pinterest tool mobile"><span class="hideText">Share on Pinterest</span><span class="fa fa-pinterest"></span></div>
-                        </a>
-                        <!-- Tumblr  -->
-                        <a data-service="tumblr" onclick="window.open('http://www.tumblr.com/share/link?url=&amp;name=&amp;description=','share_tumblr','width=550,height=450,scrollbars=no');return false;" tabindex="8">
-                            <div class="tumblr tool mobile last"><span class="hideText">Share on Tumblr</span><span class="fa fa-tumblr"></span></div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div>
-
-    <footer class="pgChart-footer">
-        <p class="pgChart-footer-source">
-            Source: <br><a href="http://www.who.int/mediacentre/factsheets/zika/en/">http://www.who.int/mediacentre/factsheets/zika/en/</a><br><a href="http://www.cdc.gov/zika/">http://www.cdc.gov/zika/</a>
-        </p>
-
-        {% raw %}
-        <div class="pgChart-footer-share">
-            <a class="pgChart-footer-share-button pgChart-footer-share-button--email" href="mailto:?subject={{ pub_metadata_headline }}&body={{ pub_metadata_url }}%23chart-1"><span class="pgNotVisible">Share by Email</span><i class="fa fa fa-envelope"></i></a>
-            <a class="pgChart-footer-share-button pgChart-footer-share-button--twitter" href="http://twitter.com/intent/tweet?text={{ pub_metadata_headline }}%20{{ pub_metadata_url }}%23chart-1%20via%20@postgraphics "><span class="pgNotVisible">Share on Twitter</span><i class="fa fa-twitter"></i></a>
-            <a class="pgChart-footer-share-button pgChart-footer-share-button--facebook" href="https://facebook.com/dialog/feed?app_id=41245586762&link={{ pub_metadata_url }}&name={{ pub_metadata_headline }}&redirect_uri={{ pub_metadata_url }}%23chart-1"><span class="pgNotVisible">Share on Facebook</span><i class="fa fa-facebook"></i></a>
-        </div>
-        {% endraw %}
-    </footer>
 </div>

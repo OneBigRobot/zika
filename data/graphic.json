@@ -9,7 +9,7 @@
 		"first_question": {
 			"number": "1.1",
 			"title": "Where do you live?",
-			"remaining_questions": "1/2",
+			"remaining_questions": "",
 			"zone_countries": [
 					{
 						"name": "",
@@ -25,7 +25,7 @@
 						"countries": [
 							{
 								"name": "United States of America",
-								"value": "2"
+								"value": "4"
 							}
 						]
 					},
@@ -230,7 +230,7 @@
 		"second_question": {
 			"number": "1.2",
 			"title": "Where are you planning to travel?",
-			"remaining_questions": "2/2",
+			"remaining_questions": "",
 			"zone_countries": [
 					{
 						"name": "",
@@ -246,7 +246,7 @@
 						"countries": [
 							{
 								"name": "United States of America",
-								"value": "2"
+								"value": "4"
 							}
 						]
 					},
@@ -482,20 +482,20 @@
 		"first_question": {
 			"number": "3.1",
 			"title": "Which is the main mosquito transmitting the Zika virus?",
-			"remaining_questions": "1/3",
-			"answer": "Zika virus disease is caused by a virus transmitted primarily by Aedes mosquitoes, mainly the Aedes aegypti. This is the same mosquito that transmits dengue, chikungunya and yellow fever."
+			"remaining_questions": "",
+			"answer": "Zika virus disease is caused by a virus transmitted primarily by Aedes mosquitoes, mainly the Aedes aegypti. This is the same mosquito that transmits dengue, chikungunya and yellow fever."
 		},
 		"second_question": {
 			"number": "3.2",
 			"title": "Can El Niňo have an effect on Zika transmission?",
-			"remaining_questions": "2/3",
-			"answer": "The Aedes aegypti mosquito breeds in still water. Severe drought, flooding, heavy rains and temperature rises are all known effects of El Niño. An increase in mosquitoes can be expected due to expanding and favorable breeding sites."
+			"remaining_questions": "",
+			"answer": "The Aedes aegypti mosquito breeds in still water. Severe drought, flooding, heavy rains and temperature rises are all known effects of El Niño. An increase in mosquitoes can be expected due to expanding and favorable breeding sites."
 		}
 		,
 		"third_question": {
 			"number": "3.2",
 			"title": "Can the Aedes mosquito travel from country to country and region to region?",
-			"remaining_questions": "3/3",
+			"remaining_questions": "",
 			"answer": "The Aedes aegypti mosquito is a weak flyer; it cannot fly more than 150 yards. However it may be possible for the mosquito to be transported from one person  to another  who goes from travels and introduces the Zika virus to new areas."
 		}
 	},
