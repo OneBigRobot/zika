@@ -154,7 +154,7 @@ var pregnantMosquitos = 0;
 var leftCoverGlass, rightCoverGlass, leftCoverGlassHover, rightCoverGlassHover;
 var hoverBehaviorImages = new Array("icon1_hover.png","icon2_hover.png","icon3_hover.png","icon4_hover.png","icon5_hover.png","icon6_hover.png","icon7_hover.png","icon8_hover.png","icon9_hover.png");
 var behaviorImages = new Array("icon1.png","icon2.png","icon3.png","icon4.png","icon5.png","icon6.png","icon7.png","icon8.png","icon9.png");
-var tabletTreshold = 900;
+var tabletTreshold = 991;
 var mobileTreshold = 600;
 /**
   The canvasImage class represents an element drawn on the canvas.
@@ -1305,7 +1305,7 @@ var main = function(time){
             auxPositionsArray = shuffle(auxPositionsArray);
             element.positionsArray = new Array();
             auxPositionsArray.forEach(function(element2,index2,array2) {
-              var auxElement = {x: element2.x + (((Math.random() * 0.01) - 0.005) * 1.0), y: element2.y + (((Math.random() * 0.01) - 0.005) * 1.0) + 0.35};
+              var auxElement = {x: element2.x + (((Math.random() * 0.01) - 0.005) * 1.0), y: element2.y + (((Math.random() * 0.01) - 0.005) * 1.0) + 0.37};
               element.positionsArray.push(auxElement);
             });
 
@@ -1388,7 +1388,7 @@ var main = function(time){
             auxPositionsArray = shuffle(auxPositionsArray);
             element.positionsArray = new Array();
             auxPositionsArray.forEach(function(element2,index2,array2) {
-              var auxElement = {x: element2.x + (((Math.random() * 0.01) - 0.005) * 1.0), y: element2.y + (((Math.random() * 0.01) - 0.005) * 1.0) + 0.35};
+              var auxElement = {x: element2.x + (((Math.random() * 0.01) - 0.005) * 1.0), y: element2.y + (((Math.random() * 0.01) - 0.005) * 1.0) + 0.37};
               element.positionsArray.push(auxElement);
             });
 
@@ -2102,7 +2102,7 @@ var decideNextStep = function(nextStep){
       if ($(".pgArticle").width() < tabletTreshold) {
         $('.pgChart').animate({
           scrollLeft: $('#pgQuestion-container1').offset().left
-        }, 7000);
+        }, 4000);
       }
       else {
         $('html, body').animate({
@@ -2175,11 +2175,11 @@ var decideNextStep = function(nextStep){
       if ($(".pgArticle").width() < tabletTreshold) {
         $('.pgChart').animate({
           scrollLeft: $('#pgStep2').position().left
-        }, 5000, function() {
+        }, 3000, function() {
           setTimeout(function() {
             $('.pgChart').animate({
               scrollLeft: $('#pgQuestion-container2').position().left
-            }, 5000);
+            }, 3000);
           }, 3000);
         });
       }
@@ -2275,11 +2275,11 @@ var decideNextStep = function(nextStep){
       if ($(".pgArticle").width() < tabletTreshold) {
         $('.pgChart').animate({
           scrollLeft: $('#pgStep3').position().left
-        }, 7000, function() {
+        }, 4000, function() {
           setTimeout(function() {
             $('.pgChart').animate({
               scrollLeft: $('#pgQuestion-container3').position().left
-            }, 5000);
+            }, 3000);
           }, 3000);
         });
       }
@@ -2410,7 +2410,7 @@ var decideNextStep = function(nextStep){
       if ($(".pgArticle").width() < tabletTreshold) {
         $('.pgChart').animate({
           scrollLeft: $('#pgStep4').position().left
-        }, 7000, function() {
+        }, 4000, function() {
         });
       }
       else {
@@ -2418,7 +2418,7 @@ var decideNextStep = function(nextStep){
           scrollTop: $('#pgStep4').offset().top
         }, 7000);
       }
-      }, 1750);
+      }, 3250);
       break;
 
     default:
@@ -2728,7 +2728,7 @@ var selectBinaryOption = function(){
           }
         }, Math.random() * 1500);
       });
-      }, 1750);
+      }, 3250);
     }
     else if (currentStep == 3 && nextPosition == 2) {
       $($('#pgQuestion-wrapper3 .pgQuestion')[1]).find(".check").css("opacity", "1.0");
@@ -2775,7 +2775,7 @@ var selectBinaryOption = function(){
           }
         }, Math.random() * 1500);
       });
-      }, 1750);
+      }, 3250);
     }
     else {
       decideNextStep(5);
@@ -2796,23 +2796,24 @@ var selectPregnancyOption = function() {
       currentPhase = 21;
     pregnantSelected = true;
 
-    var cell = Math.floor(25 * (mosquitosLeft / totalMosquitos));
+    var cell = Math.ceil(25 * (mosquitosLeft / totalMosquitos));
     var newX = 0.3;
     var newY = 3.22;
+    var newRealY = 0;
     switch (cell) {
       case 1:
       case 3:
       case 5:
       case 8:
       case 12:
-        newX = 0.3;
+        newX = 0.315;
       break;
       case 2:
       case 6:
       case 10:
       case 14:
       case 17:
-        newX = 0.4;
+        newX = 0.405;
       break;
       case 4:
       case 9:
@@ -2826,14 +2827,14 @@ var selectPregnancyOption = function() {
       case 18:
       case 22:
       case 24:
-        newX = 0.6;
+        newX = 0.595;
       break;
       case 11:
       case 16:
       case 20:
       case 23:
       case 25:
-        newX = 0.7;
+        newX = 0.685;
       break;
     }
     switch (cell) {
@@ -2844,6 +2845,7 @@ var selectPregnancyOption = function() {
       case 11:
         newY = 3.39;
         newY = 0;
+        newRealY = 19;
       break;
       case 3:
       case 6:
@@ -2852,6 +2854,7 @@ var selectPregnancyOption = function() {
       case 16:
         newY = 3.3475;
         newY = 5;
+        newRealY = 13;
       break;
       case 5:
       case 10:
@@ -2860,6 +2863,7 @@ var selectPregnancyOption = function() {
       case 20:
         newY = 3.305;
         newY = 10;
+        newRealY = 8;
       break;
       case 8:
       case 14:
@@ -2868,6 +2872,7 @@ var selectPregnancyOption = function() {
       case 23:
         newY = 3.2625;
         newY = 15;
+        newRealY = 4;
       break;
       case 12:
       case 17:
@@ -2876,16 +2881,14 @@ var selectPregnancyOption = function() {
       case 25:
         newY = 3.22;
         newY = 20;
+        newRealY = -1;
       break;
     }
 
     $('.pgStep__last-chart-marker').css("opacity", 1.0);
     markerMarginTop = (20 - newY);
 
-    if ($(".pgChart").width() > 1180) {
-      markerMarginTop = (20 - newY) * (1180 / $(".pgChart").width());
-    }
-    $('.pgStep__last-chart-marker').css("margin-top",  markerMarginTop+ "vw");
+    $('.pgStep__last-chart-marker').css("margin-top",  newRealY+ "%");
     $('.pgStep__last-chart-marker').css("left",  (newX * 100) + "%");
 
     markerPos = $('.pgStep__last-chart-marker').position();
@@ -2937,24 +2940,25 @@ var selectPregnancyOption = function() {
     nonPregnantSelected = true;
     var newMosquitosLeftValue = Math.max(5, mosquitosLeft - (mosquitosLeft * 0.45));
 
-    var cell = Math.floor(25 * (newMosquitosLeftValue / totalMosquitos));
+    var cell = Math.ceil(25 * (newMosquitosLeftValue / totalMosquitos));
     
     var newX = 0.3;
     var newY = 3.22;
+    var newRealY = 0;
     switch (cell) {
       case 1:
       case 3:
       case 5:
       case 8:
       case 12:
-        newX = 0.3;
+        newX = 0.315;
       break;
       case 2:
       case 6:
       case 10:
       case 14:
       case 17:
-        newX = 0.4;
+        newX = 0.405;
       break;
       case 4:
       case 9:
@@ -2968,14 +2972,14 @@ var selectPregnancyOption = function() {
       case 18:
       case 22:
       case 24:
-        newX = 0.6;
+        newX = 0.595;
       break;
       case 11:
       case 16:
       case 20:
       case 23:
       case 25:
-        newX = 0.7;
+        newX = 0.685;
       break;
     }
     switch (cell) {
@@ -2986,6 +2990,7 @@ var selectPregnancyOption = function() {
       case 11:
         newY = 3.39;
         newY = 0;
+        newRealY = 19;
       break;
       case 3:
       case 6:
@@ -2994,6 +2999,7 @@ var selectPregnancyOption = function() {
       case 16:
         newY = 3.3475;
         newY = 5;
+        newRealY = 13;
       break;
       case 5:
       case 10:
@@ -3002,6 +3008,7 @@ var selectPregnancyOption = function() {
       case 20:
         newY = 3.305;
         newY = 10;
+        newRealY = 8;
       break;
       case 8:
       case 14:
@@ -3010,6 +3017,7 @@ var selectPregnancyOption = function() {
       case 23:
         newY = 3.2625;
         newY = 15;
+        newRealY = 4;
       break;
       case 12:
       case 17:
@@ -3018,17 +3026,17 @@ var selectPregnancyOption = function() {
       case 25:
         newY = 3.22;
         newY = 20;
+        newRealY = -1;
       break;
     }
 
-    $('.pgStep__last-chart-marker').css("opacity", 1.0);
+   $('.pgStep__last-chart-marker').css("opacity", 1.0);//
     markerMarginTop = (20 - newY);
-
-    if ($(".pgChart").width() > 1180) {
-      markerMarginTop = (20 - newY) * (1180 / $(".pgChart").width());
-    }
-    $('.pgStep__last-chart-marker').css("margin-top",  markerMarginTop+ "vw");
+    
+    $('.pgStep__last-chart-marker').css("margin-top",  newRealY+ "%");
     $('.pgStep__last-chart-marker').css("left",  (newX * 100) + "%");
+
+    markerPos = $('.pgStep__last-chart-marker').position();
 
     markerPos = $('.pgStep__last-chart-marker').position();
 
@@ -3080,25 +3088,28 @@ var returnMosquitosLeft = function(step, question, option){
       if (option == 1) {
         auxMosquitosLeft = 0;
       }
-      else if (option == 2 || option == 4) {
+      else if (option == 2) {
         auxMosquitosLeft = 80;
+      }
+      else if (option == 4){
+        auxMosquitosLeft = 75;
       }
     }
     if (question == 2) {
       if (option == 1) {
-        if (mosquitosLeft <= 20) {
-          auxMosquitosLeft = -80;
+        if (mosquitosLeft <= 25) {
+          auxMosquitosLeft = -50;//
         }
         else {
           auxMosquitosLeft = 0;
         }
       }
       else if (option == 2 || option == 4) {
-        if (mosquitosLeft <= 20) {
+        if (mosquitosLeft <= 25) {
           auxMosquitosLeft = 0;
         }
         else {
-          auxMosquitosLeft = 0;
+          auxMosquitosLeft = 5;
         }
       }
     }
@@ -3229,7 +3240,7 @@ var createConclusions = function(cell) {
     conclusionsText += "<p>You live in the United States or you are planning to travel to the United States. Research shows that some states will be affected by the Zika virus in the coming weeks.</p>"
   }
 
-  if ((parseInt($("#home-country").val()) == 2 && parseInt($("#visit-country").val()) == 2)) {
+  if ((parseInt($("#home-country").val()) == 2 && parseInt($("#visit-country").val()) == 2) && !(parseInt($("#home-country").val()) == 4 || parseInt($("#visit-country").val()) == 4)) {
     if (!$($(".pgQuestion__body__option")[8]).hasClass("selected") || pregnantSelected) {
       conclusionsText += "<p>You don’t live in a country nor are you planning to travel to a country affected by the Zika virus. <b>Your risk is low</b> but remember that there have been <b>cases of sexual transmission</b> by partners that got infected in those areas.</p>";
     }
@@ -3274,39 +3285,39 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
   }
 
   $($('.pgStep__users-stats-row-value')[0]).css("left", "0%");
-  $($('.pgStep__users-stats-row-value')[1]).css("left", "45%");
+  $($('.pgStep__users-stats-row-value')[1]).css("left", "60%");
   $($('.pgStep__users-stats-row-value')[2]).css("left", "75%");
   $($('.pgStep__users-stats-row-value')[3]).css("left", "0%");
-  $($('.pgStep__users-stats-row-value')[4]).css("left", "40%");
-  $($('.pgStep__users-stats-row-value')[5]).css("left", "80%");
+  $($('.pgStep__users-stats-row-value')[4]).css("left", "55%");
+  $($('.pgStep__users-stats-row-value')[5]).css("left", "70%");
 
-  $($('.pgStep__users-stats-row-value')[0]).css("width", "45%");
-  $($('.pgStep__users-stats-row-value')[1]).css("width", "30%");
+  $($('.pgStep__users-stats-row-value')[0]).css("width", "60%");
+  $($('.pgStep__users-stats-row-value')[1]).css("width", "15%");
   $($('.pgStep__users-stats-row-value')[2]).css("width", "25%");
-  $($('.pgStep__users-stats-row-value')[3]).css("width", "40%");
-  $($('.pgStep__users-stats-row-value')[4]).css("width", "40%");
-  $($('.pgStep__users-stats-row-value')[5]).css("width", "20%");
+  $($('.pgStep__users-stats-row-value')[3]).css("width", "55%");
+  $($('.pgStep__users-stats-row-value')[4]).css("width", "15%");
+  $($('.pgStep__users-stats-row-value')[5]).css("width", "30%");
 
   $($('.pgStep__users-stats-text-row-value')[0]).css("left", "0%");
-  $($('.pgStep__users-stats-text-row-value')[1]).css("left", "45%");
+  $($('.pgStep__users-stats-text-row-value')[1]).css("left", "60%");
   $($('.pgStep__users-stats-text-row-value')[2]).css("left", "75%");
   $($('.pgStep__users-stats-text-row-value')[3]).css("left", "0%");
-  $($('.pgStep__users-stats-text-row-value')[4]).css("left", "40%");
-  $($('.pgStep__users-stats-text-row-value')[5]).css("left", "80%");
+  $($('.pgStep__users-stats-text-row-value')[4]).css("left", "55%");
+  $($('.pgStep__users-stats-text-row-value')[5]).css("left", "70%");
 
-  $($('.pgStep__users-stats-text-row-value')[0]).css("width", "45%");
-  $($('.pgStep__users-stats-text-row-value')[1]).css("width", "30%");
+  $($('.pgStep__users-stats-text-row-value')[0]).css("width", "60%");
+  $($('.pgStep__users-stats-text-row-value')[1]).css("width", "15%");
   $($('.pgStep__users-stats-text-row-value')[2]).css("width", "25%");
-  $($('.pgStep__users-stats-text-row-value')[3]).css("width", "40%");
-  $($('.pgStep__users-stats-text-row-value')[4]).css("width", "40%");
-  $($('.pgStep__users-stats-text-row-value')[5]).css("width", "20%");
+  $($('.pgStep__users-stats-text-row-value')[3]).css("width", "55%");
+  $($('.pgStep__users-stats-text-row-value')[4]).css("width", "15%");
+  $($('.pgStep__users-stats-text-row-value')[5]).css("width", "30%");
 
-  $($('.pgStep__users-stats-text-row-value')[0]).html("LOW " + 45 + "%");
-  $($('.pgStep__users-stats-text-row-value')[1]).html("MEDIUM " + 30 + "%");
+  $($('.pgStep__users-stats-text-row-value')[0]).html("LOW " + 60 + "%");
+  $($('.pgStep__users-stats-text-row-value')[1]).html("MEDIUM " + 15 + "%");
   $($('.pgStep__users-stats-text-row-value')[2]).html("HIGH " + 25 + "%");
-  $($('.pgStep__users-stats-text-row-value')[3]).html("LOW " + 40 + "%");
-  $($('.pgStep__users-stats-text-row-value')[4]).html("MEDIUM " + 40 + "%");
-  $($('.pgStep__users-stats-text-row-value')[5]).html("HIGH " + 20 + "%");
+  $($('.pgStep__users-stats-text-row-value')[3]).html("LOW " + 55 + "%");
+  $($('.pgStep__users-stats-text-row-value')[4]).html("MEDIUM " + 15 + "%");
+  $($('.pgStep__users-stats-text-row-value')[5]).html("HIGH " + 30 + "%");
 
   $(".pgStep__users-stats-text-row-value").css("opacity", "1.0");
 
@@ -3317,24 +3328,129 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
   $(".pgStep__users-stats-marker").css("opacity", 1.0);
 
   switch (markerLeft) {
-    case 0.3:
-      markerLeft = 0.125;
+    case 0.315:
+      switch (markerTop) {
+        case 20:
+          markerLeft = 60 * 0.5;
+          markerTop = 70 + (30 * 0.5);
+        break;
+        case 15:
+          markerLeft = 60 * 0.5;
+          markerTop = 55 + (15 * 0.875);
+        break;
+        case 10:
+          markerLeft = 60 * 0.5;
+          markerTop = 55 + (15 * 0.5);
+        break;
+        case 5:
+          markerLeft = 60 * 0.5;
+          markerTop = 55 + (15 * 0.125);
+        break;
+        case 0:
+          markerLeft = 60 * 0.5;
+          markerTop = 55 * 0.5;
+        break;
+      }
     break;
-    case 0.4:
-      markerLeft = 0.375;
+    case 0.405:
+      switch (markerTop) {
+        case 20:
+          markerLeft = 60 + (15 * 0.125);
+          markerTop = 70 + (30 * 0.5);
+        break;
+        case 15:
+          markerLeft = 60 + (15 * 0.125);
+          markerTop = 55 + (15 * 0.875);
+        break;
+        case 10:
+          markerLeft = 60 + (15 * 0.125);
+          markerTop = 55 + (15 * 0.5);
+        break;
+        case 5:
+          markerLeft = 60 + (15 * 0.125);
+          markerTop = 55 + (15 * 0.125);
+        break;
+        case 0:
+          markerLeft = 60 + (15 * 0.125);
+          markerTop = 55 * 0.5;
+        break;
+      }
     break;
     case 0.5:
-      markerLeft = 0.5;
+      switch (markerTop) {
+        case 20:
+          markerLeft = 60 + (15 * 0.5);
+          markerTop = 70 + (30 * 0.5);
+        break;
+        case 15:
+          markerLeft = 60 + (15 * 0.5);
+          markerTop = 55 + (15 * 0.875);
+        break;
+        case 10:
+          markerLeft = 60 + (15 * 0.5);
+          markerTop = 55 + (15 * 0.5);
+        break;
+        case 5:
+          markerLeft = 60 + (15 * 0.5);
+          markerTop = 55 + (15 * 0.125);
+        break;
+        case 0:
+          markerLeft = 60 + (15 * 0.5);
+          markerTop = 55 * 0.5;
+        break;
+      }
     break;
-    case 0.6:
-      markerLeft = 0.625;
+    case 0.595:
+      switch (markerTop) {
+        case 20:
+          markerLeft = 60 + (15 * 0.875);
+          markerTop = 70 + (30 * 0.5);
+        break;
+        case 15:
+          markerLeft = 60 + (15 * 0.875);
+          markerTop = 55 + (15 * 0.875);
+        break;
+        case 10:
+          markerLeft = 60 + (15 * 0.875);
+          markerTop = 55 + (15 * 0.5);
+        break;
+        case 5:
+          markerLeft = 60 + (15 * 0.875);
+          markerTop = 55 + (15 * 0.125);
+        break;
+        case 0:
+          markerLeft = 60 + (15 * 0.875);
+          markerTop = 55 * 0.5;
+        break;
+      }
     break;
-    case 0.7:
-      markerLeft = 0.875;
+    case 0.685:
+      switch (markerTop) {
+        case 20:
+          markerLeft = 75 + (25 * 0.5);
+          markerTop = 70 + (30 * 0.5);
+        break;
+        case 15:
+          markerLeft = 75 + (25 * 0.5);
+          markerTop = 55 + (15 * 0.875);
+        break;
+        case 10:
+          markerLeft = 75 + (25 * 0.5);
+          markerTop = 55 + (15 * 0.5);
+        break;
+        case 5:
+          markerLeft = 75 + (25 * 0.5);
+          markerTop = 55 + (15 * 0.125);
+        break;
+        case 0:
+          markerLeft = 75 + (25 * 0.5);
+          markerTop = 55 * 0.5;
+        break;
+      }
     break;
   }
 
-  $($(".pgStep__users-stats-marker")[0]).css("left", (markerLeft * 100) + "%");
+  $($(".pgStep__users-stats-marker")[0]).css("left", markerLeft + "%");
 
   var offsetX = 2.5;
 
@@ -3348,7 +3464,9 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
     offsetX = 0;
   }
 
-  $($(".pgStep__users-stats-marker")[1]).css("left", ((((markerTop + offsetX) * 5))) + "%");
+  offsetX = 0;
+
+  $($(".pgStep__users-stats-marker")[1]).css("left", markerTop + "%");
 
   $('.pgConclusions-sharebar-wrapper').css("visibility", "visible");
   $('.pgConclusions-sharebar-wrapper a[data-service="facebook"]').click(function() {
@@ -3367,7 +3485,12 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
     var url = window.location.href;
     var text = "I did the Zika test in the Washington Post and got that I have a "+risk+" risk of getting the virus. Assess your risk in " + url;
 
-    window.open('https://www.facebook.com/sharer/sharer.php?u=' + url,'share_facebook','width=658,height=354,scrollbars=no');
+    FB.ui({
+      method: 'share',
+      href: url,
+      quote: text
+    }, function(response){});
+
   });
   $('.pgConclusions-sharebar-wrapper a[data-service="twitter"]').click(function() {
     var risk = "";
@@ -3421,13 +3544,13 @@ $(window).on("resize", function() {
 
     // 
 
-    if ($(".pgChart").width() < 1180) {
+    /*if ($(".pgChart").width() < 1180) {
       $(".pgStep__last-chart-marker").css("margin-top", markerMarginTop + "vw");
     }
 
     if ($(".pgChart").width() > 1180 && markerMarginTop != -1) {
       $(".pgStep__last-chart-marker").css("margin-top", parseInt($(".pgStep__last-chart-marker").css("margin-top")) + "px")
-    } 
+    } */
     
     canvas = document.getElementById('mosquitosCanvas');
     canvas.width = $('.pgChart-wrapper').width();

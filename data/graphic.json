@@ -251,10 +251,10 @@
 						]
 					},
 					{
-						"name": "",
+						"name": "None",
 						"countries": [
 							{
-								"name": "None",
+								"name": "None of these countries",
 								"value": "2"
 							}
 						]

@@ -639,10 +639,10 @@
                             
                             </optgroup>
                         
-                            <optgroup label="">
+                            <optgroup label="None">
                             
                                 <option value="2">
-                                    None
+                                    None of these countries
                                 </option>
                             
                             </optgroup>
@@ -1102,9 +1102,6 @@
          --><div class="pgStep__last-chart">
                 <img class="image" src="http://yowlu.com/wapo/images/last-chart.png">
             </div>
-            <div class="pgStep__last-chart-marker">
-                <img class="image" src="http://yowlu.com/wapo/images/marker.png">
-            </div>
             <div class="pgStep__users-stats">
                 <div class="pgStep__users-stats-wrapper">
                     <div class="pgStep__users-stats-row">
@@ -1126,7 +1123,7 @@
                 </div>
             </div>
             <div class="pgStep__users-stats-text">
-                <div>PROBABILITY OF OCCURRENCE</div>
+                <div class="pgStep__users-stats-text-title">PROBABILITY OF OCCURRENCE</div>
                 <div class="pgStep__users-stats-text-row-value-wrapper">
                     <div class="pgStep__users-stats-text-row-value">
                         LOW 32%
@@ -1139,7 +1136,7 @@
                     </div>
                     <img class="image pgStep__users-stats-marker" src="http://yowlu.com/wapo/images/marker.png">
                 </div>
-                <div>CONSEQUENCES</div>
+                <div id="pgStep__users-stats-text-title-consequences" class="pgStep__users-stats-text-title">CONSEQUENCES</div>
                 <div class="pgStep__users-stats-text-row-value-wrapper">
                     <div class="pgStep__users-stats-text-row-value">
                         LOW 32%
@@ -1152,6 +1149,9 @@
                     </div>
                     <img class="image pgStep__users-stats-marker" src="http://yowlu.com/wapo/images/marker.png">
                 </div>
+            </div>
+            <div class="pgStep__last-chart-marker">
+                <img class="image" src="http://yowlu.com/wapo/images/marker.png">
             </div>
         </div>
 
@@ -1193,6 +1193,24 @@
         </footer>
     </div>
 </div>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '623861231100932',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 
 
                 <div class="bottom-ad ">
