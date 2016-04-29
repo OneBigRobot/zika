@@ -718,7 +718,7 @@ canvas {
 	visibility: hidden;
 }
 
-.horizontal-background, .horizontal-divisions {
+.horizontal-background, .horizontal-divisions, .pgStep__last-chart-horizontal-wrapper, #horizontal-conclusions-button {
 	display: none;
 }
 
@@ -973,8 +973,13 @@ canvas {
 
 	#pgStep4 {
 		height: auto!important;
-		width: 11.111111111%!important;
+		width: 22.22222%!important;
 		float: left;
+	}
+
+	#pgStep4 .pgStep__info {
+		width: 27.5%;
+		margin-left: 11%;
 	}
 
 	.horizontal-divisions {
@@ -1039,5 +1044,141 @@ canvas {
 
 	.pgQuestion__body__options-container {
 		padding-bottom: 20px;
+	}
+
+	.pgStep__pregnancy-buttons {
+		   top: 42%;
+    	left: -31.25%;
+    	position: absolute;
+    	top: 41vw;
+    	margin: auto;
+    	width: 22%;
+    	height: 21vw;
 	}	
+
+	.pgStep__last-chart {
+		margin-left: 60.5%;
+    	width: 37%;
+    	visibility: hidden;
+    	margin-top: 0px;
+    }
+
+    /*.pgStep__last-chart-marker {
+    	margin-top: -5%;
+    	left: 68.5%;
+    }*/
+
+    .pgStep__users-stats {
+    	margin-left: 42.5%;
+    	width: 39%;
+    	bottom: auto!important;
+    }
+
+    .pgStep__users-stats-text {
+    	margin-left: 44.5%;
+    	width: 39%;
+    	bottom: 0.5%!important;
+    }
+
+    .pgStep__last-chart-horizontal-wrapper {
+        height: auto !important;
+	    width: 11.11111% !important;
+	    float: left;
+	    -webkit-transform: translateY(-50%);
+	    transform: translateY(-50%);
+	    position: relative;
+	    top: 50%;
+	    min-height: 500px;
+	    margin-left: 77.77777%;
+	    position: absolute;
+	    display: block;
+	}
+
+	#horizontal-conclusions-button {
+		position: absolute;
+		height: auto !important;
+	    width: 11.11111% !important;
+	    bottom: 10%;
+	    margin-left: 77.77777%;
+	    position: absolute;
+	    display: block;
+	    text-align: center;
+	}
+	
+	#horizontal-conclusions-button .pg-button {
+		text-transform: capitalize;
+	}
+
+	.pgStep__last-chart-horizontal-wrapper .pgStep__last-chart {
+		width: 100%;
+	    visibility: visible;
+	    margin-left: 0px;
+	    margin-top: 0px;
+	    position: relative;
+    }
+
+    .pgStep__last-chart-horizontal-wrapper .pgStep__last-chart img {
+    	width: 100%;
+    }
+
+    .pgStep__last-chart-horizontal-wrapper .pgStep__users-stats {
+    	margin-left: 10%;
+    	width: 80%;
+    	left: 0;
+    }
+
+    .pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text {
+    	margin-left: 10%;
+    	width: 80%;
+    	position: relative;
+    	left: 0;
+    	top: 13px;
+    }
+
+    #mosquitosCanvas {
+    	position: absolute;
+  		top: 50%;
+  		-moz-transform: translateY(-50%);
+    	-ms-transform: translateY(-50%);
+    	-webkit-transform: translateY(-50%);
+    	transform: translateY(-50%);
+    }
+
+    .pgConclusions p {
+		width: 85%;
+	}
+
+	.pgStep__last-chart-marker {
+		top: 2%;
+		margin-left: -2%;
+    	width: 4%;
+	}
+
+	#pgStep4 .pgStep__last-chart, #pgStep4 .pgStep__users-stats, #pgStep4 .pgStep__users-stats-text, #pgStep4 .pgStep__last-chart-marker {
+		display: none;
+	}
+
+	.pgStep__users-stats-row {
+		
+	}
+
+	.pgStep__users-stats-text-row-value-wrapper div {
+		margin-top: 1%!important;
+	}
+
+	.pgStep__users-stats-text-title {
+	    margin-left: 0.5%;
+	}
+
+	#pgStep__users-stats-text-title-consequences {
+    	margin-left: -0.5%;
+	}
+
+	.pgStep__users-stats-text-row-value-wrapper {
+	    margin-bottom: 3.5%;
+	}
+
+	.pgChart footer {
+		margin-left: 88.88%;
+	}
 }
