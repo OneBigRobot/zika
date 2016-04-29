@@ -527,6 +527,7 @@
 		"button_ok": "OK",
 		"button_back": "Back",
 		"yes": "YES",
-		"no": "NO"
+		"no": "NO",
+		"redo": "Do the test again"
 	}
 }

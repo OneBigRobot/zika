@@ -148,7 +148,8 @@ mosquitosPositionsPhase14 = new Array(
   new Array({x:0.10330508474576272, y:2.5754237288135595},{x:0.12110169491525424, y:2.574576271186441},{x:0.13127118644067798, y:2.574576271186441},{x:0.13805084745762713, y:2.574576271186441},{x:0.14228813559322034, y:2.5762711864406778},{x:0.14567796610169492, y:2.5822033898305086},{x:0.14652542372881355, y:2.594915254237288},{x:0.1439830508474576, y:2.6161016949152542})
 );
 mosquitosPositionsPhase14S = new Array(
-  new Array({x:5.149927219796216, y:0.5604075691411936},{x:5.180494905385735, y:0.5604075691411936},{x:5.202328966521106, y:0.5531295487627366},{x:5.205240174672489, y:0.5531295487627366},{x:5.208151382823872, y:0.5487627365356623},{x:5.211062590975255, y:0.5400291120815138},{x:5.205240174672489, y:0.5356622998544396},{x:5.213973799126638, y:0.5312954876273653},{x:5.205240174672489, y:0.5269286754002911},{x:5.212518195050946, y:0.5211062590975255},{x:5.205240174672489, y:0.5181950509461426},{x:5.212518195050946, y:0.5152838427947598},{x:5.203784570596798, y:0.5080058224163028},{x:5.213973799126638, y:0.4949053857350801},{x:5.197962154294032, y:0.4861717612809316},{x:5.212518195050946, y:0.4745269286754003},{x:5.212518195050946, y:0.45269286754002913},{x:5.209606986899563, y:0.4090247452692867})
+  //new Array({x:5.149927219796216, y:0.5604075691411936},{x:5.180494905385735, y:0.5604075691411936},{x:5.202328966521106, y:0.5531295487627366},{x:5.205240174672489, y:0.5531295487627366},{x:5.208151382823872, y:0.5487627365356623},{x:5.211062590975255, y:0.5400291120815138},{x:5.205240174672489, y:0.5356622998544396},{x:5.213973799126638, y:0.5312954876273653},{x:5.205240174672489, y:0.5269286754002911},{x:5.212518195050946, y:0.5211062590975255},{x:5.205240174672489, y:0.5181950509461426},{x:5.212518195050946, y:0.5152838427947598},{x:5.203784570596798, y:0.5080058224163028},{x:5.213973799126638, y:0.4949053857350801},{x:5.197962154294032, y:0.4861717612809316},{x:5.212518195050946, y:0.4745269286754003},{x:5.212518195050946, y:0.45269286754002913},{x:5.209606986899563, y:0.4090247452692867})
+  new Array({x:5.157330154946365, y:0.564958283671037},{x:5.176400476758046, y:0.5613825983313468},{x:5.191895113230036, y:0.5530393325387366},{x:5.200238379022646, y:0.5542312276519666},{x:5.206197854588797, y:0.5518474374255066},{x:5.210965435041716, y:0.5411203814064363},{x:5.206197854588797, y:0.531585220500596},{x:5.212157330154946, y:0.5280095351609059},{x:5.205005959475566, y:0.5244338498212158},{x:5.210965435041716, y:0.5208581644815257},{x:5.207389749702026, y:0.5148986889153755},{x:5.214541120381407, y:0.5089392133492253},{x:5.206197854588797, y:0.5041716328963052},{x:5.210965435041716, y:0.49821215733015495},{x:5.207389749702026, y:0.49463647199046484},{x:5.213349225268177, y:0.4922526817640048},{x:5.206197854588797, y:0.48867699642431467},{x:5.210965435041716, y:0.48152562574493446},{x:5.212157330154946, y:0.4696066746126341},{x:5.214541120381407, y:0.43146603098927294},{x:5.209773539928486, y:0.4135876042908224})
 );
 mosquitosPositionsPhase15 = new Array(
   new Array({x:0.1297627118644068, y:2.3629745762711867},{x:0.11959322033898305, y:2.371449152542373},{x:0.1128135593220339, y:2.3892457627118646},{x:0.11620338983050847, y:2.4222966101694916},{x:0.11620338983050847, y:2.443483050847458},{x:0.10942372881355932, y:2.4646694915254237},{x:0.11620338983050847, y:2.4900932203389834},{x:0.13145762711864406, y:2.497720338983051},{x:0.14416949152542374, y:2.4782288135593222},{x:0.1373898305084746, y:2.455347457627119}),
@@ -3106,13 +3107,14 @@ var selectPregnancyOption = function() {
       $('.pgStep__last-chart-marker').css("left",  (newX * 100) + "%");
     }
 
-    markerPos = $('.pgStep__last-chart-marker').position();
+    markerPos = $('#pgStep4 .pgStep__last-chart-marker').position();
 
-    var newPositionsArray = new Array({x: markerPos.left / canvas.width, y: ((markerPos.top + parseInt($('.pgStep__last-chart-marker').css("margin-top"))) + $('.pgStep__last-chart-marker').height()) / canvas.width});
+    var newPositionsArray = new Array({x: markerPos.left / canvas.width, y: ((markerPos.top + parseInt($('#pgStep4 .pgStep__last-chart-marker').css("margin-top"))) + $('#pgStep4 .pgStep__last-chart-marker').height()) / canvas.width});
 
 
     if ($(".pgArticle").width() < tabletTreshold) {
-      newPositionsArray = new Array({x: ((markerPos.left + $('.pgStep__last-chart-horizontal-wrapper').position().left + parseInt($('.pgStep__last-chart-horizontal-wrapper').css("margin-left"))) / 0.125 ) / canvas.width, y: ((((markerPos.top + $('.pgStep__last-chart-horizontal-wrapper').position().top)) + $('.pgStep__last-chart-marker').height()) / 0.125) / canvas.width});
+      markerPos = $('.pgStep__last-chart-horizontal-wrapper .pgStep__last-chart-marker').position();
+      newPositionsArray = new Array({x: ((markerPos.left + $('.pgStep__last-chart-horizontal-wrapper').position().left + parseInt($('.pgStep__last-chart-horizontal-wrapper').css("margin-left"))) / 0.125 ) / canvas.width, y: (( (markerPos.top + $('.pgStep__last-chart-marker').height()) + (($("#mosquitosCanvas").height() - $('.pgStep__last-chart-horizontal-wrapper').height()) / 2.0) ) / 0.125) / canvas.width});
     }
 
     mosquitosArray.forEach(function(element,index,array){
@@ -3289,13 +3291,14 @@ var selectPregnancyOption = function() {
       $('.pgStep__last-chart-marker').css("left",  (newX * 100) + "%");
     }
 
-    markerPos = $('.pgStep__last-chart-marker').position();
+    markerPos = $('#pgStep4 .pgStep__last-chart-marker').position();
 
-    var newPositionsArray = new Array({x: markerPos.left / canvas.width, y: ((markerPos.top + parseInt($('.pgStep__last-chart-marker').css("margin-top"))) + $('.pgStep__last-chart-marker').height()) / canvas.width});
+    var newPositionsArray = new Array({x: markerPos.left / canvas.width, y: ((markerPos.top + parseInt($('#pgStep4 .pgStep__last-chart-marker').css("margin-top"))) + $('#pgStep4 .pgStep__last-chart-marker').height()) / canvas.width});
 
 
     if ($(".pgArticle").width() < tabletTreshold) {
-      newPositionsArray = new Array({x: ((markerPos.left + $('.pgStep__last-chart-horizontal-wrapper').position().left + parseInt($('.pgStep__last-chart-horizontal-wrapper').css("margin-left"))) / 0.125 ) / canvas.width, y: ((((markerPos.top + $('.pgStep__last-chart-horizontal-wrapper').position().top)) + $('.pgStep__last-chart-marker').height()) / 0.125) / canvas.width});
+      markerPos = $('.pgStep__last-chart-horizontal-wrapper .pgStep__last-chart-marker').position();
+      newPositionsArray = new Array({x: ((markerPos.left + $('.pgStep__last-chart-horizontal-wrapper').position().left + parseInt($('.pgStep__last-chart-horizontal-wrapper').css("margin-left"))) / 0.125 ) / canvas.width, y: (( (markerPos.top + $('.pgStep__last-chart-marker').height()) + (($("#mosquitosCanvas").height() - $('.pgStep__last-chart-horizontal-wrapper').height()) / 2.0) ) / 0.125) / canvas.width});
     }
 
     mosquitosArray.forEach(function(element,index,array){
@@ -3599,16 +3602,21 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
   $($('#pgStep4 .pgStep__users-stats-text-row-value')[5]).css("width", "30%");
   $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[5]).css("width", "30%");
 
+  var mediumWord = "MEDIUM ";
+  if ($(window).width() < 520) {
+    mediumWord = "MED "
+  }
+
   $($('#pgStep4 .pgStep__users-stats-text-row-value')[0]).html("LOW " + 60 + "%");
   $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[0]).html("LOW " + 60 + "%");
-  $($('#pgStep4 .pgStep__users-stats-text-row-value')[1]).html("MEDIUM " + 15 + "%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[1]).html("MEDIUM " + 15 + "%");
+  $($('#pgStep4 .pgStep__users-stats-text-row-value')[1]).html(mediumWord + 15 + "%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[1]).html(mediumWord + 15 + "%");
   $($('#pgStep4 .pgStep__users-stats-text-row-value')[2]).html("HIGH " + 25 + "%");
   $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[2]).html("HIGH " + 25 + "%");
   $($('#pgStep4 .pgStep__users-stats-text-row-value')[3]).html("LOW " + 55 + "%");
   $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[3]).html("LOW " + 55 + "%");
-  $($('#pgStep4 .pgStep__users-stats-text-row-value')[4]).html("MEDIUM " + 15 + "%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[4]).html("MEDIUM " + 15 + "%");
+  $($('#pgStep4 .pgStep__users-stats-text-row-value')[4]).html(mediumWord + 15 + "%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[4]).html(mediumWord + 15 + "%");
   $($('#pgStep4 .pgStep__users-stats-text-row-value')[5]).html("HIGH " + 30 + "%");
   $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[5]).html("HIGH " + 30 + "%");
 
@@ -3766,7 +3774,7 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
   $("#horizontal-conclusions-button .pg-button").removeAttr("disabled");
   $(document).on("click", '#horizontal-conclusions-button .pg-button:not([disabled="disabled"])', function() {
     $('.pgChart').animate({
-      scrollLeft: $('#pgStep4').offset().left + (('#pgStep4').width() * 2.0)
+      scrollLeft: $('#pgStep4').position().left + ($('#pgStep4').width() * 2.0)
     }, 2000);
   });
 
@@ -3872,6 +3880,15 @@ function resizeend() {
         canvas.height = $('.pgChart-wrapper').height();
         canvas.style.width  = canvas.width.toString() + "px";
         canvas.style.height = canvas.height.toString() + "px";
+      }
+
+      if ($(window).width() < 520) {
+        $($(".pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value")[1]).html("MED 15%");
+        $($(".pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value")[5]).html("MED 15%");
+      }
+      else {
+        $($(".pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value")[1]).html("MEDIUM 15%");
+        $($(".pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value")[5]).html("MEDIUM 15%");
       }
     }
 }
