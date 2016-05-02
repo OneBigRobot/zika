@@ -229,8 +229,82 @@ canvas {
 }
 
 .pgStep__last-chart {
-	margin-top: 393px;
+	position: absolute;
+    bottom: 22%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.pgStep__last-chart img {
 	visibility: hidden;
+}
+
+.pgStep__last-chart-text {
+	position: absolute;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+#pgStep__last-chart-text-probability {
+	top: 10px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+}
+
+#pgStep__last-chart-text-probability-low {
+	top: 48px;
+    left: 30%;
+    font-size: 11px;
+}
+
+#pgStep__last-chart-text-probability-medium {
+	top: 48px;
+    left: 0px;
+    font-size: 11px;
+    right: 0px;
+    margin: auto;
+}
+
+#pgStep__last-chart-text-probability-high {
+	top: 48px;
+    font-size: 11px;
+    right: 32%;
+    margin: auto;
+}
+
+#pgStep__last-chart-text-consecuences {
+	-webkit-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+    top: 50%;
+    left: 10%;
+}
+
+#pgStep__last-chart-text-consecuences-low {
+	top: 88%;
+    font-size: 11px;
+    left: 13.5%;
+}
+
+#pgStep__last-chart-text-consecuences-medium {
+	top: 53.5%;
+    font-size: 11px;
+    left: 18%;
+}
+
+#pgStep__last-chart-text-consecuences-high {
+	top: 105px;
+    font-size: 11px;
+    left: 23%;
+}
+
+#pgStep__last-chart-text-compare {
+	top: 123%;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    font-size: 11px;
 }
 
 .pgStep__users-stats {
@@ -654,6 +728,21 @@ canvas {
 	box-shadow: 0px 0px 5px 2px lighten($chart-purple, 20);
 }
 
+.pgQuestion__map-info {
+	position: absolute;
+    left: 20%;
+}
+
+.pgQuestion__map-info .pgQuestion__map-info-point {
+	height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: #bc89dc;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
 /* CONCLUSIONS */
 .pgConclusions {
 	padding: 40px 0px;
@@ -857,6 +946,10 @@ canvas {
 	padding-bottom: 0px!important;
 }
 
+#pgStep2 .pgStep__info__text-action, #pgStep3 .pgStep__info__text-action, #pgQuestion-wrapper3 .pgQuestion__footer {
+	display: none;
+}
+
 /* MEDIA QUERIES */
 	/* MOBILE */
 @media (max-width: 520px) {
@@ -918,6 +1011,12 @@ canvas {
 }
 
 	/* MOBILE */
+
+@media (min-width: 720px) {
+	.pgQuestion__map-info {
+		bottom: 1%;
+	}
+}
 
 @media (max-width: 530px) {
 	.pgStep__users-stats {
@@ -1074,9 +1173,131 @@ canvas {
 	}
 }
 
+@media (min-width: 992px) {
+	#pgStep__last-chart-text-compare {
+		top: 100%!important;
+	}
+}
+
+@media (min-width: 1020px) {
+	#pgStep__last-chart-text-compare {
+		top: 102%!important;
+	}
+}
+
+@media (min-width: 1040px) {
+	#pgStep__last-chart-text-compare {
+		top: 107%!important;
+	}
+}
+
+@media (min-width: 1090px) {
+	#pgStep__last-chart-text-compare {
+		top: 107%!important;
+	}
+}
+
+@media (min-width: 1100px) {
+	#pgStep__last-chart-text-compare {
+		top: 111%!important;
+	}
+}
+
+@media (min-width: 1120px) {
+	#pgStep__last-chart-text-compare {
+		top: 114%!important;
+	}
+}
+
+@media (min-width: 1160px) {
+	#pgStep__last-chart-text-compare {
+		top: 117%!important;
+	}
+}
+
+@media (min-width: 1190px) {
+	#pgStep__last-chart-text-compare {
+		top: 120%!important;
+	}
+}
+
+@media (min-width: 1200px) {
+	#pgStep__last-chart-text-compare {
+		top: 123%!important;
+	}
+}
+
+@media (min-width: 1210px) {
+	#pgStep__last-chart-text-compare {
+		top: 125%!important;
+	}
+}
+
+@media (min-width: 1050px) {
+	.pgStep__last-chart {
+		bottom: 22%!important;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1049px) {
+	.pgStep__last-chart {
+		bottom: 21%!important;
+	}
+}
+
+@media (max-width: 680px) {
+	.pgStep__last-chart-text--horizontal {
+		font-size: 10px!important;
+	}
+
+	#pgStep__last-chart-text-probability--horizontal, 
+	#pgStep__last-chart-text-probability-low--horizontal,
+	#pgStep__last-chart-text-probability-medium--horizontal,
+	#pgStep__last-chart-text-probability-high--horizontal,
+	#pgStep__last-chart-text-consecuences--horizontal,
+	#pgStep__last-chart-text-consecuences-low--horizontal,
+	#pgStep__last-chart-text-consecuences-medium--horizontal,
+	#pgStep__last-chart-text-consecuences-high--horizontal {
+		font-size: 9px!important;
+	}
+}
+
+@media (max-width: 490px) {
+	.pgStep__last-chart-text--horizontal {
+		font-size: 9px!important;
+	}
+
+	#pgStep__last-chart-text-probability--horizontal, 
+	#pgStep__last-chart-text-probability-low--horizontal,
+	#pgStep__last-chart-text-probability-medium--horizontal,
+	#pgStep__last-chart-text-probability-high--horizontal,
+	#pgStep__last-chart-text-consecuences--horizontal,
+	#pgStep__last-chart-text-consecuences-low--horizontal,
+	#pgStep__last-chart-text-consecuences-medium--horizontal,
+	#pgStep__last-chart-text-consecuences-high--horizontal {
+		font-size: 8px!important;
+	}
+}
+
+@media (max-width: 525px) { 
+	#pgStep__last-chart-text-consecuences--horizontal {
+		left: -2%!important;
+	}
+
+	#pgStep__last-chart-text-consecuences-high--horizontal {
+	    top: 20px!important;
+    	left: 14%!important;
+    }
+
+    #pgStep__last-chart-text-consecuences-medium--horizontal {
+    	left: 8%!important;
+	}
+}
+
 @media (min-width: 0px) and (max-width: 991px) {
 	.pgChart {
-		overflow: hidden;
+		overflow-x: auto;
+    	overflow-y: hidden;
 		height: 700px!important;
 	}
 	.pgChart-wrapper {
@@ -1088,6 +1309,7 @@ canvas {
 	}
 	.pgStep:not(#pgStep4), .pgQuestion-container, .pgConclusions  {
 		height: auto!important;
+		max-height: 100%;
 		width: 11.111111111%!important;
 		float: left;
 		-moz-transform: translateY(-50%);
@@ -1097,12 +1319,18 @@ canvas {
     	position: relative;
   		top: 50%;
   		min-height: 500px;
+  		overflow-x: hidden;
+  		overflow-y: auto;
 	}
 
 	#pgStep4 {
 		height: auto!important;
 		width: 22.22222%!important;
 		float: left;
+	}
+
+	.pgStep__info {
+    	padding-left: 20px;
 	}
 
 	#pgStep4 .pgStep__info {
@@ -1185,10 +1413,16 @@ canvas {
 	}	
 
 	.pgStep__last-chart {
+		margin-top: 393px;
+		position: relative;
 		margin-left: 60.5%;
     	width: 37%;
     	visibility: hidden;
     	margin-top: 0px;
+    }
+
+    .pgStep__last-chart img {
+    	visibility: visible!important;
     }
 
     /*.pgStep__last-chart-marker {
@@ -1318,5 +1552,71 @@ canvas {
 
 	.pgStep__users-stats-row {
     	height: 12px!important;
+	}
+
+	.pgStep__last-chart-text--horizontal {
+		position: absolute;
+		font-size: 12px;
+		text-transform: uppercase;
+	}
+
+	#pgStep__last-chart-text-probability--horizontal {
+		top: -25px;
+	    left: 0px;
+	    right: 0px;
+	    margin: auto;
+	    text-align: center;
+	}
+
+	#pgStep__last-chart-text-probability-low--horizontal {
+		top: 4px;
+    	left: 25%;
+    	font-size: 11px;
+	}
+
+	#pgStep__last-chart-text-probability-medium--horizontal {
+		top: 4px;
+	    left: 0px;
+	    font-size: 11px;
+	    right: 0px;
+	    margin: auto;
+	    text-align: center;
+	}
+
+	#pgStep__last-chart-text-probability-high--horizontal {
+		top: 4px;
+	    font-size: 11px;
+	    right: 27%;
+	    margin: auto;
+	    text-align: center;
+	}
+
+	#pgStep__last-chart-text-consecuences--horizontal {
+		-webkit-transform: rotate(-90deg);
+	    transform: rotate(-90deg);
+	    top: 39%;
+	    left: 1%;
+	}
+
+	#pgStep__last-chart-text-consecuences-low--horizontal {
+		top: 81%;
+	    font-size: 11px;
+	    left: 5.5%;
+	}
+
+	#pgStep__last-chart-text-consecuences-medium--horizontal {
+		top: 43.5%;
+	    font-size: 11px;
+	    left: 11%;
+	}
+
+	#pgStep__last-chart-text-consecuences-high--horizontal {
+		top: 33px;
+    	font-size: 11px;
+    	left: 17%;
+	}
+
+	#pgStep2 .pgStep__info__text-action, #pgStep3 .pgStep__info__text-action, #pgQuestion-wrapper3 .pgQuestion__footer {
+		display: block!important;
 	}
 }

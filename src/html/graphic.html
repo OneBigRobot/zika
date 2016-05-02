@@ -49,6 +49,33 @@
                 <div class="pgStep__last-chart-marker">
                     <img class="image" src="http://yowlu.com/wapo/images/marker.png">
                 </div>
+                <div id="pgStep__last-chart-text-probability--horizontal" class="pgStep__last-chart-text--horizontal">
+                    {{ graphic.chart.probability }}
+                </div>
+                <div id="pgStep__last-chart-text-probability-low--horizontal" class="pgStep__last-chart-text--horizontal">
+                    {{ graphic.chart.low }}
+                </div>
+                <div id="pgStep__last-chart-text-probability-medium--horizontal" class="pgStep__last-chart-text--horizontal">
+                    {{ graphic.chart.medium }}
+                </div>
+                <div id="pgStep__last-chart-text-probability-high--horizontal" class="pgStep__last-chart-text--horizontal">
+                    {{ graphic.chart.high }}
+                </div>
+                <div id="pgStep__last-chart-text-consecuences--horizontal" class="pgStep__last-chart-text--horizontal">
+                    {{ graphic.chart.consecuences }}
+                </div>
+                <div id="pgStep__last-chart-text-consecuences-high--horizontal" class="pgStep__last-chart-text--horizontal">
+                {{ graphic.chart.high }}
+                </div>
+                <div id="pgStep__last-chart-text-consecuences-medium--horizontal" class="pgStep__last-chart-text--horizontal">
+                    {{ graphic.chart.medium }}
+                </div>
+                <div id="pgStep__last-chart-text-consecuences-low--horizontal" class="pgStep__last-chart-text--horizontal">
+                    {{ graphic.chart.low }}
+                </div>
+                <!--<div id="pgStep__last-chart-text-compare-horizontal" class="pgStep__last-chart-text-horizontal">
+                    {{ graphic.chart.compare |safe }}
+                </div>-->
             </div>
             <div class="pgStep__users-stats">
                 <div class="pgStep__users-stats-wrapper">
@@ -194,6 +221,10 @@
                             </optgroup>
                         {% endfor %}
                         </select>
+                        <div class="pgQuestion__map-info">
+                            <div class="pgQuestion__map-info-point"></div>
+                            <span>{{ graphic.first_questions.first_question.map_info }}</span>
+                        </div>
                     </div>
                     <!--<div class="pgQuestion__footer">
                         <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="1" data-step="0">
@@ -248,9 +279,9 @@
                     <p class="pgStep__info__text-description">
                         {{ graphic.second_step.description }}
                     </p>
-                    <!--<button class="pgStep__info__text-action pg-button bounce" disabled="disabled" data-step="2">
+                    <button class="pgStep__info__text-action pg-button" disabled="disabled" data-step="2">
                         {{ graphic.general.button_continue }}
-                    </button>-->
+                    </button>
                 </div>
             </div>
         </div>
@@ -352,9 +383,9 @@
                     <p class="pgStep__info__text-description">
                         {{ graphic.third_step.description }}
                     </p>
-                    <!--<button class="pgStep__info__text-action pg-button bounce" disabled="disabled" data-step="4">
+                    <button class="pgStep__info__text-action pg-button" disabled="disabled" data-step="4">
                         {{ graphic.general.button_continue }}
-                    </button>-->
+                    </button>
                 </div>
             </div>
         </div>
@@ -391,11 +422,11 @@
                             {{ graphic.third_questions.first_question.answer }}
                         </div>
                     </div>
-                    <!--<div class="pgQuestion__footer">
+                    <div class="pgQuestion__footer">
                         <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="1" data-step="3">
                             {{ graphic.general.button_ok }}
                         </button>
-                    </div>-->
+                    </div>
                 </div><!--
              --><div class="pgQuestion">
                     <div class="pgQuestion__header">
@@ -428,11 +459,11 @@
                             {{ graphic.third_questions.second_question.answer }}
                         </div>
                     </div>
-                    <!--<div class="pgQuestion__footer">
+                    <div class="pgQuestion__footer">
                         <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="2" data-step="3">
                             {{ graphic.general.button_ok }}
                         </button>
-                    </div>-->
+                    </div>
                 </div><!--
              --><div class="pgQuestion">
                     <div class="pgQuestion__header">
@@ -465,11 +496,11 @@
                             {{ graphic.third_questions.third_question.answer }}
                         </div>
                     </div>
-                    <!--<div class="pgQuestion__footer">
+                    <div class="pgQuestion__footer">
                         <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="-1" data-step="4">
                             {{ graphic.general.button_ok }}
                         </button>
-                    </div>-->
+                    </div>
                 </div>
             </div>
         </div>
@@ -495,6 +526,33 @@
             </div><!--
          --><div class="pgStep__last-chart">
                 <img class="image" src="http://yowlu.com/wapo/images/last-chart.png">
+                <div id="pgStep__last-chart-text-probability" class="pgStep__last-chart-text">
+                    {{ graphic.chart.probability }}
+                </div>
+                <div id="pgStep__last-chart-text-probability-low" class="pgStep__last-chart-text">
+                    {{ graphic.chart.low }}
+                </div>
+                <div id="pgStep__last-chart-text-probability-medium" class="pgStep__last-chart-text">
+                    {{ graphic.chart.medium }}
+                </div>
+                <div id="pgStep__last-chart-text-probability-high" class="pgStep__last-chart-text">
+                    {{ graphic.chart.high }}
+                </div>
+                <div id="pgStep__last-chart-text-consecuences" class="pgStep__last-chart-text">
+                    {{ graphic.chart.consecuences }}
+                </div>
+                <div id="pgStep__last-chart-text-consecuences-high" class="pgStep__last-chart-text">
+                {{ graphic.chart.high }}
+                </div>
+                <div id="pgStep__last-chart-text-consecuences-medium" class="pgStep__last-chart-text">
+                    {{ graphic.chart.medium }}
+                </div>
+                <div id="pgStep__last-chart-text-consecuences-low" class="pgStep__last-chart-text">
+                    {{ graphic.chart.low }}
+                </div>
+                <div id="pgStep__last-chart-text-compare" class="pgStep__last-chart-text">
+                    {{ graphic.chart.compare |safe }}
+                </div>
             </div>
             <div class="pgStep__users-stats">
                 <div class="pgStep__users-stats-wrapper">
