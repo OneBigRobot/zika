@@ -537,6 +537,7 @@
 		"button_back": "Back",
 		"yes": "YES",
 		"no": "NO",
-		"redo": "Do the test again"
+		"redo": "Do the test again",
+		"resize_warning": "To enjoy this graphic you need to scale up your window or use a landscape orientation."
 	}
 }
