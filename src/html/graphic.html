@@ -257,6 +257,10 @@
                             </optgroup>
                         {% endfor %}
                         </select>
+                        <div class="pgQuestion__map-info">
+                            <div class="pgQuestion__map-info-point"></div>
+                            <span>{{ graphic.first_questions.first_question.map_info }}</span>
+                        </div>
                     </div>
                     <!--<div class="pgQuestion__footer">
                         <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="-1" data-step="0">
@@ -421,11 +425,14 @@
                         <div class="pgQuestion__body__answer">
                             {{ graphic.third_questions.first_question.answer }}
                         </div>
-                    </div>
-                    <div class="pgQuestion__footer">
                         <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="1" data-step="3">
                             {{ graphic.general.button_ok }}
                         </button>
+                    </div>
+                    <div class="pgQuestion__footer">
+                        <!--<button class="pgQuestion-action pg-button" disabled="disabled" data-pos="1" data-step="3">
+                            {{ graphic.general.button_ok }}
+                        </button>-->
                     </div>
                 </div><!--
              --><div class="pgQuestion">
@@ -458,11 +465,14 @@
                         <div class="pgQuestion__body__answer">
                             {{ graphic.third_questions.second_question.answer }}
                         </div>
-                    </div>
-                    <div class="pgQuestion__footer">
                         <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="2" data-step="3">
                             {{ graphic.general.button_ok }}
                         </button>
+                    </div>
+                    <div class="pgQuestion__footer">
+                        <!--<button class="pgQuestion-action pg-button" disabled="disabled" data-pos="2" data-step="3">
+                            {{ graphic.general.button_ok }}
+                        </button>-->
                     </div>
                 </div><!--
              --><div class="pgQuestion">
@@ -495,11 +505,14 @@
                         <div class="pgQuestion__body__answer">
                             {{ graphic.third_questions.third_question.answer }}
                         </div>
-                    </div>
-                    <div class="pgQuestion__footer">
                         <button class="pgQuestion-action pg-button" disabled="disabled" data-pos="-1" data-step="4">
                             {{ graphic.general.button_ok }}
                         </button>
+                    </div>
+                    <div class="pgQuestion__footer">
+                        <!--<button class="pgQuestion-action pg-button" disabled="disabled" data-pos="-1" data-step="4">
+                            {{ graphic.general.button_ok }}
+                        </button>-->
                     </div>
                 </div>
             </div>

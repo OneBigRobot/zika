@@ -730,7 +730,10 @@ canvas {
 
 .pgQuestion__map-info {
 	position: absolute;
-    left: 20%;
+    left: 0px;
+    bottom: 10%!important;
+    right: 0px;
+    margin: auto;
 }
 
 .pgQuestion__map-info .pgQuestion__map-info-point {
@@ -1334,9 +1337,15 @@ canvas {
 	}
 
 	#pgStep4 .pgStep__info {
-		width: 27.5%;
+		width: 27.5%!important;
 		margin-left: 11%;
+		display: block!important;
 	}
+
+	#pgStep4 .pgStep__info__text-container {
+		margin-left: 0px !important;
+    	margin-top: 0px !important;
+    }
 
 	.horizontal-divisions {
 		width: 100%;
@@ -1382,7 +1391,15 @@ canvas {
 	}
 
 	.pgStep__info {
-	    width: 100%;
+	    display: inline-block!important;
+    	width: 50%!important;
+	}
+
+	.pgStep__info__text-container {
+	    margin-left: 80px!important;
+	    margin-top: 20px!important;
+	    width: auto!important;
+	    float: none!important;
 	}
 
 	.pgQuestion__body__option {
@@ -1392,6 +1409,12 @@ canvas {
 
 	.image-map {
 		max-width: 100%;
+		width: 60%;
+	}
+
+	#pgStep3 .pgStep__info {
+		margin-left: 25%;
+    	float: none;
 	}
 
 	.pgQuestion__body__option p {
@@ -1401,6 +1424,38 @@ canvas {
 	.pgQuestion__body__options-container {
 		padding-bottom: 20px;
 	}
+
+	.pgQuestion__body__binary-options-container--terniary {
+    	width: 280px!important;
+	}
+
+	.pgQuestion__body__binary-option {
+    	width: 80px!important;
+    	height: 80px!important;
+    }
+
+    .pgQuestion__body__binary-option .image {
+    	max-width: 100%;
+    }
+
+    .pgQuestion__body__binary-options-container {
+	    padding: 75px 0px!important;
+	}
+
+	.pgQuestion__body__binary-options-container:not(.pgQuestion__body__binary-options-container--terniary) {
+    	width: 200px!important;
+    }
+
+    .pgQuestion__body__binary-option h3 {
+	    position: relative;
+	    -moz-transform: translateY(-50%);
+    	-ms-transform: translateY(-50%);
+    	-webkit-transform: translateY(-50%);
+    	transform: translateY(-50%);
+    	top: 50%;
+    	margin: auto;
+    	font-size: 14px;
+    }
 
 	.pgStep__pregnancy-buttons {
 		top: 42%;
