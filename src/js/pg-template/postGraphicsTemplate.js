@@ -3031,6 +3031,13 @@ var selectPregnancyOption = function() {
     if ($(".pgArticle").width() < tabletTreshold) {
       markerPos = $('.pgStep__last-chart-horizontal-wrapper .pgStep__last-chart-marker').position();
       newPositionsArray = new Array({x: ((markerPos.left + $('.pgStep__last-chart-horizontal-wrapper').position().left + parseInt($('.pgStep__last-chart-horizontal-wrapper').css("margin-left"))) / 0.125 ) / canvas.width, y: (( (markerPos.top + $('.pgStep__last-chart-marker').height() + parseInt($(".pgStep__last-chart-horizontal-wrapper").css("margin-top")) ) + (($("#mosquitosCanvas").height() - $('.pgStep__last-chart-horizontal-wrapper').height()) / 2.0) ) / 0.125) / canvas.width});
+      setTimeout(function() {
+          if ($(".pgArticle").width() <= 736 && $("#horizontal-conclusions-button").css("display") == "none") {
+            $('.pgChart').animate({
+              scrollLeft: $('.pgConclusions').position().left
+            }, 2500);
+          }
+      }, 8000);
     }
 
     mosquitosArray.forEach(function(element,index,array){
@@ -3211,6 +3218,14 @@ var selectPregnancyOption = function() {
     if ($(".pgArticle").width() < tabletTreshold) {
       markerPos = $('.pgStep__last-chart-horizontal-wrapper .pgStep__last-chart-marker').position();
       newPositionsArray = new Array({x: ((markerPos.left + $('.pgStep__last-chart-horizontal-wrapper').position().left + parseInt($('.pgStep__last-chart-horizontal-wrapper').css("margin-left"))) / 0.125 ) / canvas.width, y: (( (markerPos.top + $('.pgStep__last-chart-marker').height() + parseInt($(".pgStep__last-chart-horizontal-wrapper").css("margin-top")) ) + (($("#mosquitosCanvas").height() - $('.pgStep__last-chart-horizontal-wrapper').height()) / 2.0) ) / 0.125) / canvas.width});
+    
+      setTimeout(function() {
+          if ($(".pgArticle").width() <= 736 && $("#horizontal-conclusions-button").css("display") == "none") {
+            $('.pgChart').animate({
+              scrollLeft: $('.pgConclusions').position().left
+            }, 2500);
+          }
+      }, 8000);
     }
 
     mosquitosArray.forEach(function(element,index,array){
@@ -4321,6 +4336,14 @@ var updateMosquitosPaths = function() {
         if ($(".pgArticle").width() < tabletTreshold) {
           markerPos = $('.pgStep__last-chart-horizontal-wrapper .pgStep__last-chart-marker').position();
           newPositionsArray = new Array({x: ((markerPos.left + $('.pgStep__last-chart-horizontal-wrapper').position().left + parseInt($('.pgStep__last-chart-horizontal-wrapper').css("margin-left"))) / 0.125 ) / canvas.width, y: (( (markerPos.top + $('.pgStep__last-chart-marker').height() + parseInt($(".pgStep__last-chart-horizontal-wrapper").css("margin-top")) ) + (($("#mosquitosCanvas").height() - $('.pgStep__last-chart-horizontal-wrapper').height()) / 2.0) ) / 0.125) / canvas.width});
+          
+          setTimeout(function() {
+              if ($(".pgArticle").width() <= 736 && $("#horizontal-conclusions-button").css("display") == "none") {
+                $('.pgChart').animate({
+                  scrollLeft: $('.pgConclusions').position().left
+                }, 2500);
+              }
+          }, 8000);
         }
       break;
       case 22:
@@ -4345,6 +4368,14 @@ var updateMosquitosPaths = function() {
         if ($(".pgArticle").width() < tabletTreshold) {
           markerPos = $('.pgStep__last-chart-horizontal-wrapper .pgStep__last-chart-marker').position();
           newPositionsArray = new Array({x: ((markerPos.left + $('.pgStep__last-chart-horizontal-wrapper').position().left + parseInt($('.pgStep__last-chart-horizontal-wrapper').css("margin-left"))) / 0.125 ) / canvas.width, y: (( (markerPos.top + $('.pgStep__last-chart-marker').height() + parseInt($(".pgStep__last-chart-horizontal-wrapper").css("margin-top")) ) + (($("#mosquitosCanvas").height() - $('.pgStep__last-chart-horizontal-wrapper').height()) / 2.0) ) / 0.125) / canvas.width});
+          
+          setTimeout(function() {
+              if ($(".pgArticle").width() <= 736 && $("#horizontal-conclusions-button").css("display") == "none") {
+                $('.pgChart').animate({
+                  scrollLeft: $('.pgConclusions').position().left
+                }, 2500);
+              }
+          }, 8000);
         }
 
         element.positionsArray = new Array(element.positionsArray[0],element.positionsArray[0],element.positionsArray[0],element.positionsArray[0],element.positionsArray[0], element.positionsArray[0],element.positionsArray[0],element.positionsArray[0],element.positionsArray[0],element.positionsArray[0])
@@ -4398,7 +4429,13 @@ $(document).ready(function() {
   $(window).resize(function() {
       H = $(".pgArticle").width();
       $(".pgChart").scrollLeft(P*H);
+      $('#resize-warning').css("width", $(".pgChart").width() + "px");
+      $('#resize-warning').css("height", $(".pgChart").height() + "px");
   });
+
+  $('#resize-warning').css("width", $(".pgChart").width() + "px");
+  $('#resize-warning').css("height", $(".pgChart").height() + "px");
+
   //Set up needed functions
   manageQuestionsScroll();
   manageStepsAction();
