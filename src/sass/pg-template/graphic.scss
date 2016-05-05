@@ -59,7 +59,7 @@ $chart-purple: #9b7ac1;
 }
 
 *[disabled] {
-	opacity: 0.5;
+	opacity: 0.2;
 }
 
 @-moz-keyframes bounce {
@@ -461,7 +461,7 @@ canvas {
     left: 0px;
     right: 0px;
     margin: auto;
-    width: 47%;
+    width: 49%;
     height: 21vw;
 }
 
@@ -1183,7 +1183,7 @@ canvas {
 
 	.pgStep__pregnancy-buttons {
 	    top: 330px;
-	    max-height: 280px!important;
+	    max-height: 330px!important;
 	}
 }
 
@@ -1585,7 +1585,7 @@ canvas {
 	    position: absolute;
 	    top: 100%;
 	    margin: auto;
-	    width: 22%;
+	    width: 25%;
 	    height: 40vw;
 	}	
 

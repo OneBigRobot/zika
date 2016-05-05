@@ -2058,7 +2058,7 @@ var decideNextStep = function(nextStep){
           else {
             element.yDir = true;
           }
-        }, Math.random() * 1500);
+        }, Math.random() * 500);
       });
       
       if ($(".pgArticle").width() < tabletTreshold) {
@@ -2069,7 +2069,7 @@ var decideNextStep = function(nextStep){
       else {
         $('html, body').animate({
           scrollTop: $('#pgQuestion-container1').offset().top
-        }, 4000);
+        }, 2000);
       }
       
     break;
@@ -2175,8 +2175,8 @@ var decideNextStep = function(nextStep){
       }
       else {
         $('html, body').animate({
-          scrollTop: $('#pgStep2').offset().top
-        }, 5000);
+          scrollTop: $('#pgQuestion-container2').offset().top
+        }, 3000);
       }
     break;
     case 2:
@@ -2220,12 +2220,12 @@ var decideNextStep = function(nextStep){
        if ($(".pgArticle").width() < tabletTreshold) {
         $('.pgChart').animate({
               scrollLeft: $('#pgQuestion-container2').position().left
-            }, 3500);
+            }, 2500);
       }
       else {
         $('html, body').animate({
           scrollTop: $('#pgQuestion-container2').offset().top
-        }, 7000);
+        }, 2500);
       }
     break;
     case 3:
@@ -2302,9 +2302,10 @@ var decideNextStep = function(nextStep){
         });
       }
       else {
+
         $('html, body').animate({
-          scrollTop: $('#pgStep3').offset().top
-        }, 7000);
+          scrollTop: $('#pgQuestion-container3').offset().top
+        }, 2500);
       }
     break;
     case 4:
@@ -2354,12 +2355,12 @@ var decideNextStep = function(nextStep){
       if ($(".pgArticle").width() < tabletTreshold) {
         $('.pgChart').animate({
           scrollLeft: $('#pgQuestion-container3').position().left
-        }, 3000);
+        }, 2500);
       }
       else {
         $('html, body').animate({
           scrollTop: $('#pgQuestion-container3').offset().top
-        }, 7000);
+        }, 2500);
       }
       break;
       case 5:
@@ -2461,13 +2462,13 @@ var decideNextStep = function(nextStep){
       if ($(".pgArticle").width() < tabletTreshold) {
         $('.pgChart').animate({
           scrollLeft: $('#pgStep4').position().left
-        }, 7000, function() {
+        }, 2500, function() {
         });
       }
       else {
         $('html, body').animate({
           scrollTop: $('#pgStep4').offset().top
-        }, 7000);
+        }, 2500);
       }
       }, ($(".pgArticle").width() < tabletTreshold) ? 0 : 3250);
       break;
