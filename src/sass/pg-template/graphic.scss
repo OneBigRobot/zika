@@ -461,7 +461,7 @@ canvas {
     left: 0px;
     right: 0px;
     margin: auto;
-    width: 44%;
+    width: 47%;
     height: 21vw;
 }
 
@@ -515,10 +515,10 @@ canvas {
 	-webkit-transform: translate3d(0px,0,0);
 	-moz-transform: translate3d(0px,0,0);
 	transform: translate3d(0px,0,0);
-	-webkit-transition: -webkit-transform 500ms ease-in-out;
-	-moz-transition: -moz-transform 500ms ease-in-out;
-	-o-transition: -o-transform 500ms ease-in-out;
-	transition: transform 500ms ease-in-out;
+	-webkit-transition: -webkit-transform 400ms ease-in-out;
+	-moz-transition: -moz-transform 400ms ease-in-out;
+	-o-transition: -o-transform 400ms ease-in-out;
+	transition: transform 400ms ease-in-out;
 }
 
 #pgQuestion-container1 {
@@ -711,7 +711,8 @@ canvas {
 }
 
 .pgQuestion__body__answer + .pg-button {
-	display: none;
+	display: block;
+    margin:auto;
 }
 
 .pgQuestion__body__binary-options-container .check {
@@ -1181,8 +1182,8 @@ canvas {
 	}
 
 	.pgStep__pregnancy-buttons {
-	    top: 320px;
-	    max-height: 250px!important;
+	    top: 330px;
+	    max-height: 280px!important;
 	}
 }
 
