@@ -10,7 +10,7 @@
 			"number": "1.1",
 			"title": "Where do you live?",
 			"remaining_questions": "",
-			"map_info": "COUNTRIES AFFECTED BY ZIKA",
+			"map_info": "COUNTRIES AND TERRITORIES WITH ACTIVE ZIKA VIRUS TRANSMISSION",
 			"zone_countries": [
 					{
 						"name": "",
@@ -68,10 +68,6 @@
 							},
 							{
 								"name": "Colombia",
-								"value": "1"
-							},
-							{
-								"name": "Commonwealth of Puerto Rico, US territory",
 								"value": "1"
 							},
 							{
@@ -151,6 +147,10 @@
 								"value": "1"
 							},
 							{
+								"name": "Puerto Rico, US territory",
+								"value": "1"
+							},
+							{
 								"name": "Saint Lucia",
 								"value": "1"
 							},
@@ -205,6 +205,10 @@
 							},
 							{
 								"name": "New Caledonia",
+								"value": "1"
+							},
+							{
+								"name": "Papua New Guinea",
 								"value": "1"
 							},
 							{
@@ -292,10 +296,6 @@
 								"value": "1"
 							},
 							{
-								"name": "Commonwealth of Puerto Rico, US territory",
-								"value": "1"
-							},
-							{
 								"name": "Costa Rica",
 								"value": "1"
 							},
@@ -372,6 +372,10 @@
 								"value": "1"
 							},
 							{
+								"name": "Puerto Rico, US territory",
+								"value": "1"
+							},
+							{
 								"name": "Saint Lucia",
 								"value": "1"
 							},
@@ -426,6 +430,10 @@
 							},
 							{
 								"name": "New Caledonia",
+								"value": "1"
+							},
+							{
+								"name": "Papua New Guinea",
 								"value": "1"
 							},
 							{
@@ -520,7 +528,7 @@
 		"behavior_first": "Wearing shorts and sleeveless shirts that are dark in color and keeping buckets of water or having water containers near your house can increase your risk of being bitten by the mosquito and raise your chances of getting the virus.",
 		"behavior_second": "Using insect repellent, wearing light color clothes, having physical barriers such mesh screens or treated netting materials on doors and windows, or sleeping under mosquito nets will all decrease your risk of getting bitten by the mosquito and lower your changes of getting the virus.",
 		"fifth_way": "The Zika virus can be transmitted from infected mothers to their fetuses and this can happen during both pregnancy or at childbirth. Based on a growing body of preliminary research, there is scientific consensus that Zika virus is a cause of microcephaly, which is a condition where a baby is born with a small head or the head stops growing after birth. Babies with microcephaly can develop developmental disabilities. Early diagnosis of microcephaly can sometimes be made by fetal ultrasound.<br><br>Pregnant women who develop symptoms of Zika virus infection, should see their health-care provider for close monitoring of their pregnancy.<br><br>If you’re travelling to a country affected by Zika, the World Health Organization is advising pregnant women not to travel to areas of ongoing Zika virus transmission.",
-		"share_results": "Share Results"
+		"share_results": "Share your results"
 	},
 	"chart": {
 		"low": "low",
@@ -531,7 +539,7 @@
 		"compare": "there are the results for each participant in the test<br>see how you compare to them"
 	},
 	"general": {
-		"button_start": "Start",
+		"button_start": "Start the experience",
 		"button_continue": "Continue",
 		"button_ok": "OK",
 		"button_back": "Back",

@@ -296,8 +296,9 @@ var setupMainLoop = function(){
     setTimeout(function() {
       window.requestAnimationFrame(requestAnimationFrame);
       currentPhase = 1;
+
       $('#pgStep1 .pg-button').removeAttr("disabled");
-    }, 3000);
+    }, 1500);
 }
 //Execute main loop
 var main = function(time){
@@ -317,6 +318,7 @@ var main = function(time){
       case 16:
       case 18:
       case 20:
+      case 21:
       case 22:
         if (((element.x > element.positionsArray[element.currentPosition].x &&
             element.xDir) || (element.x < element.positionsArray[element.currentPosition].x &&
@@ -2045,7 +2047,7 @@ var decideNextStep = function(nextStep){
 
           element.currentPosition = 0;
           element.currentMosquitoPhase = 1;
-          element.speed = 0.007 + (Math.random() * 0.001);
+          element.speed = 0.007 + (Math.random() * 0.010);
           if (element.x > element.positionsArray[element.currentPosition].x) {
             element.xDir = false;
           }
@@ -2058,7 +2060,7 @@ var decideNextStep = function(nextStep){
           else {
             element.yDir = true;
           }
-        }, Math.random() * 1500);
+        }, Math.random() * 500);
       });
       
       if ($(".pgArticle").width() < tabletTreshold) {
@@ -2069,11 +2071,12 @@ var decideNextStep = function(nextStep){
       else {
         $('html, body').animate({
           scrollTop: $('#pgQuestion-container1').offset().top
-        }, 4000);
+        }, 2000);
       }
       
     break;
     case 1:
+    
       var auxMosquitosLeft = mosquitosLeft;
       mosquitosLeft -= returnMosquitosLeft(0, 2, parseInt($('#visit-country').val()));
       mosquitosArray.forEach(function(element,index,array){
@@ -2140,7 +2143,7 @@ var decideNextStep = function(nextStep){
 
             element.currentPosition = 0;
             
-            element.speed = 0.007 + (Math.random() * 0.001);
+            element.speed = 0.007 + (Math.random() * 0.015);
             if (element.x > element.positionsArray[element.currentPosition].x) {
               element.xDir = false;
             }
@@ -2175,8 +2178,8 @@ var decideNextStep = function(nextStep){
       }
       else {
         $('html, body').animate({
-          scrollTop: $('#pgStep2').offset().top
-        }, 5000);
+          scrollTop: $('#pgQuestion-container2').offset().top
+        }, 3000);
       }
     break;
     case 2:
@@ -2201,7 +2204,7 @@ var decideNextStep = function(nextStep){
 
             element.currentPosition = 0;
             element.currentMosquitoPhase = 7;
-            element.speed = 0.007 + (Math.random() * 0.001);
+            element.speed = 0.007 + (Math.random() * 0.010);
             if (element.x > element.positionsArray[element.currentPosition].x) {
               element.xDir = false;
             }
@@ -2220,15 +2223,16 @@ var decideNextStep = function(nextStep){
        if ($(".pgArticle").width() < tabletTreshold) {
         $('.pgChart').animate({
               scrollLeft: $('#pgQuestion-container2').position().left
-            }, 3500);
+            }, 2500);
       }
       else {
         $('html, body').animate({
           scrollTop: $('#pgQuestion-container2').offset().top
-        }, 7000);
+        }, 2500);
       }
     break;
     case 3:
+
       $('#pgQuestion-container2 .pg-button').attr("disabled", "disabled");
       $('#pgQuestion-container2').attr("disabled", "disabled");
       $('.pgQuestion__body__option').addClass("disabled-option");
@@ -2273,7 +2277,7 @@ var decideNextStep = function(nextStep){
 
             element.currentPosition = 0;
             
-            element.speed = 0.007 + (Math.random() * 0.001);
+            element.speed = 0.007 + (Math.random() * 0.020);
             if (element.x > element.positionsArray[element.currentPosition].x) {
               element.xDir = false;
             }
@@ -2302,9 +2306,10 @@ var decideNextStep = function(nextStep){
         });
       }
       else {
+
         $('html, body').animate({
-          scrollTop: $('#pgStep3').offset().top
-        }, 7000);
+          scrollTop: $('#pgQuestion-container3').offset().top
+        }, 2500);
       }
     break;
     case 4:
@@ -2335,7 +2340,7 @@ var decideNextStep = function(nextStep){
 
             element.currentPosition = 0;
             element.currentMosquitoPhase = 11;
-            element.speed = 0.007 + (Math.random() * 0.001);
+            element.speed = 0.007 + (Math.random() * 0.010);
             if (element.x > element.positionsArray[element.currentPosition].x) {
               element.xDir = false;
             }
@@ -2354,12 +2359,12 @@ var decideNextStep = function(nextStep){
       if ($(".pgArticle").width() < tabletTreshold) {
         $('.pgChart').animate({
           scrollLeft: $('#pgQuestion-container3').position().left
-        }, 3000);
+        }, 2500);
       }
       else {
         $('html, body').animate({
           scrollTop: $('#pgQuestion-container3').offset().top
-        }, 7000);
+        }, 2500);
       }
       break;
       case 5:
@@ -2461,13 +2466,13 @@ var decideNextStep = function(nextStep){
       if ($(".pgArticle").width() < tabletTreshold) {
         $('.pgChart').animate({
           scrollLeft: $('#pgStep4').position().left
-        }, 7000, function() {
+        }, 2500, function() {
         });
       }
       else {
         $('html, body').animate({
           scrollTop: $('#pgStep4').offset().top
-        }, 7000);
+        }, 2500);
       }
       }, ($(".pgArticle").width() < tabletTreshold) ? 0 : 3250);
       break;
@@ -3865,7 +3870,7 @@ var updateMosquitosPaths = function() {
             else {
               var auxPositionsArray = mosquitosPositionsPhase3[index%mosquitosPositionsPhase3.length];
             }
-            
+
             auxPositionsArray = shuffle(auxPositionsArray);
             element.positionsArray = new Array();
             auxPositionsArray.forEach(function(element2,index2,array2) {
