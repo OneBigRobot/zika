@@ -227,9 +227,30 @@ var pregnantMosquitos = 0;
 var leftCoverGlass, rightCoverGlass, leftCoverGlassHover, rightCoverGlassHover;
 var hoverBehaviorImages = new Array("icon1_hover.png","icon2_hover.png","icon3_hover.png","icon4_hover.png","icon5_hover.png","icon6_hover.png","icon7_hover.png","icon8_hover.png","icon9_hover.png");
 var behaviorImages = new Array("icon1.png","icon2.png","icon3.png","icon4.png","icon5.png","icon6.png","icon7.png","icon8.png","icon9.png");
-var tabletTreshold = 957;
+var tabletTreshold = 354;//957;
 var mobileTreshold = 600;
 var cell = 0;
+
+if(mobile_browser == 1)
+{
+  if(window.innerHeight > window.innerWidth){
+    
+  }else{
+    tabletTreshold = 3000;
+  }
+}
+
+window.addEventListener("orientationchange", function() {
+  // Announce the new orientation number
+  if(window.orientation==0)
+  {
+    tabletTreshold = 354;
+  }else{
+    tabletTreshold = 3000;
+
+  }
+  
+}, false);
 /**
   The canvasImage class represents an element drawn on the canvas.
  
@@ -2751,7 +2772,7 @@ var selectOption = function(){
 var selectBinaryOption = function(){
   $(document).on('click', '.pgQuestion__body__binary-option:not(.disabled-option)', function() {
 
-    var nextPosition = $(this).attr('data-pos'),
+    var nextPosition = $(this).attr('da pgQuestion__body__binary-option--terniary"ta-pos'),
       currentStep = $(this).attr('data-step');
 
     if ($(this).hasClass("selected")) {
@@ -3079,7 +3100,8 @@ var selectPregnancyOption = function() {
         }
         else {
           $('html, body').animate({
-            scrollTop: $(".pgConclusions").offset().top - ($('#pgStep4 .pgStep__last-chart').height() * 2.0)
+            scrollTop: $(".pgStep__last-chart").position().top + ($('#pgStep4').height() / 2 )
+            //scrollTop: $(".pgConclusions").offset().top - ($('#pgStep4 .pgStep__last-chart').height() * 2.0)
           }, 1000);
         }
       }, 1000);
@@ -3268,7 +3290,8 @@ var selectPregnancyOption = function() {
         }
         else {
           $('html, body').animate({
-            scrollTop: $(".pgConclusions").offset().top - ($('#pgStep4 .pgStep__last-chart').height() * 2.0)
+            //scrollTop: $(".pgConclusions").offset().top - ($('#pgStep4 .pgStep__last-chart').height() * 2.0)
+            scrollTop: $(".pgStep__last-chart").position().top + ($('#pgStep4').height() / 2 )
           }, 1000);
         }
       }, 1000);
