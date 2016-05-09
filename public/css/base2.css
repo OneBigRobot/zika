@@ -587,6 +587,15 @@
 	}
 }
 
+@media (max-width: 768px) and (min-width: 521px) and (orientation: portrait) { 
+	#pgStep1, #pgQuestion-container1 {
+		padding:0px;
+		height:350px !important;
+	}
+	
+
+}
+
 #mosquitosCanvas {
-	/*display:none !important;	*/
+	display:none !important;	
 }
