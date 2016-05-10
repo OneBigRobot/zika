@@ -623,6 +623,10 @@
 	.pgStep__users-stats-text {
 		margin-top:-5px;
 	}
+	
+	#mosquitosCanvas {
+		top:47%;
+	}
 }
 
 @media (max-width: 768px) and (min-width: 521px) and (orientation: portrait) { 
@@ -694,5 +698,5 @@
 }
 
 #mosquitosCanvas {
-	display:none !important;
+	/*display:none !important;*/
 }
