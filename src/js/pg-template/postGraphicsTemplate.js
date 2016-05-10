@@ -225,8 +225,12 @@ var currentPhase = 0;
 var mosquitosLeft = totalMosquitos;
 var pregnantMosquitos = 0;
 var leftCoverGlass, rightCoverGlass, leftCoverGlassHover, rightCoverGlassHover;
-var hoverBehaviorImages = new Array("icon1_hover.png","icon2_hover.png","icon3_hover.png","icon4_hover.png","icon5_hover.png","icon6_hover.png","icon7_hover.png","icon8_hover.png","icon9_hover.png");
-var behaviorImages = new Array("icon1.png","icon2.png","icon3.png","icon4.png","icon5.png","icon6.png","icon7.png","icon8.png","icon9.png");
+var hoverBehaviorImagesDesktop = new Array("icon1_hover.png","icon2_hover.png","icon3_hover.png","icon4_hover.png","icon5_hover.png","icon6_hover.png","icon7_hover.png","icon8_hover.png","icon9_hover.png");
+var behaviorImagesDesktop = new Array("icon1.png","icon2.png","icon3.png","icon4.png","icon5.png","icon6.png","icon7.png","icon8.png","icon9.png");
+var hoverBehaviorImagesMobile = new Array("icon1mobile_hover.png","icon2mobile_hover.png","icon3mobile_hover.png","icon4mobile_hover.png","icon5mobile_hover.png","icon6mobile_hover.png","icon7mobile_hover.png","icon8mobile_hover.png","icon9mobile_hover.png");
+var behaviorImagesMobile = new Array("icon1mobile.png","icon2mobile.png","icon3mobile.png","icon4mobile.png","icon5mobile.png","icon6mobile.png","icon7mobile.png","icon8mobile.png","icon9mobile.png");
+var hoverBehaviorImages = hoverBehaviorImagesDesktop;
+var behaviorImages = behaviorImagesDesktop;
 var tabletTreshold = 354;//957;
 var mobileTreshold = 600;
 var cell = 0;
@@ -234,23 +238,40 @@ var cell = 0;
 if(mobile_browser == 1)
 {
   if(window.innerHeight > window.innerWidth){
-    
+    hoverBehaviorImages = hoverBehaviorImagesMobile;
+    behaviorImages = behaviorImagesMobile;
   }else{
     tabletTreshold = 3000;
+    hoverBehaviorImages = hoverBehaviorImagesDesktop;
+    behaviorImages = behaviorImagesDesktop;
   }
 }
+
+changeIcons();
 
 window.addEventListener("orientationchange", function() {
   // Announce the new orientation number
   if(window.orientation==0)
   {
     tabletTreshold = 354;
+    hoverBehaviorImages = hoverBehaviorImagesMobile;
+    behaviorImages = behaviorImagesMobile;
   }else{
     tabletTreshold = 3000;
-
+    hoverBehaviorImages = hoverBehaviorImagesDesktop;
+    behaviorImages = behaviorImagesDesktop;
   }
-  
+
+  changeIcons();
 }, false);
+
+function changeIcons()
+{
+  for(i=0;i<behaviorImages.length;i++)
+  {
+      $('#icon'+i).attr("src", "./images/" + behaviorImages[i]);
+  }
+}
 /**
   The canvasImage class represents an element drawn on the canvas.
  
@@ -1606,12 +1627,12 @@ var main = function(time){
 var animateBehaviorElements = function() {
   $(document).on("mouseenter", ".pgQuestion__body__option:not(.disabled-option)", function() {
     if (!$(this).hasClass("selected")) {
-      $(this).find("img").attr("src", "http://yowlu.com/wapo/images/" + hoverBehaviorImages[$(this).attr("data-index")]);
+      $(this).find("img").attr("src", "./images/" + hoverBehaviorImages[$(this).attr("data-index")]);
     }
   });
   $(document).on("mouseleave", ".pgQuestion__body__option:not(.disabled-option)", function() {
     if (!$(this).hasClass("selected")) {
-      $(this).find("img").attr("src", "http://yowlu.com/wapo/images/" + behaviorImages[$(this).attr("data-index")]);
+      $(this).find("img").attr("src", "./images/" + behaviorImages[$(this).attr("data-index")]);
     }
   });
 };
@@ -1753,7 +1774,7 @@ var setupCanvas = function(){
         }
         context4.drawImage(picture1Hover, parseInt(canvas.width - (canvas.width * 0.55) - (canvas.width * 0.064)), 0, parseInt(canvas.width * 0.55), parseInt((canvas.width * 0.55) * (536.0/656.0)));
       });
-      picture1Hover.src = 'http://yowlu.com/wapo/images/terrarium-hover.png';
+      picture1Hover.src = './images/terrarium-hover.png';
 
       var tube1 = new Image();
       tube1.addEventListener('load', function () {
@@ -1764,9 +1785,9 @@ var setupCanvas = function(){
           context2.drawImage(tube1, parseInt(canvas.width - (canvas.width * 0.55) - (canvas.width * 0.0585) - (canvas.width * 0.36051)), 235, parseInt(canvas.width * 0.36051), parseInt((canvas.width * 0.36051) * (300.0/430.0)));
         }
       });
-      tube1.src = 'http://yowlu.com/wapo/images/tube1.png';
+      tube1.src = './images/tube1.png';
   });
-  picture1.src = 'http://yowlu.com/wapo/images/terrarium.png';
+  picture1.src = './images/terrarium.png';
 
   var tube2 = new Image();
   tube2.addEventListener('load', function () {
@@ -1776,7 +1797,7 @@ var setupCanvas = function(){
       context2.drawImage(tube2, parseInt(canvas.width * 0.0345), 530, parseInt(canvas.width * 0.14672), parseInt((canvas.width * 0.14672) * (622.0/175.0)));
     }
   });
-  tube2.src = 'http://yowlu.com/wapo/images/tube2.png';
+  tube2.src = './images/tube2.png';
 
   var tube3 = new Image();
   tube3.addEventListener('load', function () {
@@ -1793,9 +1814,9 @@ var setupCanvas = function(){
         context4.drawImage(tube3Hover, parseInt(canvas.width * 0.0545), 1115, parseInt(canvas.width * 0.8073), parseInt((canvas.width * 0.8073) * (517.0/963.0)));
       }
     });
-    tube3Hover.src = 'http://yowlu.com/wapo/images/tube3-hover.png';
+    tube3Hover.src = './images/tube3-hover.png';
   });
-  tube3.src = 'http://yowlu.com/wapo/images/tube3.png';
+  tube3.src = './images/tube3.png';
 
   var tube5 = new Image();
   tube5.addEventListener('load', function () {
@@ -1813,7 +1834,7 @@ var setupCanvas = function(){
         context4.drawImage(tube5Hover, parseInt(canvas.width - (canvas.width * 0.8015) - (canvas.width * 0.133)), 2120, parseInt(canvas.width * 0.8015), parseInt((canvas.width * 0.8015) * (510.0/956.0)));
       }
     });
-    tube5Hover.src = 'http://yowlu.com/wapo/images/tube5-hover.png';  
+    tube5Hover.src = './images/tube5-hover.png';  
 
     var tube4 = new Image();
     tube4.addEventListener('load', function () {
@@ -1830,12 +1851,12 @@ var setupCanvas = function(){
           context4.drawImage(tube4Hover, parseInt(canvas.width - (canvas.width * 0.1358) - (canvas.width * 0.08)) - 3, 1618, parseInt(canvas.width * 0.1358), parseInt((canvas.width * 0.1358) * (600.0/162.0)));
         }
       });
-      tube4Hover.src = 'http://yowlu.com/wapo/images/tube4-hover.png';
+      tube4Hover.src = './images/tube4-hover.png';
     });
-    tube4.src = 'http://yowlu.com/wapo/images/tube4.png';
+    tube4.src = './images/tube4.png';
 
   });
-  tube5.src = 'http://yowlu.com/wapo/images/tube5.png';  
+  tube5.src = './images/tube5.png';  
 
   var tube6 = new Image();
   tube6.addEventListener('load', function () {
@@ -1852,9 +1873,9 @@ var setupCanvas = function(){
         context4.drawImage(tube6Hover, parseInt(canvas.width * 0.028), 2621, parseInt(canvas.width * 0.1383), parseInt((canvas.width * 0.1383) * (592.0/165.0)));
       }
     });
-    tube6Hover.src = 'http://yowlu.com/wapo/images/tube6-hover.png';
+    tube6Hover.src = './images/tube6-hover.png';
   });
-  tube6.src = 'http://yowlu.com/wapo/images/tube6.png';
+  tube6.src = './images/tube6.png';
 
   var tube7 = new Image();
   tube7.addEventListener('load', function () {
@@ -1907,26 +1928,26 @@ var setupCanvas = function(){
           leftCoverGlassHover = new CanvasImage([coverGlassHover], 0.298, (3593.0/canvas3.width), 0, 0.0005, 0, 0, new Array({x:0.298,y:(3593.0/canvas3.width)}));
           rightCoverGlassHover = new CanvasImage([coverGlassHover], 0.605, (3593.0/canvas3.width), 0, 0.0005, 0, 0, new Array({x:0.605,y:(3593.0/canvas3.width)}))
         });
-        coverGlassHover.src = 'http://yowlu.com/wapo/images/cover-glass-animate.png';
+        coverGlassHover.src = './images/cover-glass-animate.png';
 
       });
-      tube7Hover.src = 'http://yowlu.com/wapo/images/tube7-hover.png';
+      tube7Hover.src = './images/tube7-hover.png';
     });
-    coverGlass.src = 'http://yowlu.com/wapo/images/cover-glass.png';
+    coverGlass.src = './images/cover-glass.png';
   });
-  tube7.src = 'http://yowlu.com/wapo/images/tube7.png';
+  tube7.src = './images/tube7.png';
 
   var chart = new Image();
   chart.addEventListener('load', function () {
     context2.drawImage(chart, parseInt((canvas.width * 0.5) - (canvas.width * 0.77 * 0.5)), 3755, parseInt(canvas.width * 0.77), parseInt((canvas.width * 0.77) * (315.0/912.0)));
   });
-  chart.src = 'http://yowlu.com/wapo/images/last-chart.png';
+  chart.src = './images/last-chart.png';
 
   var chart2 = new Image();
   chart2.addEventListener('load', function () {
     context2.drawImage(chart2, parseInt((canvas.width * 0.5) - (canvas.width * 0.7026 * 0.5)), 4055, parseInt(canvas.width * 0.7026), parseInt((canvas.width * 0.7026) * (188.0/838.0)));
   });
-  chart2.src = 'http://yowlu.com/wapo/images/graphic.png';
+  chart2.src = './images/graphic.png';
 }
 //Draw an image rotated
 var TO_RADIANS = Math.PI/180; 
@@ -1974,22 +1995,22 @@ var setupMosquitos = function() {
   mosquito.addEventListener('load', function () {
     //
   });
-  mosquito.src = 'http://yowlu.com/wapo/images/mosquito1_left.png';
+  mosquito.src = './images/mosquito1_left.png';
   var mosquito2 = new Image();
   mosquito2.addEventListener('load', function () {
     //
   });
-  mosquito2.src = 'http://yowlu.com/wapo/images/mosquito2_left.png';
+  mosquito2.src = './images/mosquito2_left.png';
   var mosquitoFlipped = new Image();
   mosquitoFlipped.addEventListener('load', function () {
     //
   });
-  mosquitoFlipped.src = 'http://yowlu.com/wapo/images/mosquito1_left.png';
+  mosquitoFlipped.src = './images/mosquito1_left.png';
   var mosquito2Flipped = new Image();
   mosquito2Flipped.addEventListener('load', function () {
     //
   });
-  mosquito2Flipped.src = 'http://yowlu.com/wapo/images/mosquito2_left.png';
+  mosquito2Flipped.src = './images/mosquito2_left.png';
 
   for (var i = 0; i < totalMosquitos; i++) {
     
@@ -2087,7 +2108,7 @@ var decideNextStep = function(nextStep){
       if ($(".pgArticle").width() < tabletTreshold) {
         $('.pgChart').animate({
           scrollLeft: $('#pgQuestion-container1').offset().left
-        }, 5500);
+        }, 2000);
       }
       else {
         $('html, body').animate({
@@ -2189,7 +2210,7 @@ var decideNextStep = function(nextStep){
       if ($(".pgArticle").width() < tabletTreshold) {
         $('.pgChart').animate({
           scrollLeft: $('#pgStep2').position().left
-        }, 5500, function() {
+        }, 3000, function() {
           /*setTimeout(function() {
             $('.pgChart').animate({
               scrollLeft: $('#pgQuestion-container2').position().left
@@ -2759,11 +2780,11 @@ var selectOption = function(){
   $(document).on('click', '.pgQuestion__body__option:not(.disabled-option)', function() {
     if ($(this).hasClass("selected")) {
       $(this).removeClass("selected");
-      $(this).find("img").attr("src", "http://yowlu.com/wapo/images/" + behaviorImages[$(this).attr("data-index")]);
+      $(this).find("img").attr("src", "./images/" + behaviorImages[$(this).attr("data-index")]);
     }
     else {
       $(this).addClass("selected");
-      $(this).find("img").attr("src", "http://yowlu.com/wapo/images/" + hoverBehaviorImages[$(this).attr("data-index")]);
+      $(this).find("img").attr("src", "./images/" + hoverBehaviorImages[$(this).attr("data-index")]);
     }
   });
 };
@@ -2772,9 +2793,9 @@ var selectOption = function(){
 var selectBinaryOption = function(){
   $(document).on('click', '.pgQuestion__body__binary-option:not(.disabled-option)', function() {
 
-    var nextPosition = $(this).attr('da pgQuestion__body__binary-option--terniary"ta-pos'),
+    var nextPosition = $(this).attr('data-pos'),
       currentStep = $(this).attr('data-step');
-
+   
     if ($(this).hasClass("selected")) {
       $(this).removeClass("selected");
       // move mosquitos
@@ -2844,6 +2865,7 @@ var selectBinaryOption = function(){
       });
       }, 3250);
     }
+    
     }
     else if (currentStep == 3 && nextPosition == 2) {
       $($('#pgQuestion-wrapper3 .pgQuestion')[1]).find(".check").css("opacity", "1.0");
@@ -2926,7 +2948,7 @@ var selectPregnancyOption = function() {
     if (currentPhase == 20) {
       if ($(".pgArticle").width() < tabletTreshold) {
         $("#left-glass-cover-horizontal, #left-glass-cover-mid-horizontal").animate({
-          marginTop: "-" + ($("#left-glass-cover-horizontal").width() * 0.01) + "px"
+          marginLeft: "-" + ($("#left-glass-cover-horizontal").width() * 0.01) + "px"
         }, 200);
       }
       else {
@@ -3057,13 +3079,13 @@ var selectPregnancyOption = function() {
     if ($(".pgArticle").width() < tabletTreshold) {
       markerPos = $('.pgStep__last-chart-horizontal-wrapper .pgStep__last-chart-marker').position();
       newPositionsArray = new Array({x: ((markerPos.left + $('.pgStep__last-chart-horizontal-wrapper').position().left + parseInt($('.pgStep__last-chart-horizontal-wrapper').css("margin-left"))) / 0.125 ) / canvas.width, y: (( (markerPos.top + $('.pgStep__last-chart-marker').height() + parseInt($(".pgStep__last-chart-horizontal-wrapper").css("margin-top")) ) + (($("#mosquitosCanvas").height() - $('.pgStep__last-chart-horizontal-wrapper').height()) / 2.0) ) / 0.125) / canvas.width});
-      setTimeout(function() {
-          if ($(".pgArticle").width() <= 736 && $("#horizontal-conclusions-button").css("display") == "none") {
+      //setTimeout(function() {
+          //if ($(".pgArticle").width() <= 736 && $("#horizontal-conclusions-button").css("display") == "none") {
             $('.pgChart').animate({
-              scrollLeft: $('.pgConclusions').position().left
+              scrollLeft: $('.pgConclusions').position().left+500;
             }, 2500);
-          }
-      }, 8000);
+          //}
+      //}, 4000);
     }
 
     mosquitosArray.forEach(function(element,index,array){
@@ -3095,7 +3117,7 @@ var selectPregnancyOption = function() {
       setTimeout(function() {
         if ($(".pgArticle").width() < tabletTreshold) {
           $('.pgChart').animate({
-            scrollLeft: $('#pgStep4').position().left + ($('#pgStep4').width() / 2.0)
+            scrollLeft: $('#pgStep__last-chart').position().left + ($('#pgStep4').width() / 2)
           }, 1000);
         }
         else {
@@ -3252,7 +3274,7 @@ var selectPregnancyOption = function() {
               scrollLeft: $('.pgConclusions').position().left
             }, 2500);
           }
-      }, 8000);
+      }, 4000);
     }
 
     mosquitosArray.forEach(function(element,index,array){
@@ -4371,7 +4393,7 @@ var updateMosquitosPaths = function() {
                   scrollLeft: $('.pgConclusions').position().left
                 }, 2500);
               }
-          }, 8000);
+          }, 3000);
         }
       break;
       case 22:
@@ -4403,7 +4425,7 @@ var updateMosquitosPaths = function() {
                   scrollLeft: $('.pgConclusions').position().left
                 }, 2500);
               }
-          }, 8000);
+          }, 3000);
         }
 
         element.positionsArray = new Array(element.positionsArray[0],element.positionsArray[0],element.positionsArray[0],element.positionsArray[0],element.positionsArray[0], element.positionsArray[0],element.positionsArray[0],element.positionsArray[0],element.positionsArray[0],element.positionsArray[0])
