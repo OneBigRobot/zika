@@ -235,7 +235,7 @@ var tabletTreshold = 354;//957;
 var mobileTreshold = 600;
 var cell = 0;
 
-if(mobile_browser == 1)
+if((mobile_browser == 1)&&(ipad_browser == 0))
 {
   if(window.innerHeight > window.innerWidth){
     hoverBehaviorImages = hoverBehaviorImagesMobile;
@@ -1534,6 +1534,7 @@ var main = function(time){
         }
       break;
       case 21:
+        alert("ss");
         if (((element.x > element.positionsArray[element.currentPosition].x &&
             element.xDir) || (element.x < element.positionsArray[element.currentPosition].x &&
             !element.xDir) || (element.x == element.positionsArray[element.currentPosition].x)) &&  
@@ -1573,7 +1574,8 @@ var main = function(time){
             }
 
             element.currentMosquitoPhase = 22;
-            element.speed = 0.001;
+            element.speed = 0.0001;
+
           }
             if (element.x > element.positionsArray[element.currentPosition].x) {
               element.xDir = false;
@@ -3079,13 +3081,13 @@ var selectPregnancyOption = function() {
     if ($(".pgArticle").width() < tabletTreshold) {
       markerPos = $('.pgStep__last-chart-horizontal-wrapper .pgStep__last-chart-marker').position();
       newPositionsArray = new Array({x: ((markerPos.left + $('.pgStep__last-chart-horizontal-wrapper').position().left + parseInt($('.pgStep__last-chart-horizontal-wrapper').css("margin-left"))) / 0.125 ) / canvas.width, y: (( (markerPos.top + $('.pgStep__last-chart-marker').height() + parseInt($(".pgStep__last-chart-horizontal-wrapper").css("margin-top")) ) + (($("#mosquitosCanvas").height() - $('.pgStep__last-chart-horizontal-wrapper').height()) / 2.0) ) / 0.125) / canvas.width});
-      //setTimeout(function() {
-          //if ($(".pgArticle").width() <= 736 && $("#horizontal-conclusions-button").css("display") == "none") {
+      setTimeout(function() {
+          if ($(".pgArticle").width() <= 736 && $("#horizontal-conclusions-button").css("display") == "none") {
             $('.pgChart').animate({
-              scrollLeft: $('.pgConclusions').position().left+500;
+              scrollLeft: $('.pgConclusions').position().left
             }, 2500);
-          //}
-      //}, 4000);
+          }
+      }, 4000);
     }
 
     mosquitosArray.forEach(function(element,index,array){
@@ -3114,7 +3116,7 @@ var selectPregnancyOption = function() {
     setTimeout(function() {
       createConclusions(cell);
       createUsersStats(newX, newY, cell);
-      setTimeout(function() {
+      //setTimeout(function() {
         if ($(".pgArticle").width() < tabletTreshold) {
           $('.pgChart').animate({
             scrollLeft: $('#pgStep__last-chart').position().left + ($('#pgStep4').width() / 2)
@@ -3126,7 +3128,7 @@ var selectPregnancyOption = function() {
             //scrollTop: $(".pgConclusions").offset().top - ($('#pgStep4 .pgStep__last-chart').height() * 2.0)
           }, 1000);
         }
-      }, 1000);
+      //}, 1000);
     }, 0);
     }
   });

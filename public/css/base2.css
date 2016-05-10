@@ -608,8 +608,19 @@
 		padding:5px 2px;
 	}
 	
+	#pgQuestion-wrapper2 .pgQuestion__body {
+		height: 260px;
+	}
+	
 	#pgQuestion-wrapper2 .pgQuestion-action {
-		margin-top:-30px;
+		margin-top:-60px;
+	}
+	
+	#pgQuestion-wrapper2 .pgQuestion__footer {
+		margin-top:-100px;
+		z-index:10000;
+		position:absolute;
+		margin-left:250px;
 	}
 	
 	#pgQuestion-container3 {
@@ -620,12 +631,20 @@
 		margin-top:-20px;
 	}
 	
+	#pgQuestion-wrapper3 .pgQuestion {
+		margin-top:50px;
+	}
+	
 	.pgStep__users-stats-text {
 		margin-top:-5px;
 	}
 	
 	#mosquitosCanvas {
 		top:47%;
+	}
+	
+	.pgQuestion__body__options-container:nth-of-type(2) {
+		padding-bottom:0px !important;
 	}
 }
 
@@ -682,10 +701,20 @@
 	
 	#pgQuestion-wrapper2 .pgQuestion__body__options-container:nth-of-type(2) {
 		padding:0px;
+		height:120px;
 	}
 	
 	#pgQuestion-wrapper2 .pgQuestion__footer {
 		
+	}
+	
+	#pgStep3 .pgStep__info__number {
+		margin-top:40px;
+		margin-left:20px;
+	}
+	
+	#pgStep3 .pgStep__info__text-container {
+		margin-top:0px;
 	}
 	
 	#pgQuestion-wrapper3 {
@@ -694,9 +723,71 @@
 	
 	#pgQuestion-wrapper3 .pgQuestion__header {
 		width:65%;
+		margin-top:50px;
 	}
+	
+	#pgQuestion-wrapper3 .pgQuestion__body__binary-options-container {
+		padding-bottom:40px;
+	}
+	
+	#pgQuestion-wrapper3 .pgQuestion__body__binary-option {
+		width:80px;
+		height:80px;
+		margin-top:-50px;
+		
+	}
+	
+	#pgQuestion-wrapper3 .pgQuestion__body__answer {
+		margin-bottom:0px !important;
+		margin-top:-30px;
+		width: 65%;
+	}
+	
+	#pgQuestion-wrapper3 .pgQuestion__body__binary-option h3 {
+		margin-top:3px;
+	}
+	
+	#pgQuestion-wrapper3 .pgQuestion__body__binary-option IMG {
+		width:90%;
+		height:90%;
+	}
+	
+	#pgQuestion-wrapper3 .check {
+		width:20px !important;
+		height:20px !important;
+	}
+	
+	#pgQuestion-wrapper3 .pgQuestion-action {
+		margin-top:-10px;
+	}
+	
+	#pgStep4 .pgStep__info__number {
+		margin-top:20px;
+	}
+	
+	#pgStep4 .pgStep__info__text-container {
+		margin-top:-10px;
+	}
+	
+	#pgStep4 .pgStep__info__text-description {
+		width:95%;
+	}
+	
+	#pgStep__users-stats-text-title-consequences {
+		margin-top:-5px;
+	}
+	
+	#pgStep__last-chart-text-compare {
+		font-size:9px;
+		top:95% !important;
+	}
+	
+	.pgStep__last-chart {
+		bottom:12%;
+	}
+	
 }
 
 #mosquitosCanvas {
-	/*display:none !important;*/
+	display:none !important;
 }
