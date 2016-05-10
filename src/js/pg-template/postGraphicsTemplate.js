@@ -1569,7 +1569,7 @@ var main = function(time){
             if (element.y > element.positionsArray[nextPosition].y) {
               element.yDir = false;
             }
-            else {
+            else {mos
               element.yDir = true;
             }
 
