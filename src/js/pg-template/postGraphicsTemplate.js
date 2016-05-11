@@ -369,7 +369,6 @@ var main = function(time){
       case 16:
       case 18:
       case 20:
-      case 21:
       case 22:
         if (((element.x > element.positionsArray[element.currentPosition].x &&
             element.xDir) || (element.x < element.positionsArray[element.currentPosition].x &&
@@ -1543,7 +1542,6 @@ var main = function(time){
         }
       break;
       case 21:
-        alert("ss");
         if (((element.x > element.positionsArray[element.currentPosition].x &&
             element.xDir) || (element.x < element.positionsArray[element.currentPosition].x &&
             !element.xDir) || (element.x == element.positionsArray[element.currentPosition].x)) &&  
@@ -1583,7 +1581,7 @@ var main = function(time){
             }
 
             element.currentMosquitoPhase = 22;
-            element.speed = 0.0001;
+            element.speed = 0.0003;
 
           }
             if (element.x > element.positionsArray[element.currentPosition].x) {

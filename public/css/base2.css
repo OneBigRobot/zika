@@ -85,7 +85,7 @@
   #pgStep4 { height: auto !important; width: 22.22222% !important; float: left; top: 15%; position: relative; }
   .pgStep__info { padding-left: 20px; }
   #pgStep4 .pgStep__info { width: 55% !important; margin-left: -12%; display: inline-block !important; }
-  #pgStep4 .pgStep__info__text-container { margin-left: 80px !important; margin-top: 20px !important; width: 310px !important; text-align: left; display: block !important; }
+  #pgStep4 .pgStep__info__text-container { margin-left: 80px !important; margin-top: 0px !important; width: 310px !important; text-align: left; display: block !important; }
   #pgStep4 .pgStep__info__number { float: left !important; display: block !important; }
   .pgStep--acenter .pgStep__info__text-description { width: auto !important; margin: 0 0 10px !important; }
   .horizontal-divisions { width: 100%; height: 100%; position: absolute; top: 0; left: 0; display: block; }
@@ -100,7 +100,7 @@
   #pgStep3 .pgStep__info { margin-left: 25%; float: none; }
   #pgQuestion-wrapper1 { width: 200%; height: auto; position: absolute; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); margin-top: -3%; margin-left: 15px; }
   #pgQuestion-wrapper3 { height: auto; position: absolute; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); margin-left: 15px; }
-  .pgQuestion__body__option p { font-size: 1.7vw; }
+  .pgQuestion__body__option p { font-size: 1.4vw; }
   .pgQuestion__body__options-container { padding-bottom: 20px; }
   .pgQuestion__body__binary-options-container--terniary { width: 280px !important; }
   .pgQuestion__body__binary-option { width: 80px !important; height: 80px !important; }
@@ -152,7 +152,17 @@
   .pgQuestion__body__answer { width: 45%; font-size: 14px; }
   .pgQuestion__body__answer + .pg-button { display: inline-block !important; }
   #pgQuestion-wrapper1 .pgQuestion { margin-top: 5% !important; }
-  .pgQuestion__map-info { bottom: 4% !important; } 
+  .pgQuestion__map-info { bottom: 10% !important; } 
+  
+  
+  #pgStep2 .pgStep__info {
+		width:45% !important;  
+	}
+  
+  #pgStep__users-stats-text-title-consequences {
+	margin-top:33px;  
+}
+  
  }
 
 
