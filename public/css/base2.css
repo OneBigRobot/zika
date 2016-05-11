@@ -77,8 +77,8 @@
 
 }
 
-
-@media (max-width: 767px) and (orientation: landscape) { 
+/*@media (max-width: 767px) and (orientation: landscape)*/
+@media (max-width: 1024px) and (orientation: landscape) { 
   .pgChart { overflow-x: auto; overflow-y: hidden; height: 700px !important; }
   .pgChart-wrapper { height: 100% !important; width: 900% !important; -webkit-transform-style: preserve-3d; transform-style: preserve-3d; }
   .pgStep:not(#pgStep4), .pgQuestion-container, .pgConclusions { height: auto !important; max-height: 100%; width: 11.11111% !important; float: left; -webkit-transform: translateY(-50%); transform: translateY(-50%); position: relative; top: 50%; min-height: 500px; overflow-x: hidden; overflow-y: auto; }
@@ -275,6 +275,10 @@
 	}
 	
 	.pgStep__info__number {
+		display:none !important;
+	}
+	
+	#pgStep2 .pgStep__info, #pgStep3 .pgStep__info {
 		display:none !important;
 	}
 	
@@ -567,7 +571,7 @@
 	}
 	
 	#pgStep__users-stats-text-title-consequences {
-		margin-top:15px;
+		margin-top:-2px;
 	}
 	
 	.pgStep__users-stats-text {
@@ -575,7 +579,12 @@
 	}	
 	
 	.pgStep__users-stats-text-row-value-wrapper {
-		margin-top:-16px;
+		margin-top:-4px;
+	}
+	
+	.pgStep__users-stats-text-row-value {
+		margin-top:11px !important;
+		font-size:7px !important;
 	}
 	
 	.first-wrapper {
@@ -588,6 +597,11 @@
 	
 	#mosquitosCanvas {
 		top:15px;
+	}
+	
+	#pgStep__last-chart-text-compare {
+		font-size:7px !important;
+		margin-top:-10px;
 	}
 }
 

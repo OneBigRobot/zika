@@ -246,6 +246,15 @@ if((mobile_browser == 1)&&(ipad_browser == 0))
     behaviorImages = behaviorImagesDesktop;
   }
 }
+if(ipad_browser == 1)
+{
+  tabletTreshold = 3000;
+}
+if(mobile_browser == 0)
+{
+  $('#pgStep2 .pgStep__info').hide();
+  $('#pgStep3 .pgStep__info').hide();
+}
 
 changeIcons();
 
@@ -1569,7 +1578,7 @@ var main = function(time){
             if (element.y > element.positionsArray[nextPosition].y) {
               element.yDir = false;
             }
-            else {mos
+            else {
               element.yDir = true;
             }
 
