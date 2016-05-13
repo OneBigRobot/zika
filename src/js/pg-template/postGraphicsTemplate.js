@@ -246,7 +246,7 @@ if((mobile_browser == 1)&&(ipad_browser == 0))
     behaviorImages = behaviorImagesDesktop;
   }
 }
-if(ipad_browser == 1)
+if((ipad_browser == 1)&&(window.orientation==1))
 {
   tabletTreshold = 3000;
 }
@@ -273,6 +273,7 @@ window.addEventListener("orientationchange", function() {
 
   changeIcons();
 }, false);
+
 
 function changeIcons()
 {
@@ -3277,13 +3278,13 @@ var selectPregnancyOption = function() {
       markerPos = $('.pgStep__last-chart-horizontal-wrapper .pgStep__last-chart-marker').position();
       newPositionsArray = new Array({x: ((markerPos.left + $('.pgStep__last-chart-horizontal-wrapper').position().left + parseInt($('.pgStep__last-chart-horizontal-wrapper').css("margin-left"))) / 0.125 ) / canvas.width, y: (( (markerPos.top + $('.pgStep__last-chart-marker').height() + parseInt($(".pgStep__last-chart-horizontal-wrapper").css("margin-top")) ) + (($("#mosquitosCanvas").height() - $('.pgStep__last-chart-horizontal-wrapper').height()) / 2.0) ) / 0.125) / canvas.width});
     
-      setTimeout(function() {
+      /*setTimeout(function() {
           if ($(".pgArticle").width() <= 736 && $("#horizontal-conclusions-button").css("display") == "none") {
             $('.pgChart').animate({
               scrollLeft: $('.pgConclusions').position().left
             }, 2500);
           }
-      }, 4000);
+      }, 4000);*/
     }
 
     mosquitosArray.forEach(function(element,index,array){
@@ -4391,18 +4392,17 @@ var updateMosquitosPaths = function() {
 
         var newPositionsArray = new Array({x: markerPos.left / canvas.width, y: ((markerPos.top + parseInt($('#pgStep4 .pgStep__last-chart-marker').css("margin-top"))) + $('#pgStep4 .pgStep__last-chart').position().top + $('#pgStep4 .pgStep__last-chart-marker').height()) / canvas.width});
 
-
         if ($(".pgArticle").width() < tabletTreshold) {
           markerPos = $('.pgStep__last-chart-horizontal-wrapper .pgStep__last-chart-marker').position();
           newPositionsArray = new Array({x: ((markerPos.left + $('.pgStep__last-chart-horizontal-wrapper').position().left + parseInt($('.pgStep__last-chart-horizontal-wrapper').css("margin-left"))) / 0.125 ) / canvas.width, y: (( (markerPos.top + $('.pgStep__last-chart-marker').height() + parseInt($(".pgStep__last-chart-horizontal-wrapper").css("margin-top")) ) + (($("#mosquitosCanvas").height() - $('.pgStep__last-chart-horizontal-wrapper').height()) / 2.0) ) / 0.125) / canvas.width});
           
-          setTimeout(function() {
+          /*setTimeout(function() {
               if ($(".pgArticle").width() <= 736 && $("#horizontal-conclusions-button").css("display") == "none") {
                 $('.pgChart').animate({
                   scrollLeft: $('.pgConclusions').position().left
                 }, 2500);
               }
-          }, 3000);
+          }, 3000);*/
         }
       break;
       case 22:

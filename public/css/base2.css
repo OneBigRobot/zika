@@ -1,6 +1,10 @@
 @charset "UTF-8";
 /* CSS Document */
 
+.pgStep__go_to_conclusions {
+	display:none;
+}
+
 @media (min-width: 992px) { 
   .pgChart { overflow: visible; }
   .pgStep { height: 48vw !important; max-height: 583px !important; overflow: visible; }
@@ -161,6 +165,14 @@
   
   #pgStep__users-stats-text-title-consequences {
 	margin-top:33px;  
+}
+
+  .pgStep__go_to_conclusions {
+	display:block;
+}
+
+#horizontal-conclusions-button {
+	display:block;	
 }
   
  }
@@ -659,6 +671,10 @@
 		margin-top:-20px;
 	}
 	
+	#pgQuestion-wrapper3 {
+		margin-left:45px;
+	}
+	
 	#pgQuestion-wrapper3 .pgQuestion {
 		margin-top:50px;
 	}
@@ -674,6 +690,54 @@
 	.pgQuestion__body__options-container:nth-of-type(2) {
 		padding-bottom:0px !important;
 	}
+	
+	.pgStep__go_to_conclusions {
+		display:block;
+		text-align:right;
+		margin-right:90px;
+		margin-top:-80px;
+	}
+	
+	#pgStep2 .pgStep__info {
+		width: 50% !important;
+	}
+	
+	#pgStep2 .pgStep__info__text-container {
+		width: 90% !important;
+		margin-left:70px !important;
+	}
+	
+	#pgStep__users-stats-text-title-consequences {
+		margin-top:21px !important;
+	}
+	
+	.pgStep__users-stats-text-row-value-wrapper {
+		margin-top:-10px;
+		padding-top:5px;
+	}
+	
+	.pgStep__users-stats-text-row-value-wrapper IMG {
+		margin-top:-17px;
+	}
+	
+	.first-wrapper {
+		margin-bottom:3.5%;
+		margin-top:-5px;
+		padding-top:7px;
+	}
+	
+	.pgStep__go_to_conclusions {
+		border:1px solid #FF0000;
+	}
+	
+	#horizontal-conclusions-button {
+		bottom:60%;
+		z-index:2000;
+	}
+	
+	#horizontal-conclusions-button .pg-button {
+		margin-left:500px;
+	}
 }
 
 @media (max-width: 768px) and (min-width: 521px) and (orientation: portrait) { 
@@ -685,6 +749,10 @@
 		width:40px;
 		height:40px;
 		padding:10px;
+	}
+	
+	#pgStep2 .pgStep__info, #pgStep3 .pgStep__info {
+		display:none !important;
 	}
 	
 	#pgStep1 .pgStep__info__text-container {
@@ -773,6 +841,7 @@
 	
 	#pgQuestion-wrapper3 .pgQuestion__body__binary-option h3 {
 		margin-top:3px;
+		font-size:18px !important;
 	}
 	
 	#pgQuestion-wrapper3 .pgQuestion__body__binary-option IMG {
@@ -786,7 +855,7 @@
 	}
 	
 	#pgQuestion-wrapper3 .pgQuestion-action {
-		margin-top:-10px;
+		margin-top:-6px;
 	}
 	
 	#pgStep4 .pgStep__info__number {
@@ -814,8 +883,14 @@
 		bottom:12%;
 	}
 	
+	.pgStep__users-stats-row {
+		margin-top:4%;	
+	}
+	
 }
 
 #mosquitosCanvas {
 	/*display:none !important;*/
 }
+
+
