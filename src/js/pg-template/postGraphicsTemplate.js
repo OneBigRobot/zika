@@ -3083,12 +3083,12 @@ var selectPregnancyOption = function() {
 
     markerPos = $('#pgStep4 .pgStep__last-chart-marker').position();
 
-    var newPositionsArray = new Array({x: markerPos.left / canvas.width, y: ((markerPos.top + parseInt($('#pgStep4 .pgStep__last-chart-marker').css("margin-top"))) + $('#pgStep4 .pgStep__last-chart').position().top + $('#pgStep4 .pgStep__last-chart-marker').height()) / canvas.width});
+    var newPositionsArray = new Array({x: markerPos.left / canvas.width, y: (( ((markerPos.top + parseInt($('#pgStep4 .pgStep__last-chart-marker').css("margin-top"))) + $('#pgStep4 .pgStep__last-chart').position().top + $('#pgStep4 .pgStep__last-chart-marker').height()) ) - parseInt($("#mosquitosCanvas").css("top"))) / canvas.width});
 
 
     if ($(".pgArticle").width() < tabletTreshold) {
       markerPos = $('.pgStep__last-chart-horizontal-wrapper .pgStep__last-chart-marker').position();
-      newPositionsArray = new Array({x: ((markerPos.left + $('.pgStep__last-chart-horizontal-wrapper').position().left + parseInt($('.pgStep__last-chart-horizontal-wrapper').css("margin-left"))) / 0.125 ) / canvas.width, y: (( (markerPos.top + $('.pgStep__last-chart-marker').height() + parseInt($(".pgStep__last-chart-horizontal-wrapper").css("margin-top")) ) + (($("#mosquitosCanvas").height() - $('.pgStep__last-chart-horizontal-wrapper').height()) / 2.0) ) / 0.125) / canvas.width});
+      newPositionsArray = new Array({x: ((markerPos.left + $('.pgStep__last-chart-horizontal-wrapper').position().left + parseInt($('.pgStep__last-chart-horizontal-wrapper').css("margin-left"))) / 0.125 ) / canvas.width, y: (( (markerPos.top + $('.pgStep__last-chart-marker').height() + parseInt($(".pgStep__last-chart-horizontal-wrapper").css("margin-top")) ) + (($("#mosquitosCanvas").height() - $('.pgStep__last-chart-horizontal-wrapper').height()) / 2.0) ) / 0.125) / canvas.width });
       setTimeout(function() {
           if ($(".pgArticle").width() <= 736 && $("#horizontal-conclusions-button").css("display") == "none") {
             $('.pgChart').animate({
@@ -3271,7 +3271,7 @@ var selectPregnancyOption = function() {
 
     markerPos = $('#pgStep4 .pgStep__last-chart-marker').position();
 
-    var newPositionsArray = new Array({x: markerPos.left / canvas.width, y: ((markerPos.top + parseInt($('#pgStep4 .pgStep__last-chart-marker').css("margin-top"))) + $('#pgStep4 .pgStep__last-chart').position().top + $('#pgStep4 .pgStep__last-chart-marker').height()) / canvas.width});
+    var newPositionsArray = new Array({x: markerPos.left / canvas.width, y: (( ((markerPos.top + parseInt($('#pgStep4 .pgStep__last-chart-marker').css("margin-top"))) + $('#pgStep4 .pgStep__last-chart').position().top + $('#pgStep4 .pgStep__last-chart-marker').height()) ) - parseInt($("#mosquitosCanvas").css("top"))) / canvas.width});
 
 
     if ($(".pgArticle").width() < tabletTreshold) {
