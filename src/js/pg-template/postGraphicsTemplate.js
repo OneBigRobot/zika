@@ -231,7 +231,7 @@ var hoverBehaviorImagesMobile = new Array("icon1mobile_hover.png","icon2mobile_h
 var behaviorImagesMobile = new Array("icon1mobile.png","icon2mobile.png","icon3mobile.png","icon4mobile.png","icon5mobile.png","icon6mobile.png","icon7mobile.png","icon8mobile.png","icon9mobile.png");
 var hoverBehaviorImages = hoverBehaviorImagesDesktop;
 var behaviorImages = behaviorImagesDesktop;
-var tabletTreshold = 354;//957;
+var tabletTreshold = 279;//957;
 var mobileTreshold = 600;
 var cell = 0;
 
@@ -262,7 +262,7 @@ window.addEventListener("orientationchange", function() {
   // Announce the new orientation number
   if(window.orientation==0)
   {
-    tabletTreshold = 354;
+    tabletTreshold = 279;
     hoverBehaviorImages = hoverBehaviorImagesMobile;
     behaviorImages = behaviorImagesMobile;
   }else{
@@ -3464,27 +3464,35 @@ var returnMosquitosLeft = function(step, question, option){
 **************************************/
 var createConclusions = function(cell) {
   var conclusionsText = '<h4 class="pgConclusions__main-conclusion"><b>You have a ';
+  var conclusionsValue = "";
+  var riskValue = "";
 
   if (cell <= 10) {
     conclusionsText += "low";
+    conclusionsValue = "low";
   }
   else if (cell <= 19) {
     conclusionsText += "mid";
+    conclusionsValue = "mid";
   }
   else {
     conclusionsText += "high";
+    conclusionsValue = "high";
   }
 
   conclusionsText += " risk of contracting the Zika virus, and the consequences "
 
   if (cell <= 10) {
     conclusionsText += "would be mild.";
+    riskValue = "low";
   }
   else if (cell <= 19) {
     conclusionsText += "would be mild.";
+    riskValue = "mid";
   }
   else {
     conclusionsText += "could be serious.";
+    riskValue = "high";
   }
 
   conclusionsText += "</b></h4>";
@@ -3522,6 +3530,28 @@ var createConclusions = function(cell) {
   $(".pgConclusions-desc").before(conclusionsText);
 
   $(".pgConclusions-desc, .pgConclusions h4").css("display", "block");
+
+
+  //Send information to de database
+  var jsonFile = ' { "appId" : "5734cbea0c51e72f60b22ffa", '
+              + '"accountId" : "53c935be7304a04920d58910", '
+              + '"customerId" : "5522b596832147513ecf731a", '
+              + '"formData" : {'
+              + '"occurance_0" : "'+conclusionsValue+'",'
+              + '"consequences_1" : "'+riskValue+'" }, '
+              + '"submitted" : true, '
+              + '"approved" : "Pending", '
+              + '"isDraft" : false }';
+
+  var objJson = JSON.stringify(jsonFile);
+  
+  $.ajax({
+    data: objJson,
+    type: "POST",
+    dataType: "json",
+    contentType: "application/json; charset=utf-8",
+    url: "https://sub.washingtonpost.com/submission"
+  })
 }
 
 var createUsersStats = function(markerLeft, markerTop, cell) {
@@ -3780,7 +3810,7 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
     }
     else {
       risk = "high";
-    }
+    } q
 
     var url = window.location.href;
     var text = "I did the Zika test in the Washington Post and got that I have a "+risk+" risk of getting the virus. Assess your risk in " + url;
