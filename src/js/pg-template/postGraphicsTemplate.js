@@ -2823,6 +2823,9 @@ var selectBinaryOption = function(){
       $($('#pgQuestion-wrapper3 .pgQuestion')[0]).find(".pgQuestion__body__answer").css("opacity", "1.0");
 
       if ($(".pgArticle").width() >= tabletTreshold) {
+
+      if((mobile_browser == 1)&&(ipad_browser == 0))
+      {
       setTimeout(function() {
         var $questionWrapper = $($('.pgQuestion-wrapper')[currentStep - 1]),
         $questionContainer = $($('.pgQuestion-container')[currentStep - 1]),
@@ -2874,6 +2877,8 @@ var selectBinaryOption = function(){
         }, Math.random() * 1500);
       });
       }, 3250);
+
+      }
     }
     
     }
@@ -2882,6 +2887,9 @@ var selectBinaryOption = function(){
       $($('#pgQuestion-wrapper3 .pgQuestion')[1]).find(".pgQuestion__body__answer").css("opacity", "1.0");
 
       if ($(".pgArticle").width() >= tabletTreshold) {
+
+      if((mobile_browser == 1)&&(ipad_browser == 0))
+      {
       setTimeout(function() {
         var $questionWrapper = $($('.pgQuestion-wrapper')[currentStep - 1]),
         $questionContainer = $($('.pgQuestion-container')[currentStep - 1]),
@@ -2933,6 +2941,8 @@ var selectBinaryOption = function(){
         }, Math.random() * 1500);
       });
       }, 3250);
+    }
+
       }
     }
     else {
@@ -3544,7 +3554,7 @@ var createConclusions = function(cell) {
               + '"isDraft" : false }';
 
   var objJson = JSON.stringify(jsonFile);
-  
+
   $.ajax({
     data: objJson,
     type: "POST",
