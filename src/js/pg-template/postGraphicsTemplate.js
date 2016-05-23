@@ -3541,49 +3541,6 @@ var createConclusions = function(cell) {
 
   $(".pgConclusions-desc, .pgConclusions h4").css("display", "block");
 
-
-  //Send information to de database
-  var meta = {
-      "formData": {
-        "occurance_0" : cell,
-        "consequences_1" : cell
-      },
-      "mediasets": [],
-      "documentSets": [],
-      "videoSets": [],
-      "customerId": "5522b596832147513ecf731a",
-      "appId": "5734cbea0c51e72f60b22ffa",
-      "accountId": "53c935be7304a04920d58910",
-      "paramObject": {},
-      "createdDate": "2015-09-09T14:07:49.834Z",
-      "submitted" : true, 
-      "approved" : "Pending", 
-      "isDraft" : false
-    };
-    
-    console.debug('!!!!!POSTING!!!!');
-
-
-  //var objJson = JSON.stringify(jsonFile);
-
-  var $xhr = $.ajax({
-      type    : 'POST',
-      url     : "https://sub.washingtonpost.com/submission",
-      data: JSON.stringify(meta),
-      contentType: "application/json; charset=utf-8",
-      dataType: "json"
-    });
-
-    $xhr.success(function(data) {
-     console.debug('success')
-     console.debug(data)
-    });
-    
-    $xhr.error(function(e){
-     console.debug('Error');
-     console.debug(e);
-    })
-  
 }
 
 var createUsersStats = function(markerLeft, markerTop, cell) {
@@ -3672,28 +3629,41 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
   $(".pgStep__users-stats-marker").css("opacity", 1.0);
   $(".pgStep__users-stats-marker").css("display", "block");
 
+  var consequence_value = 0;
+  var risk_value = 0;
+
   switch (markerLeft) {
     case 0.315:
       switch (markerTop) {
         case 20:
           markerLeft = 60 * 0.5;
           markerTop = 70 + (30 * 0.5);
+          risk_value = 3;
+          consequence_value = 1;
         break;
         case 15:
           markerLeft = 60 * 0.5;
           markerTop = 55 + (15 * 0.875);
+          risk_value = 2;
+          consequence_value = 1;
         break;
         case 10:
           markerLeft = 60 * 0.5;
           markerTop = 55 + (15 * 0.5);
+          risk_value = 2;
+          consequence_value = 1;
         break;
         case 5:
           markerLeft = 60 * 0.5;
           markerTop = 55 + (15 * 0.125);
+          risk_value = 2;
+          consequence_value = 1;
         break;
         case 0:
           markerLeft = 60 * 0.5;
           markerTop = 55 * 0.5;
+          risk_value = 1;
+          consequence_value = 1;
         break;
       }
     break;
@@ -3702,22 +3672,32 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
         case 20:
           markerLeft = 60 + (15 * 0.125);
           markerTop = 70 + (30 * 0.5);
+          risk_value = 3;
+          consequence_value = 2;
         break;
         case 15:
           markerLeft = 60 + (15 * 0.125);
           markerTop = 55 + (15 * 0.875);
+          risk_value = 2;
+          consequence_value = 2;
         break;
         case 10:
           markerLeft = 60 + (15 * 0.125);
           markerTop = 55 + (15 * 0.5);
+          risk_value = 2;
+          consequence_value = 2;
         break;
         case 5:
           markerLeft = 60 + (15 * 0.125);
           markerTop = 55 + (15 * 0.125);
+          risk_value = 2;
+          consequence_value = 2;
         break;
         case 0:
           markerLeft = 60 + (15 * 0.125);
           markerTop = 55 * 0.5;
+          risk_value = 1;
+          consequence_value = 2;
         break;
       }
     break;
@@ -3726,22 +3706,32 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
         case 20:
           markerLeft = 60 + (15 * 0.5);
           markerTop = 70 + (30 * 0.5);
+          risk_value = 3;
+          consequence_value = 2;
         break;
         case 15:
           markerLeft = 60 + (15 * 0.5);
           markerTop = 55 + (15 * 0.875);
+          risk_value = 2;
+          consequence_value = 2;
         break;
         case 10:
           markerLeft = 60 + (15 * 0.5);
           markerTop = 55 + (15 * 0.5);
+          risk_value = 2;
+          consequence_value = 2;
         break;
         case 5:
           markerLeft = 60 + (15 * 0.5);
           markerTop = 55 + (15 * 0.125);
+          risk_value = 2;
+          consequence_value = 2;
         break;
         case 0:
           markerLeft = 60 + (15 * 0.5);
           markerTop = 55 * 0.5;
+          risk_value = 1;
+          consequence_value = 2;
         break;
       }
     break;
@@ -3750,22 +3740,32 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
         case 20:
           markerLeft = 60 + (15 * 0.875);
           markerTop = 70 + (30 * 0.5);
+          risk_value = 3;
+          consequence_value = 2;
         break;
         case 15:
           markerLeft = 60 + (15 * 0.875);
           markerTop = 55 + (15 * 0.875);
+          risk_value = 2;
+          consequence_value = 2;
         break;
         case 10:
           markerLeft = 60 + (15 * 0.875);
           markerTop = 55 + (15 * 0.5);
+          risk_value = 2;
+          consequence_value = 2;
         break;
         case 5:
           markerLeft = 60 + (15 * 0.875);
           markerTop = 55 + (15 * 0.125);
+          risk_value = 2;
+          consequence_value = 2;
         break;
         case 0:
           markerLeft = 60 + (15 * 0.875);
           markerTop = 55 * 0.5;
+          risk_value = 1;
+          consequence_value = 2;
         break;
       }
     break;
@@ -3774,26 +3774,75 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
         case 20:
           markerLeft = 75 + (25 * 0.5);
           markerTop = 70 + (30 * 0.5);
+          risk_value = 3;
+          consequence_value = 3;
         break;
         case 15:
           markerLeft = 75 + (25 * 0.5);
           markerTop = 55 + (15 * 0.875);
+          risk_value = 2;
+          consequence_value = 3;
         break;
         case 10:
           markerLeft = 75 + (25 * 0.5);
           markerTop = 55 + (15 * 0.5);
+          risk_value = 2;
+          consequence_value = 3;
         break;
         case 5:
           markerLeft = 75 + (25 * 0.5);
           markerTop = 55 + (15 * 0.125);
+          risk_value = 2;
+          consequence_value = 3;
         break;
         case 0:
           markerLeft = 75 + (25 * 0.5);
           markerTop = 55 * 0.5;
+          risk_value = 1;
+          consequence_value = 3;
         break;
       }
     break;
   }
+
+  //Send information to de database
+  var meta = {
+      "formData": {
+        "occurance_0" : risk_value,
+        "consequences_1" : consequence_value
+      },
+      "mediasets": [],
+      "documentSets": [],
+      "videoSets": [],
+      "customerId": "5522b596832147513ecf731a",
+      "appId": "5734cbea0c51e72f60b22ffa",
+      "accountId": "53c935be7304a04920d58910",
+      "paramObject": {},
+      "createdDate": "2015-09-09T14:07:49.834Z",
+      "submitted" : true, 
+      "approved" : "Pending", 
+      "isDraft" : false
+    };
+    
+    console.debug('!!!!!POSTING!!!!');
+
+  var $xhr = $.ajax({
+      type    : 'POST',
+      url     : "https://sub.washingtonpost.com/submission",
+      data: JSON.stringify(meta),
+      contentType: "application/json; charset=utf-8",
+      dataType: "json"
+    });
+
+    $xhr.success(function(data) {
+     console.debug('success')
+     console.debug(data)
+    });
+    
+    $xhr.error(function(e){
+     console.debug('Error');
+     console.debug(e);
+    })
 
   $($("#pgStep4 .pgStep__users-stats-marker")[0]).css("left", parseInt(markerLeft) + "%");
   $($(".pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-marker")[0]).css("left", parseInt(markerLeft) + "%");
