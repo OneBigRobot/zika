@@ -7300,8 +7300,8 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
   //Send information to de database
   var meta = {
       "formData": {
-        "occurance_0" : risk_value,
-        "consequences_1" : consequence_value
+        consequenses_1 : consequence_value,
+        occurance_0 : risk_value
       },
       "mediasets": [],
       "documentSets": [],
@@ -7310,12 +7310,13 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
       "appId": "5734cbea0c51e72f60b22ffa",
       "accountId": "53c935be7304a04920d58910",
       "paramObject": {},
-      "createdDate": "2015-09-09T14:07:49.834Z",
+      "createdDate": new Date().toString(),
       "submitted" : true, 
       "approved" : "Pending", 
       "isDraft" : false
     };
     
+    console.debug(JSON.stringify(meta));
     console.debug('!!!!!POSTING!!!!');
 
   var $xhr = $.ajax({
@@ -7328,7 +7329,7 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
 
     $xhr.success(function(data) {
      console.debug('success')
-     console.debug(data)
+     console.debug(JSON.stringify(data))
     });
     
     $xhr.error(function(e){
