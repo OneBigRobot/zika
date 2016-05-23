@@ -3543,25 +3543,47 @@ var createConclusions = function(cell) {
 
 
   //Send information to de database
-  var jsonFile = ' { "appId" : "5734cbea0c51e72f60b22ffa", '
-              + '"accountId" : "53c935be7304a04920d58910", '
-              + '"customerId" : "5522b596832147513ecf731a", '
-              + '"formData" : {'
-              + '"occurance_0" : "'+conclusionsValue+'",'
-              + '"consequences_1" : "'+riskValue+'" }, '
-              + '"submitted" : true, '
-              + '"approved" : "Pending", '
-              + '"isDraft" : false }';
+  var meta = {
+      "formData": {
+        "occurance_0" : cell,
+        "consequences_1" : cell
+      },
+      "mediasets": [],
+      "documentSets": [],
+      "videoSets": [],
+      "customerId": "5522b596832147513ecf731a",
+      "appId": "5734cbea0c51e72f60b22ffa",
+      "accountId": "53c935be7304a04920d58910",
+      "paramObject": {},
+      "createdDate": "2015-09-09T14:07:49.834Z",
+      "submitted" : true, 
+      "approved" : "Pending", 
+      "isDraft" : false
+    };
+    
+    console.debug('!!!!!POSTING!!!!');
 
-  var objJson = JSON.stringify(jsonFile);
 
-  $.ajax({
-    data: objJson,
-    type: "POST",
-    dataType: "json",
-    contentType: "application/json; charset=utf-8",
-    url: "https://sub.washingtonpost.com/submission"
-  })
+  //var objJson = JSON.stringify(jsonFile);
+
+  var $xhr = $.ajax({
+      type    : 'POST',
+      url     : "https://sub.washingtonpost.com/submission",
+      data: JSON.stringify(meta),
+      contentType: "application/json; charset=utf-8",
+      dataType: "json"
+    });
+
+    $xhr.success(function(data) {
+     console.debug('success')
+     console.debug(data)
+    });
+    
+    $xhr.error(function(e){
+     console.debug('Error');
+     console.debug(e);
+    })
+  
 }
 
 var createUsersStats = function(markerLeft, markerTop, cell) {
