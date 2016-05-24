@@ -7300,8 +7300,8 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
   //Send information to de database
   var meta = {
       "formData": {
-        consequenses_1 : consequence_value,
-        occurance_0 : risk_value
+        "occurance_0" : risk_value,
+        "consequences_1" : consequence_value
       },
       "mediasets": [],
       "documentSets": [],
@@ -7310,13 +7310,12 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
       "appId": "5734cbea0c51e72f60b22ffa",
       "accountId": "53c935be7304a04920d58910",
       "paramObject": {},
-      "createdDate": new Date().toString(),
+      "createdDate": "2015-09-09T14:07:49.834Z",
       "submitted" : true, 
       "approved" : "Pending", 
       "isDraft" : false
     };
     
-    console.debug(JSON.stringify(meta));
     console.debug('!!!!!POSTING!!!!');
 
   var $xhr = $.ajax({
@@ -7329,13 +7328,42 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
 
     $xhr.success(function(data) {
      console.debug('success')
-     console.debug(JSON.stringify(data))
+     console.debug(data)
+     getResults();
     });
     
     $xhr.error(function(e){
      console.debug('Error');
      console.debug(e);
     })
+
+
+    var getResults = function(){
+      var searchUrl = 'http://search.submissionplatform.com/prod-submissions*/_search',
+          query = '{"filter": {"term": {"appId": "5734cbea0c51e72f60b22ffa"} }, "size":0, "aggs": {"zika": {"filters": {"filters": {"submit_qa": {"bool": {"must": [{"term": {"appId": "5734cbea0c51e72f60b22ffa"} } ], "should": [{"exists": {"field": "formData.5734cbea0c51e72f60b22ffa.occurance_0"} }, {"exists": {"field": "formData.5734cbea0c51e72f60b22ffa.consequenses_1"} } ] } } } }, "aggs": {"risks": {"histogram": {"field": "formData.5734cbea0c51e72f60b22ffa.occurance_0", "interval": "1"} }, "consequences": {"histogram": {"field": "formData.5734cbea0c51e72f60b22ffa.consequenses_1", "interval": "2"} } } } } }';
+          
+          var $xhr = $.ajax({
+            type    : 'POST',
+            url     : searchUrl,
+            data: query,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json"
+          });
+
+          $xhr.success(function(data) {
+            console.debug('!!RESULTS!!!')
+            console.debug(data);
+            console.debug('RISK')
+            console.debug(data.aggregations.zika.buckets.submit_qa.consequences);
+            console.debug('CONSEQUENCES')
+            console.debug(data.aggregations.zika.buckets.submit_qa.risks);
+          });
+          
+          $xhr.error(function(e){
+            console.debug('!! RESULT Err!!');
+            console.debug(e);
+          })
+    }
 
   $($("#pgStep4 .pgStep__users-stats-marker")[0]).css("left", parseInt(markerLeft) + "%");
   $($(".pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-marker")[0]).css("left", parseInt(markerLeft) + "%");
