@@ -7329,7 +7329,7 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
     $xhr.success(function(data) {
      console.debug('success')
      console.debug(data)
-     getResults();
+     getResults()
     });
     
     $xhr.error(function(e){
@@ -7337,8 +7337,7 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
      console.debug(e);
     })
 
-
-    var getResults = function(){
+  var getResults = function(){
       var searchUrl = 'http://search.submissionplatform.com/prod-submissions*/_search',
           query = '{"filter": {"term": {"appId": "5734cbea0c51e72f60b22ffa"} }, "size":0, "aggs": {"zika": {"filters": {"filters": {"submit_qa": {"bool": {"must": [{"term": {"appId": "5734cbea0c51e72f60b22ffa"} } ], "should": [{"exists": {"field": "formData.5734cbea0c51e72f60b22ffa.occurance_0"} }, {"exists": {"field": "formData.5734cbea0c51e72f60b22ffa.consequenses_1"} } ] } } } }, "aggs": {"risks": {"histogram": {"field": "formData.5734cbea0c51e72f60b22ffa.occurance_0", "interval": "1"} }, "consequences": {"histogram": {"field": "formData.5734cbea0c51e72f60b22ffa.consequenses_1", "interval": "2"} } } } } }';
           
@@ -7354,16 +7353,16 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
             console.debug('!!RESULTS!!!')
             console.debug(data);
             console.debug('RISK')
-            console.debug(data.aggregations.zika.buckets.submit_qa.consequences);
-            console.debug('CONSEQUENCES')
             console.debug(data.aggregations.zika.buckets.submit_qa.risks);
+            console.debug('CONSEQUENCES')
+            console.debug(data.aggregations.zika.buckets.submit_qa.consequences);
           });
           
           $xhr.error(function(e){
             console.debug('!! RESULT Err!!');
             console.debug(e);
           })
-    }
+  };
 
   $($("#pgStep4 .pgStep__users-stats-marker")[0]).css("left", parseInt(markerLeft) + "%");
   $($(".pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-marker")[0]).css("left", parseInt(markerLeft) + "%");
