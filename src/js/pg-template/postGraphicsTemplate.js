@@ -2950,6 +2950,7 @@ var selectBinaryOption = function(){
       $($('#pgQuestion-wrapper3 .pgQuestion')[2]).find(".pgQuestion__body__answer").css("opacity", "1.0");
       if ($(".pgArticle").width() >= tabletTreshold) {
         decideNextStep(5);
+        getResults();
       }
     }
 
@@ -3543,6 +3544,77 @@ var createConclusions = function(cell) {
 
 }
 
+var get_risk_low = 0;
+var get_risk_med = 0;
+var get_risk_high = 0;
+var get_consequences_low = 0;
+var get_consequences_med = 0;
+var get_consequences_high = 0;
+var getResults = function(){
+      var searchUrl = 'http://search.submissionplatform.com/prod-submissions*/_search',
+          query = '{"filter": {"term": {"appId": "5734cbea0c51e72f60b22ffa"} }, "size":0, "aggs": {"zika": {"filters": {"filters": {"submit_qa": {"bool": {"must": [{"term": {"appId": "5734cbea0c51e72f60b22ffa"} } ], "should": [{"exists": {"field": "formData.5734cbea0c51e72f60b22ffa.occurance_0"} }, {"exists": {"field": "formData.5734cbea0c51e72f60b22ffa.consequenses_1"} } ] } } } }, "aggs": {"risks": {"histogram": {"field": "formData.5734cbea0c51e72f60b22ffa.occurance_0", "interval": "1"} }, "consequences": {"histogram": {"field": "formData.5734cbea0c51e72f60b22ffa.consequenses_1", "interval": "2"} } } } } }';
+          
+          var $xhr = $.ajax({
+            type    : 'POST',
+            url     : searchUrl,
+            data: query,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json"
+          });
+
+          $xhr.success(function(data) {
+            console.debug('!!RESULTS!!!')
+            console.debug(data);
+            console.debug('RISK')
+            buck_risk = data.aggregations.zika.buckets.submit_qa.risks.buckets;
+            for(i=0;i<buck_risk.length;i++)
+            {
+                switch (buck_risk[i].key) {
+                  case 1:
+                     get_risk_low = buck_risk[i].doc_count;
+                  break;
+                  case 2:
+                     get_risk_med = buck_risk[i].doc_count;
+                  break;
+                  case 3:
+                     get_risk_high = buck_risk[i].doc_count;
+                  break;
+                }
+            }
+
+            console.debug("Risk: low-"+get_risk_low+" med-"+get_risk_med+" high-"+get_risk_high);
+            console.debug('CONSEQUENCES')
+            buck_consequences = data.aggregations.zika.buckets.submit_qa.consequences.buckets;
+            for(i=0;i<buck_consequences.length;i++)
+            {
+                switch (buck_consequences[i].key) {
+                  case 0:
+                     get_consequences_low = buck_consequences[i].doc_count;
+                  break;
+                  case 1:
+                     get_consequences_med = buck_consequences[i].doc_count;
+                  break;
+                  case 2:
+                     get_consequences_high = buck_consequences[i].doc_count;
+                  break;
+                }
+            }
+            console.debug("Consequences: low-"+get_consequences_low+" med-"+get_consequences_med+" high-"+get_consequences_high);
+          });
+          
+          $xhr.error(function(e){
+            console.debug('!! RESULT Err!!');
+            console.debug(e);
+          })
+  };
+
+var createStatsPorcentage = function(num,max)
+{
+  porc = (num*100)/max;
+
+  return porc.toPrecision(3);
+}
+
 var createUsersStats = function(markerLeft, markerTop, cell) {
   var results = [1, 2, 1, 2, 5, 3, 6, 10, 1, 1, 1, 1, 10, 12, 5, 1, 1, 10, 12, 1, 1, 1, 2, 9, 1];
 
@@ -3554,75 +3626,78 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
     }
   }
 
+  var total_risk = get_risk_high + get_risk_med + get_risk_low;
+  var total_cons = get_consequences_high + get_consequences_med + get_consequences_low;
+
   $($('#pgStep4 .pgStep__users-stats-row-value')[0]).css("left", "0%");
   $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-row-value')[0]).css("left", "0%");
-  $($('#pgStep4 .pgStep__users-stats-row-value')[1]).css("left", "60%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-row-value')[1]).css("left", "60%");
-  $($('#pgStep4 .pgStep__users-stats-row-value')[2]).css("left", "75%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-row-value')[2]).css("left", "75%");
+  $($('#pgStep4 .pgStep__users-stats-row-value')[1]).css("left", createStatsPorcentage(get_risk_low,total_risk)+"%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-row-value')[1]).css("left", createStatsPorcentage(get_risk_low,total_risk)+"%");
+  $($('#pgStep4 .pgStep__users-stats-row-value')[2]).css("left", createStatsPorcentage((get_risk_med+get_risk_low),total_risk)+"%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-row-value')[2]).css("left", createStatsPorcentage((get_risk_med+get_risk_low),total_risk)+"%");
   $($('#pgStep4 .pgStep__users-stats-row-value')[3]).css("left", "0%");
   $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-row-value')[3]).css("left", "0%");
-  $($('#pgStep4 .pgStep__users-stats-row-value')[4]).css("left", "55%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-row-value')[4]).css("left", "55%");
-  $($('#pgStep4 .pgStep__users-stats-row-value')[5]).css("left", "70%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-row-value')[5]).css("left", "70%");
+  $($('#pgStep4 .pgStep__users-stats-row-value')[4]).css("left", createStatsPorcentage(get_consequences_low,total_cons)+"%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-row-value')[4]).css("left", createStatsPorcentage(get_consequences_low,total_cons)+"%");
+  $($('#pgStep4 .pgStep__users-stats-row-value')[5]).css("left", createStatsPorcentage((get_consequences_low+get_consequences_med),total_cons)+"%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-row-value')[5]).css("left", createStatsPorcentage((get_consequences_low+get_consequences_med),total_cons)+"%");
 
-  $($('#pgStep4 .pgStep__users-stats-row-value')[0]).css("width", "60%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-row-value')[0]).css("width", "60%");
-  $($('#pgStep4 .pgStep__users-stats-row-value')[1]).css("width", "15%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-row-value')[1]).css("width", "15%");
-  $($('#pgStep4 .pgStep__users-stats-row-value')[2]).css("width", "25%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-row-value')[2]).css("width", "25%");
-  $($('#pgStep4 .pgStep__users-stats-row-value')[3]).css("width", "55%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-row-value')[3]).css("width", "55%");
-  $($('#pgStep4 .pgStep__users-stats-row-value')[4]).css("width", "15%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-row-value')[4]).css("width", "15%");
-  $($('#pgStep4 .pgStep__users-stats-row-value')[5]).css("width", "30%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-row-value')[5]).css("width", "30%");
+  $($('#pgStep4 .pgStep__users-stats-row-value')[0]).css("width", createStatsPorcentage(get_risk_low,total_risk)+"%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-row-value')[0]).css("width", createStatsPorcentage(get_risk_low,total_risk)+"%");
+  $($('#pgStep4 .pgStep__users-stats-row-value')[1]).css("width", createStatsPorcentage(get_risk_med,total_risk)+"%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-row-value')[1]).css("width", createStatsPorcentage(get_risk_med,total_risk)+"%");
+  $($('#pgStep4 .pgStep__users-stats-row-value')[2]).css("width", createStatsPorcentage(get_risk_high,total_risk)+"%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-row-value')[2]).css("width", createStatsPorcentage(get_risk_high,total_risk)+"%");
+  $($('#pgStep4 .pgStep__users-stats-row-value')[3]).css("width", createStatsPorcentage(get_consequences_low,total_cons)+"%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-row-value')[3]).css("width", createStatsPorcentage(get_consequences_low,total_cons)+"%");
+  $($('#pgStep4 .pgStep__users-stats-row-value')[4]).css("width", createStatsPorcentage(get_consequences_med,total_cons)+"%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-row-value')[4]).css("width", createStatsPorcentage(get_consequences_med,total_cons)+"%");
+  $($('#pgStep4 .pgStep__users-stats-row-value')[5]).css("width", createStatsPorcentage(get_consequences_high,total_cons)+"%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-row-value')[5]).css("width", createStatsPorcentage(get_consequences_high,total_cons)+"%");
 
   $($('#pgStep4 .pgStep__users-stats-text-row-value')[0]).css("left", "0%");
   $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[0]).css("left", "0%");
-  $($('#pgStep4 .pgStep__users-stats-text-row-value')[1]).css("left", "60%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[1]).css("left", "60%");
-  $($('#pgStep4 .pgStep__users-stats-text-row-value')[2]).css("left", "75%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[2]).css("left", "75%");
+  $($('#pgStep4 .pgStep__users-stats-text-row-value')[1]).css("left", createStatsPorcentage(get_risk_low,total_risk)+"%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[1]).css("left", createStatsPorcentage(get_risk_low,total_risk)+"%");
+  $($('#pgStep4 .pgStep__users-stats-text-row-value')[2]).css("left", createStatsPorcentage((get_risk_med+get_risk_low),total_risk)+"%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[2]).css("left", createStatsPorcentage((get_risk_med+get_risk_low),total_risk)+"%");
   $($('#pgStep4 .pgStep__users-stats-text-row-value')[3]).css("left", "0%");
   $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[3]).css("left", "0%");
-  $($('#pgStep4 .pgStep__users-stats-text-row-value')[4]).css("left", "55%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[4]).css("left", "55%");
-  $($('#pgStep4 .pgStep__users-stats-text-row-value')[5]).css("left", "70%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[5]).css("left", "70%");
+  $($('#pgStep4 .pgStep__users-stats-text-row-value')[4]).css("left", createStatsPorcentage(get_consequences_low,total_cons)+"%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[4]).css("left", createStatsPorcentage(get_consequences_low,total_cons)+"%");
+  $($('#pgStep4 .pgStep__users-stats-text-row-value')[5]).css("left", createStatsPorcentage((get_consequences_low+get_consequences_med),total_cons)+"%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[5]).css("left", createStatsPorcentage((get_consequences_low+get_consequences_med),total_cons)+"%");
 
-  $($('#pgStep4 .pgStep__users-stats-text-row-value')[0]).css("width", "60%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[0]).css("width", "60%");
-  $($('#pgStep4 .pgStep__users-stats-text-row-value')[1]).css("width", "15%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[1]).css("width", "15%");
-  $($('#pgStep4 .pgStep__users-stats-text-row-value')[2]).css("width", "25%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[2]).css("width", "25%");
-  $($('#pgStep4 .pgStep__users-stats-text-row-value')[3]).css("width", "55%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[3]).css("width", "55%");
-  $($('#pgStep4 .pgStep__users-stats-text-row-value')[4]).css("width", "15%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[4]).css("width", "15%");
-  $($('#pgStep4 .pgStep__users-stats-text-row-value')[5]).css("width", "30%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[5]).css("width", "30%");
+  $($('#pgStep4 .pgStep__users-stats-text-row-value')[0]).css("width", createStatsPorcentage(get_risk_low,total_risk)+"%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[0]).css("width", createStatsPorcentage(get_risk_low,total_risk)+"%");
+  $($('#pgStep4 .pgStep__users-stats-text-row-value')[1]).css("width", createStatsPorcentage(get_risk_med,total_risk)+"%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[1]).css("width", createStatsPorcentage(get_risk_med,total_risk)+"%");
+  $($('#pgStep4 .pgStep__users-stats-text-row-value')[2]).css("width", createStatsPorcentage(get_risk_high,total_risk)+"%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[2]).css("width", createStatsPorcentage(get_risk_high,total_risk)+"%");
+  $($('#pgStep4 .pgStep__users-stats-text-row-value')[3]).css("width", createStatsPorcentage(get_consequences_low,total_cons)+"%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[3]).css("width", createStatsPorcentage(get_consequences_low,total_cons)+"%");
+  $($('#pgStep4 .pgStep__users-stats-text-row-value')[4]).css("width", createStatsPorcentage(get_consequences_med,total_cons)+"%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[4]).css("width", createStatsPorcentage(get_consequences_med,total_cons)+"%");
+  $($('#pgStep4 .pgStep__users-stats-text-row-value')[5]).css("width", createStatsPorcentage(get_consequences_high,total_cons)+"%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[5]).css("width", createStatsPorcentage(get_consequences_high,total_cons)+"%");
 
   var mediumWord = "MEDIUM ";
   if ($(window).width() < 520) {
     mediumWord = "MED "
   }
 
-  $($('#pgStep4 .pgStep__users-stats-text-row-value')[0]).html("LOW " + 60 + "%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[0]).html("LOW " + 60 + "%");
-  $($('#pgStep4 .pgStep__users-stats-text-row-value')[1]).html(mediumWord + 15 + "%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[1]).html(mediumWord + 15 + "%");
-  $($('#pgStep4 .pgStep__users-stats-text-row-value')[2]).html("HIGH " + 25 + "%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[2]).html("HIGH " + 25 + "%");
-  $($('#pgStep4 .pgStep__users-stats-text-row-value')[3]).html("LOW " + 55 + "%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[3]).html("LOW " + 55 + "%");
-  $($('#pgStep4 .pgStep__users-stats-text-row-value')[4]).html(mediumWord + 15 + "%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[4]).html(mediumWord + 15 + "%");
-  $($('#pgStep4 .pgStep__users-stats-text-row-value')[5]).html("HIGH " + 30 + "%");
-  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[5]).html("HIGH " + 30 + "%");
+  $($('#pgStep4 .pgStep__users-stats-text-row-value')[0]).html("LOW " + createStatsPorcentage(get_risk_low,total_risk) + "%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[0]).html("LOW " + createStatsPorcentage(get_risk_low,total_risk) + "%");
+  $($('#pgStep4 .pgStep__users-stats-text-row-value')[1]).html(mediumWord + createStatsPorcentage(get_risk_med,total_risk) + "%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[1]).html(mediumWord + createStatsPorcentage(get_risk_med,total_risk) + "%");
+  $($('#pgStep4 .pgStep__users-stats-text-row-value')[2]).html("HIGH " + createStatsPorcentage(get_risk_high,total_risk) + "%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[2]).html("HIGH " + createStatsPorcentage(get_risk_high,total_risk) + "%");
+  $($('#pgStep4 .pgStep__users-stats-text-row-value')[3]).html("LOW " + createStatsPorcentage(get_consequences_low,total_cons) + "%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[3]).html("LOW " + createStatsPorcentage(get_consequences_low,total_cons) + "%");
+  $($('#pgStep4 .pgStep__users-stats-text-row-value')[4]).html(mediumWord + createStatsPorcentage(get_consequences_med,total_cons) + "%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[4]).html(mediumWord + createStatsPorcentage(get_consequences_med,total_cons) + "%");
+  $($('#pgStep4 .pgStep__users-stats-text-row-value')[5]).html("HIGH " + createStatsPorcentage(get_consequences_high,total_cons) + "%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[5]).html("HIGH " + createStatsPorcentage(get_consequences_high,total_cons) + "%");
 
   $(".pgStep__users-stats-text-row-value").css("opacity", "1.0");
 
@@ -3636,32 +3711,32 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
     case 0.315:
       switch (markerTop) {
         case 20:
-          markerLeft = 60 * 0.5;
-          markerTop = 70 + (30 * 0.5);
+          markerLeft = createStatsPorcentage(get_risk_low,total_risk) * 0.5;
+          markerTop = createStatsPorcentage((get_consequences_low+get_consequences_med),total_cons) + (createStatsPorcentage(get_consequences_high,total_cons) * 0.5);
           risk_value = 3;
           consequence_value = 1;
         break;
         case 15:
-          markerLeft = 60 * 0.5;
-          markerTop = 55 + (15 * 0.875);
+          markerLeft = createStatsPorcentage(get_risk_low,total_risk) * 0.5;
+          markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.875);
           risk_value = 2;
           consequence_value = 1;
         break;
         case 10:
-          markerLeft = 60 * 0.5;
-          markerTop = 55 + (15 * 0.5);
+          markerLeft = createStatsPorcentage(get_risk_low,total_risk) * 0.5;
+          markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.5);
           risk_value = 2;
           consequence_value = 1;
         break;
         case 5:
-          markerLeft = 60 * 0.5;
-          markerTop = 55 + (15 * 0.125);
+          markerLeft = createStatsPorcentage(get_risk_low,total_risk) * 0.5;
+          markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.125);
           risk_value = 2;
           consequence_value = 1;
         break;
         case 0:
-          markerLeft = 60 * 0.5;
-          markerTop = 55 * 0.5;
+          markerLeft = createStatsPorcentage(get_risk_low,total_risk) * 0.5;
+          markerTop = createStatsPorcentage(get_consequences_low,total_cons) * 0.5;
           risk_value = 1;
           consequence_value = 1;
         break;
@@ -3670,32 +3745,32 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
     case 0.405:
       switch (markerTop) {
         case 20:
-          markerLeft = 60 + (15 * 0.125);
-          markerTop = 70 + (30 * 0.5);
+          markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.125);
+          markerTop = createStatsPorcentage((get_consequences_low+get_consequences_med),total_cons) + (createStatsPorcentage(get_consequences_high,total_cons) * 0.5);
           risk_value = 3;
           consequence_value = 2;
         break;
         case 15:
-          markerLeft = 60 + (15 * 0.125);
-          markerTop = 55 + (15 * 0.875);
+          markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.125);
+          markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.875);
           risk_value = 2;
           consequence_value = 2;
         break;
         case 10:
-          markerLeft = 60 + (15 * 0.125);
-          markerTop = 55 + (15 * 0.5);
+          markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.125);
+          markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.5);
           risk_value = 2;
           consequence_value = 2;
         break;
         case 5:
-          markerLeft = 60 + (15 * 0.125);
-          markerTop = 55 + (15 * 0.125);
+          markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.125);
+          markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.125);
           risk_value = 2;
           consequence_value = 2;
         break;
         case 0:
-          markerLeft = 60 + (15 * 0.125);
-          markerTop = 55 * 0.5;
+          markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.125);
+          markerTop = createStatsPorcentage(get_consequences_low,total_cons) * 0.5;
           risk_value = 1;
           consequence_value = 2;
         break;
@@ -3704,32 +3779,32 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
     case 0.5:
       switch (markerTop) {
         case 20:
-          markerLeft = 60 + (15 * 0.5);
-          markerTop = 70 + (30 * 0.5);
+          markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.5);
+          markerTop = createStatsPorcentage((get_consequences_low+get_consequences_med),total_cons) + (createStatsPorcentage(get_consequences_high,total_cons) * 0.5);
           risk_value = 3;
           consequence_value = 2;
         break;
         case 15:
-          markerLeft = 60 + (15 * 0.5);
-          markerTop = 55 + (15 * 0.875);
+          markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.5);
+          markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.875);
           risk_value = 2;
           consequence_value = 2;
         break;
         case 10:
-          markerLeft = 60 + (15 * 0.5);
-          markerTop = 55 + (15 * 0.5);
+          markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.5);
+          markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.5);
           risk_value = 2;
           consequence_value = 2;
         break;
         case 5:
-          markerLeft = 60 + (15 * 0.5);
-          markerTop = 55 + (15 * 0.125);
+          markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.5);
+          markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.125);
           risk_value = 2;
           consequence_value = 2;
         break;
         case 0:
-          markerLeft = 60 + (15 * 0.5);
-          markerTop = 55 * 0.5;
+          markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.5);
+          markerTop = createStatsPorcentage(get_consequences_low,total_cons) * 0.5;
           risk_value = 1;
           consequence_value = 2;
         break;
@@ -3738,32 +3813,32 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
     case 0.595:
       switch (markerTop) {
         case 20:
-          markerLeft = 60 + (15 * 0.875);
-          markerTop = 70 + (30 * 0.5);
+          markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.875);
+          markerTop = createStatsPorcentage((get_consequences_low+get_consequences_med),total_cons) + (createStatsPorcentage(get_consequences_high,total_cons) * 0.5);
           risk_value = 3;
           consequence_value = 2;
         break;
         case 15:
-          markerLeft = 60 + (15 * 0.875);
-          markerTop = 55 + (15 * 0.875);
+          markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.875);
+          markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.875);
           risk_value = 2;
           consequence_value = 2;
         break;
         case 10:
-          markerLeft = 60 + (15 * 0.875);
-          markerTop = 55 + (15 * 0.5);
+          markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.875);
+          markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.5);
           risk_value = 2;
           consequence_value = 2;
         break;
         case 5:
-          markerLeft = 60 + (15 * 0.875);
-          markerTop = 55 + (15 * 0.125);
+          markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.875);
+          markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.125);
           risk_value = 2;
           consequence_value = 2;
         break;
         case 0:
-          markerLeft = 60 + (15 * 0.875);
-          markerTop = 55 * 0.5;
+          markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.875);
+          markerTop = createStatsPorcentage(get_consequences_low,total_cons) * 0.5;
           risk_value = 1;
           consequence_value = 2;
         break;
@@ -3772,32 +3847,32 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
     case 0.685:
       switch (markerTop) {
         case 20:
-          markerLeft = 75 + (25 * 0.5);
-          markerTop = 70 + (30 * 0.5);
+          markerLeft = createStatsPorcentage((get_risk_med+get_risk_low),total_risk) + (createStatsPorcentage(get_risk_high,total_risk) * 0.5);
+          markerTop = createStatsPorcentage((get_consequences_low+get_consequences_med),total_cons) + (createStatsPorcentage(get_consequences_high,total_cons) * 0.5);
           risk_value = 3;
           consequence_value = 3;
         break;
         case 15:
-          markerLeft = 75 + (25 * 0.5);
-          markerTop = 55 + (15 * 0.875);
+          markerLeft = createStatsPorcentage((get_risk_med+get_risk_low),total_risk) + (createStatsPorcentage(get_risk_high,total_risk) * 0.5);
+          markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.875);
           risk_value = 2;
           consequence_value = 3;
         break;
         case 10:
-          markerLeft = 75 + (25 * 0.5);
-          markerTop = 55 + (15 * 0.5);
+          markerLeft = createStatsPorcentage((get_risk_med+get_risk_low),total_risk) + (createStatsPorcentage(get_risk_high,total_risk) * 0.5);
+          markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.5);
           risk_value = 2;
           consequence_value = 3;
         break;
         case 5:
-          markerLeft = 75 + (25 * 0.5);
-          markerTop = 55 + (15 * 0.125);
+          markerLeft = createStatsPorcentage((get_risk_med+get_risk_low),total_risk) + (createStatsPorcentage(get_risk_high,total_risk) * 0.5);
+          markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.125);
           risk_value = 2;
           consequence_value = 3;
         break;
         case 0:
-          markerLeft = 75 + (25 * 0.5);
-          markerTop = 55 * 0.5;
+          markerLeft = createStatsPorcentage((get_risk_med+get_risk_low),total_risk) + (createStatsPorcentage(get_risk_high,total_risk) * 0.5);
+          markerTop = createStatsPorcentage(get_consequences_low,total_cons) * 0.5;
           risk_value = 1;
           consequence_value = 3;
         break;
