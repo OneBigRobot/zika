@@ -3585,13 +3585,13 @@ var getResults = function(){
             for(i=0;i<buck_consequences.length;i++)
             {
                 switch (buck_consequences[i].key) {
-                  case 0:
+                  case 1:
                      get_consequences_low = buck_consequences[i].doc_count;
                   break;
-                  case 1:
+                  case 2:
                      get_consequences_med = buck_consequences[i].doc_count;
                   break;
-                  case 2:
+                  case 3:
                      get_consequences_high = buck_consequences[i].doc_count;
                   break;
                 }
