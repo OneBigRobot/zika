@@ -2420,7 +2420,7 @@ var decideNextStep = function(nextStep){
       }
       break;
       case 5:
-      setTimeout(function() {
+      //setTimeout(function() {
         mosquitosLeft -= returnMosquitosLeft(4, 3, !$($($('#pgQuestion-wrapper3 .pgQuestion')[1]).find("pgQuestion__body__binary-option")[1]).hasClass("selected"));
 
         pregnantMosquitos = mosquitosLeft * 0.75;
@@ -2526,7 +2526,7 @@ var decideNextStep = function(nextStep){
           scrollTop: $('#pgStep4').offset().top
         }, 2500);
       }
-      }, ($(".pgArticle").width() < tabletTreshold) ? 0 : 3250);
+      //}, ($(".pgArticle").width() < tabletTreshold) ? 0 : 3250);
       break;
 
     default:
@@ -2949,7 +2949,10 @@ var selectBinaryOption = function(){
       $($('#pgQuestion-wrapper3 .pgQuestion')[2]).find(".check").css("opacity", "1.0");
       $($('#pgQuestion-wrapper3 .pgQuestion')[2]).find(".pgQuestion__body__answer").css("opacity", "1.0");
       if ($(".pgArticle").width() >= tabletTreshold) {
-        decideNextStep(5);
+        if((mobile_browser == 1)&&(ipad_browser == 0))
+        {
+          decideNextStep(5);
+        }
         getResults();
       }
     }
@@ -3478,15 +3481,12 @@ var createConclusions = function(cell) {
 
   if (risk_value == 1) {
     conclusionsText += "low";
-    conclusionsValue = "low";
   }
   else if (risk_value == 2) {
     conclusionsText += "mid";
-    conclusionsValue = "mid";
   }
   else {
     conclusionsText += "high";
-    conclusionsValue = "high";
   }
 
   conclusionsText += " risk of contracting the Zika virus, and the consequences "
