@@ -7376,7 +7376,8 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
   var meta = {
       "formData": {
         "occurance_0" : risk_value,
-        "consequences_1" : consequence_value
+        //leave misspelled as "consequenses"
+        "consequenses_1" : consequence_value
       },
       "mediasets": [],
       "documentSets": [],
