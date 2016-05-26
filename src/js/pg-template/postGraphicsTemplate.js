@@ -3475,14 +3475,12 @@ var returnMosquitosLeft = function(step, question, option){
 **************************************/
 var createConclusions = function(cell) {
   var conclusionsText = '<h4 class="pgConclusions__main-conclusion"><b>You have a ';
-  var conclusionsValue = "";
-  var riskValue = "";
 
-  if (cell <= 10) {
+  if (risk_value == 1) {
     conclusionsText += "low";
     conclusionsValue = "low";
   }
-  else if (cell <= 19) {
+  else if (risk_value == 2) {
     conclusionsText += "mid";
     conclusionsValue = "mid";
   }
@@ -3493,17 +3491,14 @@ var createConclusions = function(cell) {
 
   conclusionsText += " risk of contracting the Zika virus, and the consequences "
 
-  if (cell <= 10) {
-    conclusionsText += "would be mild.";
-    riskValue = "low";
+  if (consequence_value == 1) {
+    conclusionsText += "would be low.";
   }
-  else if (cell <= 19) {
+  else if (consequence_value == 2) {
     conclusionsText += "would be mild.";
-    riskValue = "mid";
   }
   else {
     conclusionsText += "could be serious.";
-    riskValue = "high";
   }
 
   conclusionsText += "</b></h4>";
@@ -3544,6 +3539,8 @@ var createConclusions = function(cell) {
 
 }
 
+var consequence_value = 0;
+var risk_value = 0;
 var get_risk_low = 0;
 var get_risk_med = 0;
 var get_risk_high = 0;
@@ -3703,9 +3700,6 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
 
   $(".pgStep__users-stats-marker").css("opacity", 1.0);
   $(".pgStep__users-stats-marker").css("display", "block");
-
-  var consequence_value = 0;
-  var risk_value = 0;
 
   switch (markerLeft) {
     case 0.315:
@@ -3958,10 +3952,10 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
   $('.pgConclusions-sharebar-wrapper a[data-service="facebook"]').click(function() {
     var risk = "";
 
-    if (cell <= 10) {
+    if (risk_value == 1) {
       risk = "low";
     }
-    else if (cell <= 19) {
+    else if (risk_value == 2) {
       risk = "mid";
     }
     else {
@@ -3981,10 +3975,10 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
   $('.pgConclusions-sharebar-wrapper a[data-service="twitter"]').click(function() {
     var risk = "";
 
-    if (cell <= 10) {
+    if (risk_value == 1) {
       risk = "low";
     }
-    else if (cell <= 19) {
+    else if (risk_value == 2) {
       risk = "mid";
     }
     else {
