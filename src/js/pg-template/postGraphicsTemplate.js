@@ -3549,7 +3549,7 @@ var get_consequences_med = 0;
 var get_consequences_high = 0;
 var getResults = function(){
       var searchUrl = 'http://search.submissionplatform.com/prod-submissions*/_search',
-          query = '{"filter": {"term": {"appId": "5734cbea0c51e72f60b22ffa"} }, "size":0, "aggs": {"zika": {"filters": {"filters": {"submit_qa": {"bool": {"must": [{"term": {"appId": "5734cbea0c51e72f60b22ffa"} } ], "should": [{"exists": {"field": "formData.5734cbea0c51e72f60b22ffa.occurance_0"} }, {"exists": {"field": "formData.5734cbea0c51e72f60b22ffa.consequenses_1"} } ] } } } }, "aggs": {"risks": {"histogram": {"field": "formData.5734cbea0c51e72f60b22ffa.occurance_0", "interval": "1"} }, "consequences": {"histogram": {"field": "formData.5734cbea0c51e72f60b22ffa.consequenses_1", "interval": "2"} } } } } }';
+          query = '{"filter": {"term": {"appId": "5734cbea0c51e72f60b22ffa"} }, "size":0, "aggs": {"zika": {"filters": {"filters": {"submit_qa": {"bool": {"must": [{"term": {"appId": "5734cbea0c51e72f60b22ffa"} } ], "should": [{"exists": {"field": "formData.5734cbea0c51e72f60b22ffa.occurance_0"} }, {"exists": {"field": "formData.5734cbea0c51e72f60b22ffa.consequenses_1"} } ] } } } }, "aggs": {"risks": {"histogram": {"field": "formData.5734cbea0c51e72f60b22ffa.occurance_0", "interval": "1"} }, "consequences": {"histogram": {"field": "formData.5734cbea0c51e72f60b22ffa.consequenses_1", "interval": "1"} } } } } }';
           
           var $xhr = $.ajax({
             type    : 'POST',
@@ -3878,7 +3878,8 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
   var meta = {
       "formData": {
         "occurance_0" : risk_value,
-        "consequences_1" : consequence_value
+        //leave "spelled"" this way
+        "consequenses_1" : consequence_value
       },
       "mediasets": [],
       "documentSets": [],
