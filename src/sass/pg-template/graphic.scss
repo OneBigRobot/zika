@@ -1255,6 +1255,32 @@ canvas {
 	#pgStep2 .pgStep__info {
 		width: 51%!important;
 	}
+
+    .pgStep__users-stats-row:nth-of-type(2) {
+        margin-top:11%;
+    }
+
+    .pgStep__users-stats-marker {
+        margin-top:-1%;
+    }
+
+    .pgStep__users-stats-text {
+        bottom: -20px;
+    }
+
+    #pgStep__users-stats-text-title-consequences {
+        margin-top:25px;
+    }
+
+    .pgStep__users-stats-text-row-value-wrapper {
+        margin-bottom:4.5%;
+    }
+
+    .first-wrapper {
+        margin-top:5px !important;
+    }
+
+
 }
 
 @media (min-width: 992px) {
