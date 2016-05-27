@@ -3136,8 +3136,8 @@ var selectPregnancyOption = function() {
         }, (Math.random() * 1500) + 1000);
       });
     setTimeout(function() {
-      createConclusions(cell);
       createUsersStats(newX, newY, cell);
+      createConclusions(cell);
       //setTimeout(function() {
         if ($(".pgArticle").width() < tabletTreshold) {
           $('.pgChart').animate({
@@ -3326,8 +3326,8 @@ var selectPregnancyOption = function() {
       });
 
     setTimeout(function() {
-      createConclusions(cell);
       createUsersStats(newX, newY, cell);
+      createConclusions(cell);
       setTimeout(function() {
         if ($(".pgArticle").width() < tabletTreshold) {
           $('.pgChart').animate({
@@ -3478,7 +3478,7 @@ var returnMosquitosLeft = function(step, question, option){
 **************************************/
 var createConclusions = function(cell) {
   var conclusionsText = '<h4 class="pgConclusions__main-conclusion"><b>You have a ';
-
+  console.log("Conclusions: risk-"+risk_value+" :: consequences:"+consequence_value);
   if (risk_value == 1) {
     conclusionsText += "low";
   }

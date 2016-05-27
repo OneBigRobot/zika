@@ -1937,21 +1937,4 @@ canvas {
         display: inline-block !important;
         width: 100% !important;
     }
-
-    #pgQuestion-container2 {
-        margin-top:-15px;
-    }
-
-    #pgQuestion-container2 .pgQuestion__body__options-container {
-        padding-top:0px !important;
-    }
-
-    #pgQuestion-container2 .pgQuestion__body__options-container:nth-of-type(2){
-        margin-top:-15px;
-    }
-
-    #pgQuestion-wrapper2 .pgQuestion__body {
-        height: 85px;
-        min-height: 85px;
-    }
 }

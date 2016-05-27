@@ -889,6 +889,132 @@
 	
 }
 
+@media (max-width: 320px) and (orientation: portrait) {
+   	#pgQuestion-container1 {
+		margin-top:-20px !important;	
+	}
+   
+   	.pgQuestion__body__select-country {
+		height:18px;
+		font-size:8px;	
+	}
+	
+	.pgQuestion__header .pgQuestion__header-title {
+		font-size:9px !important;
+		width:calc(100% - 40px);
+	}
+	
+	#pgStep2, #pgStep3 {
+		height: 170px !important;
+	}
+	
+    #pgQuestion-container2 {
+        margin-top:-20px !important;
+    }
+
+    #pgQuestion-container2 .pgQuestion__body__options-container {
+        padding-top:5px !important;
+    }
+
+    #pgQuestion-container2 .pgQuestion__body__options-container:nth-of-type(2){
+        margin-top:-15px;
+        padding-top:10px !important;
+    }
+
+    #pgQuestion-wrapper2 .pgQuestion__body {
+        height: 90px !important;
+        min-height: 90px !important;
+    }
+	
+	#pgQuestion-container3 {
+		margin-top:-10px !important;
+	}
+	
+	#pgQuestion-container3 .pgQuestion__body__binary-option {
+		width:10vw;
+		height:10vw;
+	}
+	
+	#pgQuestion-container3 h3 {
+		font-size:12px;
+	}
+	
+	#pgQuestion-container3 .pgQuestion__body__binary-options-container {
+		height:80px;	
+	}
+	
+	#pgQuestion-container3 .pgQuestion__body__answer {
+		height:50px;
+		font-size:9px;
+	}
+	
+	#pgStep4 {
+		height: 240px !important;
+	}
+	
+	#pgStep4 .pgStep__info__text-description {
+		display:none;
+	}
+	
+	#pgStep4 .pgStep__info__text-title {
+		margin-bottom:0px;
+		margin-top:62px;	
+	}
+
+    .pgStep__last-chart {
+        top:0px;
+        margin-top:-25px;
+    }
+
+	#pgStep__last-chart-text-probability-low, #pgStep__last-chart-text-probability-medium, #pgStep__last-chart-text-probability-high {
+		top:45px;
+	}
+	
+	#pgStep__last-chart-text-probability-low {
+		left:29%;
+	}
+	
+	#pgStep__last-chart-text-probability-medium {
+		left:44%;
+	}
+	
+	#pgStep__last-chart-text-probability-high {
+		left:64%;
+	}
+	
+	#pgStep__last-chart-text-consecuences {
+		top:27%;
+	}
+	
+	#pgStep__last-chart-text-consecuences-high {
+		top:55px;
+	}
+	
+	#pgStep__last-chart-text-consecuences-medium {
+		top:26%;
+	}
+	
+	#pgStep__last-chart-text-consecuences-low {
+		top:34%;
+	}
+	
+	#pgStep__last-chart-text-compare, .pgStep__users-stats, .pgStep__users-stats-text {
+		display:none;
+	}
+	
+	.pgStep__last-chart-text {
+		font-size:7px !important;
+	}
+	
+	.pgStep__pregnancy-buttons {
+		top:0;
+	}
+	
+	.pgConclusions {
+		margin:0px;
+	}
+}
+
 #mosquitosCanvas {
 	/*display:none !important;*/
 }
