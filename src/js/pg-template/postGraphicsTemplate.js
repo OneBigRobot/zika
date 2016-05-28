@@ -231,7 +231,7 @@ var hoverBehaviorImagesMobile = new Array("icon1mobile_hover.png","icon2mobile_h
 var behaviorImagesMobile = new Array("icon1mobile.png","icon2mobile.png","icon3mobile.png","icon4mobile.png","icon5mobile.png","icon6mobile.png","icon7mobile.png","icon8mobile.png","icon9mobile.png");
 var hoverBehaviorImages = hoverBehaviorImagesDesktop;
 var behaviorImages = behaviorImagesDesktop;
-var tabletTreshold = 279;//957;
+var tabletTreshold = 259;//957;
 var mobileTreshold = 600;
 var cell = 0;
 
@@ -262,7 +262,7 @@ window.addEventListener("orientationchange", function() {
   // Announce the new orientation number
   if(window.orientation==0)
   {
-    tabletTreshold = 279;
+    tabletTreshold = 259;
     hoverBehaviorImages = hoverBehaviorImagesMobile;
     behaviorImages = behaviorImagesMobile;
   }else{

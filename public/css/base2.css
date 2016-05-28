@@ -1015,6 +1015,93 @@
 	}
 }
 
+@media (max-width: 280px) and (orientation: portrait) {
+	.pgStep, #pgStep2, #pgStep3, #pgQuestion-container3, .vertical-divisions DIV {
+		height: 150px !important;
+	}
+	
+	#pgStep2 {
+		height: 130px !important;
+	}
+	
+	.pgStep__info__text-title {
+		font-size:9px;
+	}
+	
+	.pgStep__info__text-description {
+		font-size:8px;
+	}
+	
+	.pg-button {
+		font-size:8px;
+	}
+	
+	#pgQuestion-container1 {
+		margin-top:-10px !important;
+	}
+	
+	#pgQuestion-wrapper2 .pgQuestion__header {
+		height:16px;
+	}
+	
+	#pgQuestion-wrapper2 .pgQuestion__header-title, #pgQuestion-wrapper3 .pgQuestion__header-title {
+		font-size:8px !important;
+	}
+	
+	#pgQuestion-container2 .pgQuestion__body__options-container {
+		padding-top:0px !important;
+	}
+	
+	#pgQuestion-wrapper2 .pgQuestion__body {
+		height:75px !important;
+		min-height:75px !important;
+	}
+
+	#pgQuestion-wrapper3 {
+		margin-top:40px !important;
+	}
+	
+	#pgQuestion-container3 .pgQuestion__body__binary-options-container {
+		height:70px !important;
+	}
+	
+	#pgStep4 {
+		height:180px !important;
+	}
+	
+	.pgStep__last-chart {
+		margin-top:-35px;
+	}
+	
+	.pgStep__last-chart .pgStep__last-chart-text {
+		font-size:7px !important;
+	}
+	
+	#pgStep__last-chart-text-consecuences {
+		top:24%;
+	}
+	
+	#pgStep__last-chart-text-consecuences-high {
+		top:50px;
+	}
+	
+	#pgStep__last-chart-text-consecuences-medium {
+		top:22%;
+	}
+	
+	#pgStep__last-chart-text-consecuences-low {
+		top:30%;
+	}
+	
+	#pgStep__last-chart-text-probability-high, #pgStep__last-chart-text-probability-medium, #pgStep__last-chart-text-probability-low {
+		top:43px;
+	}
+	
+	.pgStep__last-chart-marker {
+		top:21%;
+	}
+}
+
 #mosquitosCanvas {
 	/*display:none !important;*/
 }
