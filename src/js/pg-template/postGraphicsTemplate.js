@@ -3136,6 +3136,12 @@ var selectPregnancyOption = function() {
         }, (Math.random() * 1500) + 1000);
       });
     setTimeout(function() {
+
+      if($(".pgArticle").width() < 320)
+      {
+        $("#mosquitosCanvas").hide();
+      }
+      
       createUsersStats(newX, newY, cell);
       createConclusions(cell);
       //setTimeout(function() {
@@ -3326,6 +3332,12 @@ var selectPregnancyOption = function() {
       });
 
     setTimeout(function() {
+      
+      if($(".pgArticle").width() < 320)
+      {
+        $("#mosquitosCanvas").hide();
+      }
+
       createUsersStats(newX, newY, cell);
       createConclusions(cell);
       setTimeout(function() {
