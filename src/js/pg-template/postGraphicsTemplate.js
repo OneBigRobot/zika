@@ -3696,17 +3696,27 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
   }
 
   $($('#pgStep4 .pgStep__users-stats-text-row-value')[0]).html("LOW " + createStatsPorcentage(get_risk_low,total_risk) + "%");
+  $($('#pgStep4 .pgStep__users-stats-text-row-value')[0]).css("text-align", "left");
   $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[0]).html("LOW " + createStatsPorcentage(get_risk_low,total_risk) + "%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[0]).css("text-align", "left");
   $($('#pgStep4 .pgStep__users-stats-text-row-value')[1]).html(mediumWord + createStatsPorcentage(get_risk_med,total_risk) + "%");
+  $($('#pgStep4 .pgStep__users-stats-text-row-value')[1]).css("text-align", "center");
   $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[1]).html(mediumWord + createStatsPorcentage(get_risk_med,total_risk) + "%");
   $($('#pgStep4 .pgStep__users-stats-text-row-value')[2]).html("HIGH " + createStatsPorcentage(get_risk_high,total_risk) + "%");
+  $($('#pgStep4 .pgStep__users-stats-text-row-value')[2]).css("text-align", "right");
   $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[2]).html("HIGH " + createStatsPorcentage(get_risk_high,total_risk) + "%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[2]).css("text-align", "right");
   $($('#pgStep4 .pgStep__users-stats-text-row-value')[3]).html("LOW " + createStatsPorcentage(get_consequences_low,total_cons) + "%");
+  $($('#pgStep4 .pgStep__users-stats-text-row-value')[3]).css("text-align", "left");
   $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[3]).html("LOW " + createStatsPorcentage(get_consequences_low,total_cons) + "%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[3]).css("text-align", "left");
   $($('#pgStep4 .pgStep__users-stats-text-row-value')[4]).html(mediumWord + createStatsPorcentage(get_consequences_med,total_cons) + "%");
+  $($('#pgStep4 .pgStep__users-stats-text-row-value')[4]).css("text-align", "center");
   $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[4]).html(mediumWord + createStatsPorcentage(get_consequences_med,total_cons) + "%");
   $($('#pgStep4 .pgStep__users-stats-text-row-value')[5]).html("HIGH " + createStatsPorcentage(get_consequences_high,total_cons) + "%");
+  $($('#pgStep4 .pgStep__users-stats-text-row-value')[5]).css("text-align", "right");
   $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[5]).html("HIGH " + createStatsPorcentage(get_consequences_high,total_cons) + "%");
+  $($('.pgStep__last-chart-horizontal-wrapper .pgStep__users-stats-text-row-value')[5]).css("text-align", "right");
 
   $(".pgStep__users-stats-text-row-value").css("opacity", "1.0");
 
@@ -3737,7 +3747,7 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
         case 5:
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) * 0.5;
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.125);
-          risk_value = 2;
+          risk_value = 1;
           consequence_value = 1;
         break;
         case 0:
@@ -3754,31 +3764,31 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.125);
           markerTop = createStatsPorcentage((get_consequences_low+get_consequences_med),total_cons) + (createStatsPorcentage(get_consequences_high,total_cons) * 0.5);
           risk_value = 3;
-          consequence_value = 2;
+          consequence_value = 1;
         break;
         case 15:
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.125);
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.875);
           risk_value = 2;
-          consequence_value = 2;
+          consequence_value = 1;
         break;
         case 10:
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.125);
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.5);
           risk_value = 2;
-          consequence_value = 2;
+          consequence_value = 1;
         break;
         case 5:
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.125);
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.125);
-          risk_value = 2;
-          consequence_value = 2;
+          risk_value = 1;
+          consequence_value = 1;
         break;
         case 0:
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.125);
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) * 0.5;
           risk_value = 1;
-          consequence_value = 2;
+          consequence_value = 1;
         break;
       }
     break;
@@ -3805,7 +3815,7 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
         case 5:
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.5);
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.125);
-          risk_value = 2;
+          risk_value = 1;
           consequence_value = 2;
         break;
         case 0:
@@ -3839,7 +3849,7 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
         case 5:
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.875);
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.125);
-          risk_value = 2;
+          risk_value = 1;
           consequence_value = 2;
         break;
         case 0:
@@ -3873,7 +3883,7 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
         case 5:
           markerLeft = createStatsPorcentage((get_risk_med+get_risk_low),total_risk) + (createStatsPorcentage(get_risk_high,total_risk) * 0.5);
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.125);
-          risk_value = 2;
+          risk_value = 1;
           consequence_value = 3;
         break;
         case 0:

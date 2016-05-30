@@ -5,6 +5,14 @@
 	display:none;
 }
 
+.pgStep__users-stats-text  .pgStep__users-stats-text-row-value{
+	text-align:left;
+}
+
+.pgStep__users-stats-text {
+	width:67%;
+}
+
 @media (min-width: 992px) { 
   .pgChart { overflow: visible; }
   .pgStep { height: 48vw !important; max-height: 583px !important; overflow: visible; }
@@ -625,6 +633,18 @@
 		font-size:7px !important;
 		margin-top:-10px;
 	}
+	
+	.pgStep__users-stats-row:nth-of-type(2) {
+		margin-top:27% !important;
+	}
+	
+	.pgStep__users-stats-text-row-value-wrapper {
+		margin-top:4px;
+	}
+	
+	#pgStep__users-stats-text-title-consequences {
+		margin-top:25px;
+	}
 }
 
 @media (max-width: 776px) and (orientation: landscape) { 
@@ -880,11 +900,40 @@
 	}
 	
 	.pgStep__last-chart {
-		bottom:12%;
+		bottom:8%;
 	}
 	
 	.pgStep__users-stats-row {
 		margin-top:4%;	
+	}
+	
+	#pgStep__last-chart-text-consecuences {
+		top:40%;
+	}
+	
+	#pgStep__last-chart-text-consecuences-high {
+		top:75px;
+	}
+	
+	#pgStep__last-chart-text-consecuences-medium {
+		top:43%;
+	}
+	
+	#pgStep__last-chart-text-consecuences-low {
+		top:65%;
+		left:16%;
+	}
+	
+	.pgStep__users-stats-row:nth-of-type(2) {
+		margin-top:15px;
+	}
+	
+	#pgStep__users-stats-text-title-consequences {
+		margin-top:28px;
+	}
+	
+	.pgStep__users-stats-text-row-value-wrapper {
+		margin-top:1px;
 	}
 	
 }
@@ -949,7 +998,7 @@
 	}
 	
 	#pgStep4 {
-		height: 240px !important;
+		height: 180px !important;
 	}
 	
 	#pgStep4 .pgStep__info__text-description {
@@ -1012,6 +1061,10 @@
 	
 	.pgConclusions {
 		margin:0px;
+	}
+	
+	.pgStep__last-chart-marker {
+		top:17% !important;
 	}
 }
 
@@ -1099,6 +1152,10 @@
 	
 	.pgStep__last-chart-marker {
 		top:21%;
+	}
+	
+	.pgStep__last-chart-marker {
+		top:17% !important;
 	}
 }
 
