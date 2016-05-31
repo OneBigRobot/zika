@@ -4020,11 +4020,11 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
     var url = window.location.href;
     var text = "I did the Zika test in the Washington Post and got that I have a "+risk+" risk of getting the virus. Assess your risk in " + url;
 
-    window.open('https://www.facebook.com/dialog/feed?app_id=1438439249728371&display=popup&caption='+text+'&link='+url+'&description=desc&redirect_uri='+url,'share_facebook','width=658, height=350, scrollbars=no');
+    //window.open('https://www.facebook.com/dialog/feed?app_id=1438439249728371&display=popup&caption='+text+'&link='+url+'&description=desc&redirect_uri='+url,'share_facebook','width=658, height=350, scrollbars=no');
 
     FB.ui({
       method: 'share',
-      href: "http://www.google.com",
+      href: url,
       quote: text
     }, function(response){});
 
