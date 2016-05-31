@@ -3504,7 +3504,7 @@ var createConclusions = function(cell) {
   conclusionsText += " risk of contracting the Zika virus, and the consequences "
 
   if (consequence_value == 1) {
-    conclusionsText += "would be low.";
+    conclusionsText += "would be mild.";
   }
   else if (consequence_value == 2) {
     conclusionsText += "would be mild.";
@@ -3727,30 +3727,35 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
     case 0.315:
       switch (markerTop) {
         case 20:
+          console.log("0.315 - 20");
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) * 0.5;
           markerTop = createStatsPorcentage((get_consequences_low+get_consequences_med),total_cons) + (createStatsPorcentage(get_consequences_high,total_cons) * 0.5);
-          risk_value = 3;
-          consequence_value = 1;
+          risk_value = 1;
+          consequence_value = 3;
         break;
         case 15:
+          console.log("0.315 - 15");
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) * 0.5;
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.875);
-          risk_value = 2;
-          consequence_value = 1;
+          risk_value = 1;
+          consequence_value = 2;
         break;
         case 10:
+          console.log("0.315 - 10");
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) * 0.5;
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.5);
-          risk_value = 2;
-          consequence_value = 1;
+          risk_value = 1;
+          consequence_value = 2;
         break;
         case 5:
+          console.log("0.315 - 5");
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) * 0.5;
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.125);
           risk_value = 1;
           consequence_value = 1;
         break;
         case 0:
+          console.log("0.315 - 0");
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) * 0.5;
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) * 0.5;
           risk_value = 1;
@@ -3761,30 +3766,35 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
     case 0.405:
       switch (markerTop) {
         case 20:
+          console.log("0.405 - 20");
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.125);
           markerTop = createStatsPorcentage((get_consequences_low+get_consequences_med),total_cons) + (createStatsPorcentage(get_consequences_high,total_cons) * 0.5);
-          risk_value = 3;
-          consequence_value = 1;
+          risk_value = 1;
+          consequence_value = 3;
         break;
         case 15:
+          console.log("0.405 - 15");
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.125);
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.875);
-          risk_value = 2;
-          consequence_value = 1;
+          risk_value = 1;
+          consequence_value = 2;
         break;
         case 10:
+          console.log("0.405 - 10");
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.125);
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.5);
-          risk_value = 2;
-          consequence_value = 1;
+          risk_value = 1;
+          consequence_value = 2;
         break;
         case 5:
+          console.log("0.405 - 5");
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.125);
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.125);
           risk_value = 1;
           consequence_value = 1;
         break;
         case 0:
+          console.log("0.405 - 0");
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.125);
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) * 0.5;
           risk_value = 1;
@@ -3795,102 +3805,117 @@ var createUsersStats = function(markerLeft, markerTop, cell) {
     case 0.5:
       switch (markerTop) {
         case 20:
+          console.log("0.5 - 20");
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.5);
           markerTop = createStatsPorcentage((get_consequences_low+get_consequences_med),total_cons) + (createStatsPorcentage(get_consequences_high,total_cons) * 0.5);
-          risk_value = 3;
-          consequence_value = 2;
+          risk_value = 2;
+          consequence_value = 3;
         break;
         case 15:
+          console.log("0.5 - 15");
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.5);
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.875);
           risk_value = 2;
           consequence_value = 2;
         break;
         case 10:
+          console.log("0.5 - 10");
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.5);
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.5);
           risk_value = 2;
           consequence_value = 2;
         break;
         case 5:
+          console.log("0.5 - 5");
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.5);
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.125);
-          risk_value = 1;
-          consequence_value = 2;
+          risk_value = 2;
+          consequence_value = 1;
         break;
         case 0:
+          console.log("0.5 - 0");
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.5);
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) * 0.5;
-          risk_value = 1;
-          consequence_value = 2;
+          risk_value = 2;
+          consequence_value = 1;
         break;
       }
     break;
     case 0.595:
       switch (markerTop) {
         case 20:
+          console.log("0.595 - 20");
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.875);
           markerTop = createStatsPorcentage((get_consequences_low+get_consequences_med),total_cons) + (createStatsPorcentage(get_consequences_high,total_cons) * 0.5);
-          risk_value = 3;
-          consequence_value = 2;
+          risk_value = 2;
+          consequence_value = 3;
         break;
         case 15:
+          console.log("0.595 - 15");
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.875);
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.875);
           risk_value = 2;
           consequence_value = 2;
         break;
         case 10:
+          console.log("0.595 - 10");
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.875);
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.5);
           risk_value = 2;
           consequence_value = 2;
         break;
         case 5:
+          console.log("0.595 - 5");
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.875);
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.125);
-          risk_value = 1;
-          consequence_value = 2;
+          risk_value = 2;
+          consequence_value = 1;
         break;
         case 0:
+          console.log("0.595 - 0");
           markerLeft = createStatsPorcentage(get_risk_low,total_risk) + (createStatsPorcentage(get_risk_med,total_risk) * 0.875);
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) * 0.5;
-          risk_value = 1;
-          consequence_value = 2;
+          risk_value = 2;
+          consequence_value = 1;
         break;
       }
     break;
     case 0.685:
       switch (markerTop) {
         case 20:
+          console.log("0.685 - 20");
           markerLeft = createStatsPorcentage((get_risk_med+get_risk_low),total_risk) + (createStatsPorcentage(get_risk_high,total_risk) * 0.5);
           markerTop = createStatsPorcentage((get_consequences_low+get_consequences_med),total_cons) + (createStatsPorcentage(get_consequences_high,total_cons) * 0.5);
           risk_value = 3;
           consequence_value = 3;
         break;
         case 15:
+          console.log("0.685 - 15");
           markerLeft = createStatsPorcentage((get_risk_med+get_risk_low),total_risk) + (createStatsPorcentage(get_risk_high,total_risk) * 0.5);
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.875);
-          risk_value = 2;
+          risk_value = 3;
           consequence_value = 3;
         break;
         case 10:
+          console.log("0.685 - 10");
           markerLeft = createStatsPorcentage((get_risk_med+get_risk_low),total_risk) + (createStatsPorcentage(get_risk_high,total_risk) * 0.5);
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.5);
-          risk_value = 2;
+          risk_value = 3;
           consequence_value = 3;
         break;
         case 5:
+          console.log("0.685 - 5");
           markerLeft = createStatsPorcentage((get_risk_med+get_risk_low),total_risk) + (createStatsPorcentage(get_risk_high,total_risk) * 0.5);
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) + (createStatsPorcentage(get_consequences_med,total_cons) * 0.125);
-          risk_value = 1;
-          consequence_value = 3;
+          risk_value = 3;
+          consequence_value = 2;
         break;
         case 0:
+          console.log("0.685 - 0");
           markerLeft = createStatsPorcentage((get_risk_med+get_risk_low),total_risk) + (createStatsPorcentage(get_risk_high,total_risk) * 0.5);
           markerTop = createStatsPorcentage(get_consequences_low,total_cons) * 0.5;
-          risk_value = 1;
-          consequence_value = 3;
+          risk_value = 3;
+          consequence_value = 2;
         break;
       }
     break;
