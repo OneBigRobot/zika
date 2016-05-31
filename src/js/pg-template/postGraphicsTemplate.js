@@ -3176,11 +3176,18 @@ var selectPregnancyOption = function() {
       $('.pgStep__pregnancy-ko').attr("disabled", "disabled");
       currentPhase = 21;
     nonPregnantSelected = true;
-    var newMosquitosLeftValue = Math.max(5, mosquitosLeft - (mosquitosLeft * 0.45));
+    //var newMosquitosLeftValue = Math.max(5, mosquitosLeft - (mosquitosLeft * 0.45));
+
+    var newMosquitosLeftValue = mosquitosLeft - Math.ceil(pregnantMosquitos);
 
     cell = Math.ceil(25 * (newMosquitosLeftValue / totalMosquitos));
     
-    cell = Math.ceil(25 * (mosquitosLeft / totalMosquitos));
+    //cell = Math.ceil(25 * (mosquitosLeft / totalMosquitos));
+
+    console.log("newMosquitosLeftValue: " + newMosquitosLeftValue);
+    console.log("mosquitosLeft: " + mosquitosLeft);
+    console.log("totalMosquitos: " + totalMosquitos);//
+    console.log(cell);
 
     switch (cell) {
       case 1:
