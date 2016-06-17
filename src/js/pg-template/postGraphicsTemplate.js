@@ -2987,6 +2987,8 @@ var selectPregnancyOption = function() {
     pregnantSelected = true;
 
     cell = Math.ceil(25 * (mosquitosLeft / totalMosquitos));
+
+
     
     switch (cell) {
       case 1:
@@ -3030,7 +3032,7 @@ var selectPregnancyOption = function() {
         newXS = 0.75;
       break;
     }
-    switch (cell) {
+    /*switch (cell) {
       case 1:
       case 2:
       case 4:
@@ -3081,7 +3083,13 @@ var selectPregnancyOption = function() {
         newRealY = -1;
         newYS = 2;
       break;
-    }
+    }*/
+
+    // if pregant (this is the case) set consequences to high
+    newY = 3.22;
+    newY = 20;
+    newRealY = -1;
+    newYS = 2;
 
     $('.pgStep__last-chart-marker').css("opacity", 1.0);
     markerMarginTop = (20 - newY);
@@ -3384,7 +3392,7 @@ var returnMosquitosLeft = function(step, question, option){
     if (question == 2) {
       if (option == 1) {
         if (mosquitosLeft <= 25) {
-          auxMosquitosLeft = -50;//
+          auxMosquitosLeft = -(100 - mosquitosLeft);
         }
         else {
           auxMosquitosLeft = 0;
